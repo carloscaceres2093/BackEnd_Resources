@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div id="navbar"></div>
+    <script>
+        $(function(){
+            $("#navbar").load("navbar.html")
+        })
+    </script>
+
+    <!-- Contact Page -->
+    <div class="container" >
+        <h2 class="text-center">Contact Us</h2>
+        <div class="row">
+            <div class="col-sm-5">
+                <p>Contact us and we'll get back to you within 24 hours.</p>
+                <p><span class="glyphicon glyphicon-map-marker"> Bogotá, CO </span></p>
+                <p><span class="glyphicon glyphicon-phone">  57 3185555555 </span></p>
+                <p><span class="glyphicon glyphicon-envelope">  backend-intermedio@123.siempreviva </span></p>
+            </div>
+            <div class="col-sm-7">
+                <form class="form-horizontal">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label class="control-label" for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label class="control-label" for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="comments">Comments:</label>
+                        <textarea rows="5" class="form-control" id="comments" name="comments"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

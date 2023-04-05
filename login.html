@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div id="navbar"></div>
+    <script>
+        $(function(){
+            $("#navbar").load("navbar.html")
+        })
+    </script>
+
+    <!-- Login Page -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <form>
+                    <h2 class="text-center">Login</h2>
+                    <div class="form-group">
+                        <label  for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required></input>
+                    </div>
+                    <div class="form-group">
+                        <label  for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required></input>
+                    </div>
+                    <div class="form-group">
+                       <div class="checkbox">
+                        <label >
+                            <input type="checkbox"> Remember me </input>
+                        </label>
+                       </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
