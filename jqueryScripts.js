@@ -8,14 +8,14 @@ $(document).ready(function(){
         var email = $("#emailInput").val();
         if(!email){
             var alertHtml = '<div  class="alert alert-warning alert-dismissible" role="alert">'+
-                             'Please fill in email field.'+
+                             'Please fill in email field completed.'+
                              '<button type="button" class="close" data-dismiss="alert" onclick="closeAlert(this)">'+
                              '<span aria-hidden="true">&times;</span>'+
                              '</button>'+
                              '</div>';
         }else if (!isValidEmailRegx(email)){
             var alertHtml = '<div  class="alert alert-danger alert-dismissible" role="alert">'+
-                            'Please enter valid email address.'+
+                            'Please enter valid email address and remember that it should have @ and ..'+
                             '<button type="button" class="close" data-dismiss="alert" onclick="closeAlert(this)">'+
                             '<span aria-hidden="true">&times;</span>'+
                             '</button>'+
@@ -23,7 +23,7 @@ $(document).ready(function(){
         }
         else {
             var alertHtml = '<div  class="alert alert-success alert-dismissible" role="alert">'+
-                            'This is a success alert!.'+
+                            'This is a success alert that says everthing is ok!.'+
                             '<button type="button" class="close" data-dismiss="alert" onclick="closeAlert(this)">'+
                             '<span aria-hidden="true">&times;</span>'+
                             '</button>'+
@@ -31,10 +31,6 @@ $(document).ready(function(){
         }
         alerts.push(alertHtml);
         $("#alertContainer").append(alertHtml);
-        // setTimeout(function(){
-        //     $(".alert").alert("close");
-        //     alerts.pop();
-        // }, 10000);
     });
 
     function closeAlert(button){
