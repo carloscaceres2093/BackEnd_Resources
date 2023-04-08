@@ -27,26 +27,23 @@
                 <p><span class="glyphicon glyphicon-envelope">  backend-intermedio@123.siempreviva </span></p>
             </div>
             <div class="col-sm-7">
-                <form class="form-horizontal">
-                    <div class="row">
-                        <div class="col-sm-6 form-group">
-                            <label class="control-label" for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <label class="control-label" for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" required></div>
+                <form>
+                    <div class="form-group">
+                        <label class="control-label" for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="comments">Comments:</label>
-                        <textarea rows="5" class="form-control" id="comments" name="comments"></textarea>
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
-                        <div>
-                            <button class="btn btn-success">Submit</button>
-                        </div>
+                      <label for="control-label" for="comments">Comments</label>
+                      <textarea type="textarea" class="form-control" id="comments" name="comments"></textarea>
                     </div>
-                </form>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+
             </div>
 
         </div>
