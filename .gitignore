@@ -1,0 +1,18 @@
+# Variables de entorno
+*.env
+# Folder test
+test_no_subir/
+
+#Archivos extensión .py
+*.py
+
+# Archivos test .csv
+test*.csv
+
+# Folder Test
+test*/
+
+# folder 
+f*r/
+# Test 
+test*

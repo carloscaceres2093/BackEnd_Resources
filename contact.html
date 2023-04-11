@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>About</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -25,6 +25,8 @@
                 <p><span class="glyphicon glyphicon-map-marker"> Bogotá, CO </span></p>
                 <p><span class="glyphicon glyphicon-phone">  57 3185555555 </span></p>
                 <p><span class="glyphicon glyphicon-envelope">  backend-intermedio@123.siempreviva </span></p>
+                <br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8091087962493!2d-74.06764158595618!3d4.628120243573061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a286d598bd5%3A0xddf14904a87dfb47!2sUniversidad%20Distrital%20Francisco%20Jos%C3%A9%20de%20Caldas!5e0!3m2!1ses!2sco!4v1680919580709!5m2!1ses!2sco" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-sm-7">
                 <form class="form-horizontal">
@@ -38,9 +40,14 @@
                             <input type="email" class="form-control" id="email" name="email" required></div>
                     </div>
                     <div class="form-group">
+                        <label class="control-label" for="number">Phone Number:</label>
+                        <input type="text" class="form-control" id="number" name="number">
+                    </div>
+                    <div class="form-group">
                         <label class="control-label" for="comments">Comments:</label>
                         <textarea rows="5" class="form-control" id="comments" name="comments"></textarea>
                     </div>
+                    
                     <div class="form-group">
                         <div>
                             <button class="btn btn-success">Submit</button>

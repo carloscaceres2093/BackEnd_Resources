@@ -1,8 +1,10 @@
 <html>
 <head>
     <title>Contact</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -20,7 +22,9 @@
         <div class="row">
             <div class="col-sm-4 col-sm-offset-4">
                 <form>
-                    <h2 class="text-center">Login</h2>
+                    <div class="form-group">
+                        <img class="redimension" src="//aulasvirtuales.udistrital.edu.co/pluginfile.php/1/theme_moove/logo/1678650643/LOGOS-01.png">
+                    </div>
                     <div class="form-group">
                         <label  for="email">Email:</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required></input>
@@ -29,15 +33,15 @@
                         <label  for="password">Password:</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" required></input>
                     </div>
-                    <div class="form-group">
-                       <div class="checkbox">
-                        <label >
-                            <input type="checkbox"> Remember me </input>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" unchecked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Remember me
                         </label>
-                       </div>
-                    </div>
+                      </div>
                     <button type="submit" class="btn btn-primary btn-block">Log in</button>
-
+                    <button class="btn btn-lg btn-google btn-block" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+                    <button class="btn btn-lg btn-facebook btn-block" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
                 </form>
             </div>
         </div>
