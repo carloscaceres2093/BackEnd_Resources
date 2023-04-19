@@ -205,147 +205,270 @@
 // console.log("Busqueda String: ", `Yo tengo ${yearsOld} y además me gusta jugar futbol`)
 
 
-console.log("============================ Numbers ============================")
-// 64 bit 
-// Valor 52bits (0-51)  |||  Exponente 11bits (52-62)  ||| 1bit (63)
+// console.log("============================ Numbers ============================")
+// // 64 bit 
+// // Valor 52bits (0-51)  |||  Exponente 11bits (52-62)  ||| 1bit (63)
 
-// Numbers
+// // Numbers
 
-let intNum = 5
-console.log("Int: ", intNum)
-let floatNum = 3.14
-console.log("Float: ", floatNum)
-let sciNum = 753e10 
-console.log("Notación científica: ", sciNum)
-let floatSciNum = 753e-5
-console.log("Notación científica float: ", floatSciNum)
-let longNum = 999999999999999
-console.log("Número de gran longitud: ", longNum)
-let longNum15 = 9999999999999999
-console.log("Número de gran longitud: ", longNum15)
-let floatPrec = 0.2+0.1
-console.log("Precisión Float: ", floatPrec)
-let floatPrecFix = (0.2*10 + 0.1*10)/10
-console.log("Precisión Float: ", floatPrecFix)
+// let intNum = 5
+// console.log("Int: ", intNum)
+// let floatNum = 3.14
+// console.log("Float: ", floatNum)
+// let sciNum = 753e10 
+// console.log("Notación científica: ", sciNum)
+// let floatSciNum = 753e-5
+// console.log("Notación científica float: ", floatSciNum)
+// let longNum = 999999999999999
+// console.log("Número de gran longitud: ", longNum)
+// let longNum15 = 9999999999999999
+// console.log("Número de gran longitud: ", longNum15)
+// let floatPrec = 0.2+0.1
+// console.log("Precisión Float: ", floatPrec)
+// let floatPrecFix = (0.2*10 + 0.1*10)/10
+// console.log("Precisión Float: ", floatPrecFix)
 
-// Numbers + String
-let numPlus = 10
-let strNumPlus = "20"
-console.log("Suma entre number y string: ", numPlus+strNumPlus)
-console.log("Suma entre number y string: "+ numPlus+numPlus)
-let strNumPlus2 = "5"
-console.log("División entre strings: ", strNumPlus/strNumPlus2)
-console.log("Multiplicación entre strings: ", strNumPlus*strNumPlus2)
-console.log("Resta entre strings: ", strNumPlus-strNumPlus2)
-console.log("Modulo entre strings: ", strNumPlus%strNumPlus2)
-console.log("Modulo entre strings: ", strNumPlus**strNumPlus2)
-// Not a Number NaN
-let apple = "apple"
-console.log("NaN: ", strNumPlus-apple)
-// isNaN()
-console.log("Validación NaN: ", isNaN(strNumPlus-apple))
-console.log("Validación strings: ", isNaN(strNumPlus2))
-console.log("Validación strings: ", isNaN(apple))
-console.log("Tipo NaN: ", typeof NaN)
-console.log("Modulo entre strings: ", 1 + NaN)
-// Infinity
-console.log("MásInfinito: ", Infinity)
-console.log("Menos Infinito: ", -Infinity)
-// hexadecimal
-let hexaNum = 0xA0
-console.log("Valor Hexadecimal: ", hexaNum)
-//Conversión a String
-let convertNum = 10
-console.log("Conversión a String: ", convertNum.toString(16))
-let objectNumber = new Number(10)
-console.log("Objeto Number: ", typeof objectNumber)
-console.log("Conversión a String: ", convertNum==objectNumber)
-console.log("Conversión a String: ", objectNumber===objectNumber)
+// // Numbers + String
+// let numPlus = 10
+// let strNumPlus = "20"
+// console.log("Suma entre number y string: ", numPlus+strNumPlus)
+// console.log("Suma entre number y string: "+ numPlus+numPlus)
+// let strNumPlus2 = "5"
+// console.log("División entre strings: ", strNumPlus/strNumPlus2)
+// console.log("Multiplicación entre strings: ", strNumPlus*strNumPlus2)
+// console.log("Resta entre strings: ", strNumPlus-strNumPlus2)
+// console.log("Modulo entre strings: ", strNumPlus%strNumPlus2)
+// console.log("Modulo entre strings: ", strNumPlus**strNumPlus2)
+// // Not a Number NaN
+// let apple = "apple"
+// console.log("NaN: ", strNumPlus-apple)
+// // isNaN()
+// console.log("Validación NaN: ", isNaN(strNumPlus-apple))
+// console.log("Validación strings: ", isNaN(strNumPlus2))
+// console.log("Validación strings: ", isNaN(apple))
+// console.log("Tipo NaN: ", typeof NaN)
+// console.log("Modulo entre strings: ", 1 + NaN)
+// // Infinity
+// console.log("MásInfinito: ", Infinity)
+// console.log("Menos Infinito: ", -Infinity)
+// // hexadecimal
+// let hexaNum = 0xA0
+// console.log("Valor Hexadecimal: ", hexaNum)
+// //Conversión a String
+// let convertNum = 10
+// console.log("Conversión a String: ", convertNum.toString(16))
+// let objectNumber = new Number(10)
+// console.log("Objeto Number: ", typeof objectNumber)
+// console.log("Conversión a String: ", convertNum==objectNumber)
+// console.log("Conversión a String: ", objectNumber===objectNumber)
 
-// BigInt
-let bigIntNum = 9999999999999999n
-console.log("Definición BigInt: ", bigIntNum)
-let bigIntNumFun = BigInt("9999999999999999")
-console.log("Definición BigInt: ", bigIntNumFun)
-console.log("Tipo BigInt: ", typeof bigIntNumFun)
-// BigInt Operation
-let bigIntNum1 = 10n
-let bigIntNum2 = 2n
-console.log("Operación BigInt: ",  bigIntNum1/bigIntNum2)
-console.log("Operación BigInt y Number: ",  bigIntNum1/BigInt(2))
+// // BigInt
+// let bigIntNum = 9999999999999999n
+// console.log("Definición BigInt: ", bigIntNum)
+// let bigIntNumFun = BigInt("9999999999999999")
+// console.log("Definición BigInt: ", bigIntNumFun)
+// console.log("Tipo BigInt: ", typeof bigIntNumFun)
+// // BigInt Operation
+// let bigIntNum1 = 10n
+// let bigIntNum2 = 2n
+// console.log("Operación BigInt: ",  bigIntNum1/bigIntNum2)
+// console.log("Operación BigInt y Number: ",  bigIntNum1/BigInt(2))
 
-// Propiedades y metodos
-// Max/Min Number propierties 
-let maxNum = Number.MAX_SAFE_INTEGER
-console.log("Entero máximo: ", maxNum)
-let minNum = Number.MIN_SAFE_INTEGER
-console.log("Entero mínimo: ", minNum)
-// Es entero isInteger()
-console.log("Validación entero: ", Number.isInteger(10))
-console.log("Validación entero: ", Number.isInteger(10.5))
-// ToExponential() toFixed() toPrecision() -> string
-let convertNumFunc = 10.54942
-console.log("Exponential: ", convertNumFunc.toExponential(3))
-console.log("Fixed: ", convertNumFunc.toFixed(3))
-console.log("Precision: ", convertNumFunc.toPrecision(6))
-//Valueof
-let valueNum = 156
-console.log("Valueof: ", valueNum.valueOf())
-let objvalueNum = new Number(100)
-console.log("Valueof object: ",  (objvalueNum).valueOf())
-console.log("Objeto normal: ", objvalueNum)
+// // Propiedades y metodos
+// // Max/Min Number propierties 
+// let maxNum = Number.MAX_SAFE_INTEGER
+// console.log("Entero máximo: ", maxNum)
+// let minNum = Number.MIN_SAFE_INTEGER
+// console.log("Entero mínimo: ", minNum)
+// // Es entero isInteger()
+// console.log("Validación entero: ", Number.isInteger(10))
+// console.log("Validación entero: ", Number.isInteger(10.5))
+// // ToExponential() toFixed() toPrecision() -> string
+// let convertNumFunc = 10.54942
+// console.log("Exponential: ", convertNumFunc.toExponential(3))
+// console.log("Fixed: ", convertNumFunc.toFixed(3))
+// console.log("Precision: ", convertNumFunc.toPrecision(6))
+// //Valueof
+// let valueNum = 156
+// console.log("Valueof: ", valueNum.valueOf())
+// let objvalueNum = new Number(100)
+// console.log("Valueof object: ",  (objvalueNum).valueOf())
+// console.log("Objeto normal: ", objvalueNum)
 
-// Conversion entre numbers
-let intValueNum = "100.1"
-console.log("Conversión float: ", parseFloat(intValueNum))
-// Conversion entre numbers
-let floatValueNum = 100.51
-console.log("Conversión entero: ", parseInt(intValueNum))
-console.log("Conversión entero: ", parseInt("101.1"))
-// Conversion de fecha a Number  -> 01.01.1970 epoch
-let dateToday = new Date()
-console.log("Conversión fecha a milisegundos: ", Number(dateToday))
+// // Conversion entre numbers
+// let intValueNum = "100.1"
+// console.log("Conversión float: ", parseFloat(intValueNum))
+// // Conversion entre numbers
+// let floatValueNum = 100.51
+// console.log("Conversión entero: ", parseInt(intValueNum))
+// console.log("Conversión entero: ", parseInt("101.1"))
+// // Conversion de fecha a Number  -> 01.01.1970 epoch
+// let dateToday = new Date()
+// console.log("Conversión fecha a milisegundos: ", Number(dateToday))
 
 
-console.log("============================ Arrays ============================")
-// Definición de un array
+// console.log("============================ Arrays ============================")
+// // Definición de un array
 const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
-// Array Vacio
-const motos2 = []
-motos2[0] = "Pulsar"
-motos2[3] = "Ducati"
-console.log("Arrays: ", motos2)
-motos2[3] = "Akt"
-console.log("Arrays: ", motos2)
-// Array new
-const motos3 = new Array("Pulsar", "Akt", "BMW", "Ducati")
-// Acceso a datos del array
-console.log("Arrays: ", motos3[1])
-motos3[5]=3
-console.log("Arrays: ", motos3)
+// // Array Vacio
+// const motos2 = []
+// motos2[0] = "Pulsar"
+// motos2[3] = "Ducati"
+// console.log("Arrays: ", motos2)
+// motos2[3] = "Akt"
+// console.log("Arrays: ", motos2)
+// // Array new
+// const motos3 = new Array("Pulsar", "Akt", "BMW", "Ducati")
+// // Acceso a datos del array
+// console.log("Arrays: ", motos3[1])
+// motos3[5]=3
+// console.log("Arrays: ", motos3)
 
-// Propiedades y métodos
-// Longitud
-console.log("Longitud Arrays: ", motos3.length)
-// Order
-console.log("Longitud Arrays: ", motos3.sort())
-// Acceder al ultimos objetos 
-console.log("Longitud Arrays: ", motos3[motos3.length-2])
-// Añadir componentes al array
-motos3.push("tvs")
-console.log("Añadir datos Arrays: ", motos3)
-motos3[motos3.length] = "Suzuki"
-console.log("Añadir datos  Arrays: ", motos3)
-// CUidado definición
-//Array de una posición
-const numbersTest = [5]
-console.log("Arrays: ", numbersTest)
-// Array de 5 Posiciones
-const numbersTest2  = new Array(5)
-console.log("Arrays: ", numbersTest2)
+// // Propiedades y métodos
+// // Longitud
+// console.log("Longitud Arrays: ", motos3.length)
+// // Order
+// console.log("Longitud Arrays: ", motos3.sort())
+// // Acceder al ultimos objetos 
+// console.log("Longitud Arrays: ", motos3[motos3.length-2])
+// // Añadir componentes al array
+// motos3.push("tvs")
+// console.log("Añadir datos Arrays: ", motos3)
+// motos3[motos3.length] = "Suzuki"
+// console.log("Añadir datos  Arrays: ", motos3)
+// // CUidado definición
+// //Array de una posición
+// const numbersTest = [5]
+// console.log("Arrays: ", numbersTest)
+// // Array de 5 Posiciones
+// const numbersTest2  = new Array(5)
+// console.log("Arrays: ", numbersTest2)
 
-// Validar tipo array
-// Validación isArray()
-console.log("Tipo Array: ", Array.isArray(numbersTest))
-//Validación instanceof
-console.log("Tipo Array: ", numbersTest instanceof Array)
+// // Validar tipo array
+// // Validación isArray()
+// console.log("Tipo Array: ", Array.isArray(numbersTest))
+// //Validación instanceof
+// console.log("Tipo Array: ", numbersTest instanceof Array)
+
+// Añadir valor a Array
+// Normal
+motos[5] = "KTM"
+console.log("Anadir Dato Array", motos)
+//Push
+motos.push("Pulsar", "tvs")
+console.log("Anadir Dato Array", motos)
+// Añadir primera posición
+motos.unshift("Honda")
+console.log("Añadir Dato Array al principio", motos)
+// Añadir o reemplazar en cualquier posición posición
+motos.splice(2, 0, "kimco")
+console.log("Añadir Dato Array", motos)
+// Añadir y borrar en cualquier posición posición
+motos.splice(2, 4, "Apache")
+console.log("Añadir Dato Array", motos)
+
+//Arrays a string
+console.log(typeof  motos.toString())
+console.log("Array a string", motos.toString())
+console.log("Array a string", motos.join(" * "))
+
+// Remover valores del array
+motos.pop() // Remueve el ultimo valor del array
+console.log("Quitar Dato Array", motos)
+motos.shift() // Remueve el primer valor del array
+console.log("Quitar Dato Array", motos)
+const motos2  = motos.slice(1, 4) // Remueve extracción de datos
+console.log("Quitar Dato Array", motos2)
+const motos1  = motos.slice(0, -1) // Remueve extracción de datos
+console.log("Quitar Dato Array", motos1)
+// Remueve posición especifica de datos
+console.log("Quitar Dato Array", motos)
+const motos3 =  motos.splice(1, 1) 
+console.log("Quitar Dato Array", motos)
+console.log("Quitar Dato Array", motos3)
+
+// Remover valor específico
+motos.push(null, "", undefined)
+console.log("Añadir vacios", motos)
+let removeNullMotos = motos.filter(function (noElminar){
+    return noElminar!=null
+})
+console.log("Quitar Dato Array", removeNullMotos)
+
+// Ordernar
+console.log("Ordenar alfabeticament", removeNullMotos.sort())
+console.log("Ordenar alfabeticamente desc", removeNullMotos.reverse())
+const arrayNum = [1,21,6,2,20,5]
+console.log("Ordenar alfabeticamente asc", arrayNum.sort())
+console.log("Ordenar Numericamente asc", arrayNum.sort(function(a,b){return a-b}))
+console.log("Ordenar Numericamente desc ", arrayNum.sort(function(a,b){return b-a}))
+
+//Comparación de arrays
+
+let array1  = [1, 2, 3, 4]
+let array2  = [1, 2, 3, 4, 5, 7]
+let array3 = [2, 1, 3, 2, 3, 1, 5]
+console.log("Comparación Estricta: ", array1===array2)
+console.log("Comparación Estricta: ", array1[0]===array2[0])
+// Stringify()
+console.log("Array a string: ", JSON.stringify(array1))
+"[1,2,3]"
+console.log("Array a string: ", array1.toString())
+"1,2,3"
+//Comparar Stringify()
+console.log("Comparación a arrays: ",  JSON.stringify(array1)=== JSON.stringify(array2))
+//Comparar toString()
+console.log("Comparación a arrays: ",   array1.toString()=== array2.toString())
+
+const compareArrays = function (a, b){
+    return a.lenght === b.lenght && a.every((element, index)=> element === b[index])
+}
+console.log("Comparación a arrays: ",   compareArrays(array1, array2))
+// Obtener diferencias entre los valores de los arrays
+let setArray1 = new Set(array1)
+console.log("Set arrays: ",   setArray1)
+let setArray3 = new Set(array3)
+console.log("Set arrays: ",   setArray3)
+function diferencia(a, b){
+    const setB = new Set(b)
+    return a.filter(element => !setB.has(element))
+}   
+function diferenciaTotal(a,b){
+    return diferencia(a,b).concat(diferencia(b,a))
+}
+const diferenciaArrays = diferencia(array1, array3)
+console.log("Diferencia arrays: ", diferenciaArrays)
+console.log("Diferencia arrays: ", diferenciaTotal(array1, array3))
+
+console.log("============================ Objects ============================")
+
+// Objetos definición
+const mandarina = {color:"Naranja", precio:8, forma:"Redonda", nombre:"Mandarina"}
+const frutas = {mazana:10, pera:5, mandarina:5, uva:12}
+console.log("acceder propiedad objeto: ", frutas.mandarina)
+console.log("acceder propiedad objeto: ", frutas["mandarina"]) 
+const persona = {
+    fullName: function(){
+        return `${this.nombre} ${this.apellido}`
+    }, 
+    nombre:"Carlos", 
+    apellido:"Cáceres",   
+    gustos: function(){
+        return mandarina.nombre
+    }
+}
+let gusto = mandarina.nombre
+console.log("acceder propiedad objeto: ", persona["fullName"]())
+console.log("acceder propiedad objeto: ", gusto)
+
+// Objecto Iterable
+for (let x in frutas){
+    console.log("objeto "+x+" : ", frutas[x])
+}
+
+const objectTest = {12345:["Peras", "Manzanas", "Uvas"], 123451:[]}
+console.log("objeto: ", objectTest["12345"])
+
+console.log("============================ Dates ============================")
+// Definición Date
+ 
