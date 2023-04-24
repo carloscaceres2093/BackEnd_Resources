@@ -130,11 +130,11 @@
 
 // // String
 // let stringTest = "prueba de, de D"
-// // Length calcula la longitud del string
+// // Length Calcula La longitud completa del strgin
 // console.log("Longitud String: ", stringTest.length)
 // // Slice
 // console.log("Separar String: ", stringTest.slice(-5))
-// // substring obtiene una parte del string definido por lo que está en las parentesis
+// // substring 
 // console.log("Separar String: ", stringTest.substring(7,9))
 // // substr -deprecado para futuras versiones
 // console.log("Separar String: ", stringTest.substr(1,3))
