@@ -132,7 +132,7 @@
 // let stringTest = "prueba de, de D"
 // // Length Calcula La longitud completa del strgin
 // console.log("Longitud String: ", stringTest.length)
-// // Slice
+// // Slice esta función me permite tomar ciertos datos del string
 // console.log("Separar String: ", stringTest.slice(-5))
 // // substring 
 // console.log("Separar String: ", stringTest.substring(7,9))
