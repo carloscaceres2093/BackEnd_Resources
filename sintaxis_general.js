@@ -1,6 +1,7 @@
 // Declaración
 // console.log("============================ DECLARACIÓN ============================")
-// const constante = "Ejemplo COnstante"
+// //Est es la denfinición  de una variable en JavaScript
+// const constante = "Ejemplo Constante"
 // let variable1 = 3
 // var variable2 = 2
 // var variable2 = 3;
@@ -64,6 +65,8 @@
 
 // console.log("============================ Asignación ============================")
 // // Asiganación
+// //Esta es la denfinición  de asignación y operación bajo una abreviación de signos, sin tener que definir
+// // la sentencia completa de asignación y operación.
 // let n = 5
 // // Abreviación
 // // Suma
@@ -127,11 +130,11 @@
 
 // // String
 // let stringTest = "prueba de, de D"
-// // Length
+// // Length Calcula La longitud completa del strgin
 // console.log("Longitud String: ", stringTest.length)
-// // Slice
+// // Slice esta función me permite tomar ciertos datos del string
 // console.log("Separar String: ", stringTest.slice(-5))
-// // substring
+// // substring 
 // console.log("Separar String: ", stringTest.substring(7,9))
 // // substr -deprecado para futuras versiones
 // console.log("Separar String: ", stringTest.substr(1,3))
