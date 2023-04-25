@@ -474,4 +474,54 @@ console.log("objeto: ", objectTest["12345"])
 
 console.log("============================ Dates ============================")
 // Definición Date
- 
+console.log("============================ Dates ============================")
+
+// Definición Date
+const dateNow = new Date()
+console.log("Fecha Actual: ", dateNow)
+// String
+const dateStr = new Date("April 17, 2022 21:20:01")
+console.log("Fecha string Definida: ", dateStr)
+const dateStr1 = new Date("2022-04-17")
+console.log("Fecha string Definida: ", dateStr1)
+//Numbers
+// En números enero = 0 y diciembre = 11
+const dateNum = new Date(2013, 15, 18, 23, 30, 10 )
+console.log("Fecha Number Definida: ", dateNum)
+const dateNum1 = new Date(2013, 15, 18, 23, 30 )
+console.log("Fecha Number Definida: ", dateNum1)
+const dateNum2 = new Date(2013, 15, 18, 23 )
+console.log("Fecha Number Definida: ", dateNum2)
+const dateNum3 = new Date(2013, 11, 18 )
+console.log("Fecha Number Definida: ", dateNum3)
+const dateNum4 = new Date(2013, 11 )
+console.log("Fecha Number Definida: ", dateNum4)
+// Error No se pueden definir fechas sin mes
+const dateNum5 = new Date(2013)
+console.log("Fecha Number Definida: ", dateNum5)
+// Miliseconds
+const dateMili = new Date(999809708500)
+console.log("Fecha milisegundos Definida: ", dateMili)
+const dateMili1 = new Date(-62109809708500)
+console.log("Fecha milisegundos Definida: ", dateMili1)
+
+// Métodos
+// Date to String
+console.log("Fecha String: ", dateNow.toString())
+console.log("Fecha Date String: ", dateNow.toDateString())
+console.log("Fecha UTC String: ", dateNow.toUTCString())
+console.log("Fecha ISO String: ", dateNow.toISOString())
+
+// Formatos
+// ISO AAAA-MM-DD (2023-04-19)
+// Fecha Corta MM/DD/AAAA (04/19/2023)
+// Fecha Amplia  (Apr 19 2023, 19 Apr 2023)
+
+const dateIso = new Date("2022-04-17")
+console.log("Fecha ISO Definida: ", dateIso)
+const dateIso1 = new Date("2022-04-17 11:00:11")
+console.log("Fecha ISO Definida: ", dateIso1)
+const dateIso2 = new Date("2022-04-17T11:00:11Z")
+console.log("Fecha ISO UTC Definida: ", dateIso2)
+const dateIso3 = new Date("2022-04-17T11:00:11-01:00")
+console.log("Fecha ISO Hora Local Definida: ", dateIso3)
