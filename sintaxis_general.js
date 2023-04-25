@@ -446,179 +446,301 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // Iteración Array
 
 // ForEach()
-let texto = "" 
-function forEachFunc(value,index){
-    if (index!=1){
-        texto += value+"\n"
-    }
-}
-motos.forEach(forEachFunc)
-console.log("For Each Result: ", texto)
+// let texto = "" 
+// function forEachFunc(value,index){
+//     if (index!=1){
+//         texto += value+"\n"
+//     }
+// }
+// motos.forEach(forEachFunc)
+// console.log("For Each Result: ", texto)
 
-// map()
-function mapFunc(value, index, array){
-    return value + " Moto"
-}
-motos[5] = "ktm"
-console.log("Motos: ", motos)
-const newMotos = motos.map(mapFunc)
-console.log("map Result: ", newMotos)
+// // map()
+// function mapFunc(value, index, array){
+//     return value + " Moto"
+// }
+// motos[5] = "ktm"
+// console.log("Motos: ", motos)
+// const newMotos = motos.map(mapFunc)
+// console.log("map Result: ", newMotos)
 
-// flatMap()
-const newMotosFlat = motos.flatMap((value) => value+ " Motos")
-console.log("flatmap Result: ", newMotosFlat)
+// // flatMap()
+// const newMotosFlat = motos.flatMap((value) => value+ " Motos")
+// console.log("flatmap Result: ", newMotosFlat)
 
-// filter()
-function filterFunc(value){
-    return value != "Pulsar"
-}
-const newMotosFilter = motos.filter(filterFunc)
-console.log("filter Result: ", newMotosFilter)
+// // filter()
+// function filterFunc(value){
+//     return value != "Pulsar"
+// }
+// const newMotosFilter = motos.filter(filterFunc)
+// console.log("filter Result: ", newMotosFilter)
 
-// reduce()
-//const numberArray= [1, 2, 1]
-console.log("Motos: ", motos)
-function reduceFunc(texto1, value, index){
-    if (index!=1){
-        texto1 += value+"\n" // text1 = text1 + value+"\n"
-    }
-    return texto1
-}
-console.log("reduce Result: ", motos.reduce(reduceFunc))
+// // reduce()
+// //const numberArray= [1, 2, 1]
+// console.log("Motos: ", motos)
+// function reduceFunc(texto1, value, index){
+//     if (index!=1){
+//         texto1 += value+"\n" // text1 = text1 + value+"\n"
+//     }
+//     return texto1
+// }
+// console.log("reduce Result: ", motos.reduce(reduceFunc))
 
-// every()
-function everyFunc(value){
-    return value != "Honda"
-}
-console.log("every Result: ", motos.every(everyFunc))
+// // every()
+// function everyFunc(value){
+//     return value != "Honda"
+// }
+// console.log("every Result: ", motos.every(everyFunc))
 
-// some()
-function someFunc(value){
-    return value == "Pulsar"
-}
-console.log("some Result: ", motos.some(someFunc))
+// // some()
+// function someFunc(value){
+//     return value == "Pulsar"
+// }
+// console.log("some Result: ", motos.some(someFunc))
 
-// Buscar valores en el array
-// IndexOf
-let posMoto = motos.indexOf("BMW", 1)
-console.log("indexOF Result: ", posMoto)
-motos[4] = "BMW"
-console.log(motos)
-// lastIndexOf
-let posMotoLast = motos.lastIndexOf("BMW", 1)
-console.log("lastIndexOF Result: ", posMotoLast)
+// // Buscar valores en el array
+// // IndexOf
+// let posMoto = motos.indexOf("BMW", 1)
+// console.log("indexOF Result: ", posMoto)
+// motos[4] = "BMW"
+// console.log(motos)
+// // lastIndexOf
+// let posMotoLast = motos.lastIndexOf("BMW", 1)
+// console.log("lastIndexOF Result: ", posMotoLast)
 
-// find encuentra el primer valor a partir de una condición
-function findFunc(value){
-    return value != "Akt"
-}
-console.log("find Result: ", motos.find(findFunc))
+// // find encuentra el primer valor a partir de una condición
+// function findFunc(value){
+//     return value != "Akt"
+// }
+// console.log("find Result: ", motos.find(findFunc))
 
-// findIndex encuentra el index del primer  valor a partir de una condición
-function findFunc(value){
-    return value != "Akt"
-}
-console.log("find Result: ", motos.findIndex(findFunc))
+// // findIndex encuentra el index del primer  valor a partir de una condición
+// function findFunc(value){
+//     return value != "Akt"
+// }
+// console.log("find Result: ", motos.findIndex(findFunc))
 
-// from permite convertir un string en un array
-console.log("From resutl", Array.from("Motos"))
+// // from permite convertir un string en un array
+// console.log("From resutl", Array.from("Motos"))
 
-// entries permite obtener el index y el valor de un array 
-const motosEntries = motos.entries()
-for (let x of motosEntries){
-    console.log(x)
-    console.log(x[0], x[1])
-}
-console.log(motosEntries)
+// // entries permite obtener el index y el valor de un array 
+// const motosEntries = motos.entries()
+// for (let x of motosEntries){
+//     console.log(x)
+//     console.log(x[0], x[1])
+// }
+// console.log(motosEntries)
 
-for (let x of motos){
-    console.log(x)
-    console.log(x)
-}
+// for (let x of motos){
+//     console.log(x)
+//     console.log(x)
+// }
 
-// includes() es validar si el valor existe dentro de un array
+// // includes() es validar si el valor existe dentro de un array
 
-console.log("includes resutls: ", motos.includes("BMW"))
-
-
-console.log("============================ Objects ============================")
-
-// Objetos definición
-const mandarina = {color:"Naranja", precio:8, forma:"Redonda", nombre:"Mandarina"}
-const frutas = {mazana:10, pera:5, mandarina:5, uva:12}
-console.log("acceder propiedad objeto: ", frutas.mandarina)
-console.log("acceder propiedad objeto: ", frutas["mandarina"]) 
-const persona = {
-    fullName: function(){
-        return `${this.nombre} ${this.apellido}`
-    }, 
-    nombre:"Carlos", 
-    apellido:"Cáceres",   
-    gustos: function(){
-        return mandarina.nombre
-    }
-}
-let gusto = mandarina.nombre
-console.log("acceder propiedad objeto: ", persona["fullName"]())
-console.log("acceder propiedad objeto: ", gusto)
-
-// Objecto Iterable
-for (let x in frutas){
-    console.log("objeto "+x+" : ", frutas[x])
-}
-
-const objectTest = {12345:["Peras", "Manzanas", "Uvas"], 123451:[]}
-console.log("objeto: ", objectTest["12345"])
+// console.log("includes resutls: ", motos.includes("BMW"))
 
 
-console.log("============================ Dates ============================")
+// console.log("============================ Objects ============================")
 
-// Definición Date
-const dateNow = new Date()
-console.log("Fecha Actual: ", dateNow)
-// String
-const dateStr = new Date("April 17, 2022 21:20:01")
-console.log("Fecha string Definida: ", dateStr)
-const dateStr1 = new Date("2022-04-17")
-console.log("Fecha string Definida: ", dateStr1)
-//Numbers
-// En números enero = 0 y diciembre = 11
-const dateNum = new Date(2013, 15, 18, 23, 30, 10 )
-console.log("Fecha Number Definida: ", dateNum)
-const dateNum1 = new Date(2013, 15, 18, 23, 30 )
-console.log("Fecha Number Definida: ", dateNum1)
-const dateNum2 = new Date(2013, 15, 18, 23 )
-console.log("Fecha Number Definida: ", dateNum2)
-const dateNum3 = new Date(2013, 11, 18 )
-console.log("Fecha Number Definida: ", dateNum3)
-const dateNum4 = new Date(2013, 11 )
-console.log("Fecha Number Definida: ", dateNum4)
-// Error No se pueden definir fechas sin mes
-const dateNum5 = new Date(2013)
-console.log("Fecha Number Definida: ", dateNum5)
-// Miliseconds
-const dateMili = new Date(999809708500)
-console.log("Fecha milisegundos Definida: ", dateMili)
-const dateMili1 = new Date(-62109809708500)
-console.log("Fecha milisegundos Definida: ", dateMili1)
+// // Objetos definición
+// const mandarina = {color:"Naranja", precio:8, forma:"Redonda", nombre:"Mandarina"}
+// const frutas = {mazana:10, pera:5, mandarina:5, uva:12}
+// console.log("acceder propiedad objeto: ", frutas.mandarina)
+// console.log("acceder propiedad objeto: ", frutas["mandarina"]) 
+// const persona = {
+//     fullName: function(){
+//         return `${this.nombre} ${this.apellido}`
+//     }, 
+//     nombre:"Carlos", 
+//     apellido:"Cáceres",   
+//     gustos: function(){
+//         return mandarina.nombre
+//     }
+// }
+// let gusto = mandarina.nombre
+// console.log("acceder propiedad objeto: ", persona["fullName"]())
+// console.log("acceder propiedad objeto: ", gusto)
 
-// Métodos
-// Date to String
-console.log("Fecha String: ", dateNow.toString())
-console.log("Fecha Date String: ", dateNow.toDateString())
-console.log("Fecha UTC String: ", dateNow.toUTCString())
-console.log("Fecha ISO String: ", dateNow.toISOString())
+// // Objecto Iterable
+// for (let x in frutas){
+//     console.log("objeto "+x+" : ", frutas[x])
+// }
 
-// Formatos
-// ISO AAAA-MM-DD (2023-04-19)
-// Fecha Corta MM/DD/AAAA (04/19/2023)
-// Fecha Amplia  (Apr 19 2023, 19 Apr 2023)
+// const objectTest = {12345:["Peras", "Manzanas", "Uvas"], 123451:[]}
+// console.log("objeto: ", objectTest["12345"])
 
-const dateIso = new Date("2022-04-17")
-console.log("Fecha ISO Definida: ", dateIso)
-const dateIso1 = new Date("2022-04-17 11:00:11")
-console.log("Fecha ISO Definida: ", dateIso1)
-const dateIso2 = new Date("2022-04-17T11:00:11Z")
-console.log("Fecha ISO UTC Definida: ", dateIso2)
-const dateIso3 = new Date("2022-04-17T11:00:11-01:00")
-console.log("Fecha ISO Hora Local Definida: ", dateIso3)
+
+// console.log("============================ Dates ============================")
+
+// // Definición Date
+// const dateNow = new Date()
+// console.log("Fecha Actual: ", dateNow)
+// // String
+// const dateStr = new Date("April 17, 2022 21:20:01")
+// console.log("Fecha string Definida: ", dateStr)
+// const dateStr1 = new Date("2022-04-17")
+// console.log("Fecha string Definida: ", dateStr1)
+// //Numbers
+// // En números enero = 0 y diciembre = 11
+// const dateNum = new Date(2013, 15, 18, 23, 30, 10 )
+// console.log("Fecha Number Definida: ", dateNum)
+// const dateNum1 = new Date(2013, 15, 18, 23, 30 )
+// console.log("Fecha Number Definida: ", dateNum1)
+// const dateNum2 = new Date(2013, 15, 18, 23 )
+// console.log("Fecha Number Definida: ", dateNum2)
+// const dateNum3 = new Date(2013, 11, 18 )
+// console.log("Fecha Number Definida: ", dateNum3)
+// const dateNum4 = new Date(2013, 11 )
+// console.log("Fecha Number Definida: ", dateNum4)
+// // Error No se pueden definir fechas sin mes
+// const dateNum5 = new Date(2013)
+// console.log("Fecha Number Definida: ", dateNum5)
+// // Miliseconds
+// const dateMili = new Date(999809708500)
+// console.log("Fecha milisegundos Definida: ", dateMili)
+// const dateMili1 = new Date(-62109809708500)
+// console.log("Fecha milisegundos Definida: ", dateMili1)
+
+// // Métodos
+// // Date to String
+// console.log("Fecha String: ", dateNow.toString())
+// console.log("Fecha Date String: ", dateNow.toDateString())
+// console.log("Fecha UTC String: ", dateNow.toUTCString())
+// console.log("Fecha ISO String: ", dateNow.toISOString())
+
+// // Formatos
+// // ISO AAAA-MM-DD (2023-04-19)
+// // Fecha Corta MM/DD/AAAA (04/19/2023)
+// // Fecha Amplia  (Apr 19 2023, 19 Apr 2023)
+
+// const dateIso = new Date("2022-04-17")
+// console.log("Fecha ISO Definida: ", dateIso)
+// const dateIso1 = new Date("2022-04-17 11:00:11")
+// console.log("Fecha ISO Definida: ", dateIso1)
+// const dateIso2 = new Date("2022-04-17T11:00:11Z")
+// console.log("Fecha ISO UTC Definida: ", dateIso2)
+// const dateIso3 = new Date("2022-04-17T11:00:11-01:00")
+// console.log("Fecha ISO Hora Local Definida: ", dateIso3)
+
+// // DATE GETS
+// const getMethodsDate = new Date("2023-04-24 09:10:20.999")
+// // getFullYear() Obtiene el año de un objeto Date - versión vieja getYear()
+// console.log("Año completo", getMethodsDate.getFullYear())
+// console.log("Tipo de dato Año completo", typeof getMethodsDate.getFullYear())
+// // getMoth() Obtiene el mes de un objeto Date 
+// console.log("Mes completo", getMethodsDate.getMonth()+1) // Retorna el mes -1
+// console.log("Tipo de dato Mes completo", typeof getMethodsDate.getMonth())
+// const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+// console.log("Mes nombre", months[getMethodsDate.getMonth()])
+
+// // getDay() Obtiene el día de la semana (0-6) empezando el domingo de un objeto Date 
+// console.log("Día de la semana completo", getMethodsDate.getDay()) 
+
+// // getDate() Obtiene el día de un objeto Date (1-31)
+// console.log("Día completo", getMethodsDate.getDate())
+
+// // getHours() Obtiene la hora de un objeto Date (0-23)
+// console.log("Horas completo", getMethodsDate.getHours())
+// // getMinutes() Obtiene los minutos de un objeto Date (0-59)
+// console.log("Minutos completo", getMethodsDate.getMinutes())
+// // getSeconds() Obtiene los segundos de un objeto Date (0-59)
+// console.log("Segundos completo", getMethodsDate.getSeconds())
+// // getMilliseconds() Obtiene los milisegundos de un objeto Date (0-999)
+// console.log("Segundos completo", getMethodsDate.getMilliseconds())
+
+// // getTime() Obtiene la fecha actual en milisegundos desde 1970
+// console.log("Fecha en milisegundos", getMethodsDate.getTime())
+
+// // Definición normal Fecha
+// const dateToday = new Date("2023-12-31 20:10:20.999")
+// console.log("Fecha normal", dateToday)
+// // UTC GET metodos
+// const dateTodayEpoch = Date.now()
+// console.log("Día UTC", dateToday.getUTCDate())
+// console.log("Año UTC", dateToday.getUTCFullYear())
+// console.log("Mes UTC", dateToday.getUTCMonth())
+// console.log("Día semana UTC", dateToday.getUTCDay())
+// console.log("Horas UTC", dateToday.getUTCHours())
+// console.log("Minutos UTC", dateToday.getUTCMinutes())
+// console.log("Segundos UTC", dateToday.getUTCSeconds())
+// console.log("Milisegundos UTC", dateToday.getUTCMilliseconds())
+
+// // Diferencia contra UTC en minutos
+// console.log("Diferencia contra UTC en minutos", dateToday.getTimezoneOffset())
+// console.log("Diferencia contra UTC en horas", dateToday.getTimezoneOffset()/60)
+// // Calcular el week number
+// const currentDate = new Date()
+// const startDate =  new Date(currentDate.getFullYear(), 0, 1)
+// console.log("StartDate", startDate)
+// console.log("Resta fechas ", (currentDate - startDate) )
+// console.log("Calculo Completo fechas ", (currentDate - startDate) / (24*60*60*1000) )
+// console.log("Aproximación fechas ",  Math.floor((currentDate - startDate) / (24*60*60*1000) ))
+// let days = Math.floor((currentDate - startDate) / (24*60*60*1000))
+// console.log("Dias fechas ", days )
+// let weekNumber = Math.ceil(days/7)
+// console.log("WeekNumber", weekNumber )
+
+// // Obtener fecha actual por el timezone
+// // Timezones "America/NewYork"
+// console.log("HOra A partir de timezone", new Date().toLocaleTimeString("en-US", {timeZone:"America/New_York"}))
+// console.log("Date A partir de timezone", new Date().toLocaleDateString("en-US", {timeZone:"America/New_York"}))
+// console.log("Fecha completa A partir de timezone", new Date().toLocaleString("en-US", {timeZone:"Asia/Hong_Kong"}))
+
+// // DATE SETS
+// // setFullYear() cambia el año de la fecha actual
+// console.log(dateToday)
+// console.log("Cambio Año", dateToday.setFullYear(2020))
+// console.log(dateToday)
+// console.log("Cambio Año", dateToday.setFullYear(2020, 10, 1))
+// console.log(dateToday)
+// // setMoth()
+// console.log("Cambio Mes", dateToday.setMonth(9))
+// console.log(dateToday)
+// // setDate()
+// console.log("Cambio Día", dateToday.setDate(2))
+// console.log(dateToday)
+// // setHours()
+// console.log("Cambio Horas", dateToday.setHours(19))
+// console.log(dateToday)
+// // setMinutes()
+// console.log("Cambio Minutos", dateToday.setMinutes(9))
+// console.log(dateToday)
+// // setSeconds()
+// console.log("Cambio Segundos", dateToday.setSeconds(19))
+// console.log(dateToday)
+
+// // Comparar Dates
+// const date1 = new Date()
+// //date1.setFullYear(2025,1,24)
+// const date2 = new Date()
+// date2.setFullYear(2024, 5, 24)
+// if (date2 > date1){
+//     console.log("Hoy es antes de 24 Abril 2024")
+// } else{
+//     console.log("Hoy es después de 24 Abril 2024")
+// }
+// // Restar horas de una fecha
+// console.log("Fecha actual", date1)
+// const getHour = date1.getHours()
+// console.log("Horas Actuales", getHour)
+// const subsHours =  getHour + 8 
+// console.log("Horas Operadas", subsHours)
+// date1.setHours(subsHours)
+// console.log("Fecha operada", date1)
+
+// // Conversiones Fechas
+// // toDateString() convertir a string
+// console.log("Fecha string", date1.toDateString())
+// // toISOString() convertir a ISO string
+// console.log("Fecha string", date1.toISOString())
+// // toDateString() convertir a JSON (ISO) string
+// console.log("Fecha string", date1.toJSON())
+// // toTimeString() convertir a JSON (ISO) string
+// console.log("Fecha Time string", date1.toTimeString())
+// // toString() convertir a JSON (ISO) string
+// console.log("Fecha Time string", date1.toString())
+// // toUTCString() convertir a JSON (ISO) string
+// console.log("Fecha UTC string", date1.toUTCString())
+
+console.log("============================ Funciones ============================")
