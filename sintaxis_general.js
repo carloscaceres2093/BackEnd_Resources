@@ -352,93 +352,191 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 
 // Añadir valor a Array
 // Normal
-motos[5] = "KTM"
-console.log("Anadir Dato Array", motos)
-//Push
-motos.push("Pulsar", "tvs")
-console.log("Anadir Dato Array", motos)
-// Añadir primera posición
-motos.unshift("Honda")
-console.log("Añadir Dato Array al principio", motos)
-// Añadir o reemplazar en cualquier posición posición
-motos.splice(2, 0, "kimco")
-console.log("Añadir Dato Array", motos)
-// Añadir y borrar en cualquier posición posición
-motos.splice(2, 4, "Apache")
-console.log("Añadir Dato Array", motos)
+// motos[5] = "KTM"
+// console.log("Anadir Dato Array", motos)
+// //Push
+// motos.push("Pulsar", "tvs")
+// console.log("Anadir Dato Array", motos)
+// // Añadir primera posición
+// motos.unshift("Honda")
+// console.log("Añadir Dato Array al principio", motos)
+// // Añadir o reemplazar en cualquier posición posición
+// motos.splice(2, 0, "kimco")
+// console.log("Añadir Dato Array", motos)
+// // Añadir y borrar en cualquier posición posición
+// motos.splice(2, 4, "Apache")
+// console.log("Añadir Dato Array", motos)
 
-//Arrays a string
-console.log(typeof  motos.toString())
-console.log("Array a string", motos.toString())
-console.log("Array a string", motos.join(" * "))
+// //Arrays a string
+// console.log(typeof  motos.toString())
+// console.log("Array a string", motos.toString())
+// console.log("Array a string", motos.join(" * "))
 
-// Remover valores del array
-motos.pop() // Remueve el ultimo valor del array
-console.log("Quitar Dato Array", motos)
-motos.shift() // Remueve el primer valor del array
-console.log("Quitar Dato Array", motos)
-const motos2  = motos.slice(1, 4) // Remueve extracción de datos
-console.log("Quitar Dato Array", motos2)
-const motos1  = motos.slice(0, -1) // Remueve extracción de datos
-console.log("Quitar Dato Array", motos1)
-// Remueve posición especifica de datos
-console.log("Quitar Dato Array", motos)
-const motos3 =  motos.splice(1, 1) 
-console.log("Quitar Dato Array", motos)
-console.log("Quitar Dato Array", motos3)
+// // Remover valores del array
+// motos.pop() // Remueve el ultimo valor del array
+// console.log("Quitar Dato Array", motos)
+// motos.shift() // Remueve el primer valor del array
+// console.log("Quitar Dato Array", motos)
+// const motos2  = motos.slice(1, 4) // Remueve extracción de datos
+// console.log("Quitar Dato Array", motos2)
+// const motos1  = motos.slice(0, -1) // Remueve extracción de datos
+// console.log("Quitar Dato Array", motos1)
+// // Remueve posición especifica de datos
+// console.log("Quitar Dato Array", motos)
+// const motos3 =  motos.splice(1, 1) 
+// console.log("Quitar Dato Array", motos)
+// console.log("Quitar Dato Array", motos3)
 
-// Remover valor específico
-motos.push(null, "", undefined)
-console.log("Añadir vacios", motos)
-let removeNullMotos = motos.filter(function (noElminar){
-    return noElminar!=null
-})
-console.log("Quitar Dato Array", removeNullMotos)
+// // Remover valor específico
+// motos.push(null, "", undefined)
+// console.log("Añadir vacios", motos)
+// let removeNullMotos = motos.filter(function (noElminar){
+//     return noElminar!=null
+// })
+// console.log("Quitar Dato Array", removeNullMotos)
 
-// Ordernar
-console.log("Ordenar alfabeticament", removeNullMotos.sort())
-console.log("Ordenar alfabeticamente desc", removeNullMotos.reverse())
-const arrayNum = [1,21,6,2,20,5]
-console.log("Ordenar alfabeticamente asc", arrayNum.sort())
-console.log("Ordenar Numericamente asc", arrayNum.sort(function(a,b){return a-b}))
-console.log("Ordenar Numericamente desc ", arrayNum.sort(function(a,b){return b-a}))
+// // Ordernar
+// console.log("Ordenar alfabeticament", removeNullMotos.sort())
+// console.log("Ordenar alfabeticamente desc", removeNullMotos.reverse())
+// const arrayNum = [1,21,6,2,20,5]
+// console.log("Ordenar alfabeticamente asc", arrayNum.sort())
+// console.log("Ordenar Numericamente asc", arrayNum.sort(function(a,b){return a-b}))
+// console.log("Ordenar Numericamente desc ", arrayNum.sort(function(a,b){return b-a}))
 
-//Comparación de arrays
+// //Comparación de arrays
 
-let array1  = [1, 2, 3, 4]
-let array2  = [1, 2, 3, 4, 5, 7]
-let array3 = [2, 1, 3, 2, 3, 1, 5]
-console.log("Comparación Estricta: ", array1===array2)
-console.log("Comparación Estricta: ", array1[0]===array2[0])
-// Stringify()
-console.log("Array a string: ", JSON.stringify(array1))
-"[1,2,3]"
-console.log("Array a string: ", array1.toString())
-"1,2,3"
-//Comparar Stringify()
-console.log("Comparación a arrays: ",  JSON.stringify(array1)=== JSON.stringify(array2))
-//Comparar toString()
-console.log("Comparación a arrays: ",   array1.toString()=== array2.toString())
+// let array1  = [1, 2, 3, 4]
+// let array2  = [1, 2, 3, 4, 5, 7]
+// let array3 = [2, 1, 3, 2, 3, 1, 5]
+// console.log("Comparación Estricta: ", array1===array2)
+// console.log("Comparación Estricta: ", array1[0]===array2[0])
+// // Stringify()
+// console.log("Array a string: ", JSON.stringify(array1))
+// "[1,2,3]"
+// console.log("Array a string: ", array1.toString())
+// "1,2,3"
+// //Comparar Stringify()
+// console.log("Comparación a arrays: ",  JSON.stringify(array1)=== JSON.stringify(array2))
+// //Comparar toString()
+// console.log("Comparación a arrays: ",   array1.toString()=== array2.toString())
 
-const compareArrays = function (a, b){
-    return a.lenght === b.lenght && a.every((element, index)=> element === b[index])
+// const compareArrays = function (a, b){
+//     return a.lenght === b.lenght && a.every((element, index)=> element === b[index])
+// }
+// console.log("Comparación a arrays: ",   compareArrays(array1, array2))
+// // Obtener diferencias entre los valores de los arrays
+// let setArray1 = new Set(array1)
+// console.log("Set arrays: ",   setArray1)
+// let setArray3 = new Set(array3)
+// console.log("Set arrays: ",   setArray3)
+// function diferencia(a, b){
+//     const setB = new Set(b)
+//     return a.filter(element => !setB.has(element))
+// }   
+// function diferenciaTotal(a,b){
+//     return diferencia(a,b).concat(diferencia(b,a))
+// }
+// const diferenciaArrays = diferencia(array1, array3)
+// console.log("Diferencia arrays: ", diferenciaArrays)
+// console.log("Diferencia arrays: ", diferenciaTotal(array1, array3))
+
+// Iteración Array
+
+// ForEach()
+let texto = "" 
+function forEachFunc(value,index){
+    if (index!=1){
+        texto += value+"\n"
+    }
 }
-console.log("Comparación a arrays: ",   compareArrays(array1, array2))
-// Obtener diferencias entre los valores de los arrays
-let setArray1 = new Set(array1)
-console.log("Set arrays: ",   setArray1)
-let setArray3 = new Set(array3)
-console.log("Set arrays: ",   setArray3)
-function diferencia(a, b){
-    const setB = new Set(b)
-    return a.filter(element => !setB.has(element))
-}   
-function diferenciaTotal(a,b){
-    return diferencia(a,b).concat(diferencia(b,a))
+motos.forEach(forEachFunc)
+console.log("For Each Result: ", texto)
+
+// map()
+function mapFunc(value, index, array){
+    return value + " Moto"
 }
-const diferenciaArrays = diferencia(array1, array3)
-console.log("Diferencia arrays: ", diferenciaArrays)
-console.log("Diferencia arrays: ", diferenciaTotal(array1, array3))
+motos[5] = "ktm"
+console.log("Motos: ", motos)
+const newMotos = motos.map(mapFunc)
+console.log("map Result: ", newMotos)
+
+// flatMap()
+const newMotosFlat = motos.flatMap((value) => value+ " Motos")
+console.log("flatmap Result: ", newMotosFlat)
+
+// filter()
+function filterFunc(value){
+    return value != "Pulsar"
+}
+const newMotosFilter = motos.filter(filterFunc)
+console.log("filter Result: ", newMotosFilter)
+
+// reduce()
+//const numberArray= [1, 2, 1]
+console.log("Motos: ", motos)
+function reduceFunc(texto1, value, index){
+    if (index!=1){
+        texto1 += value+"\n" // text1 = text1 + value+"\n"
+    }
+    return texto1
+}
+console.log("reduce Result: ", motos.reduce(reduceFunc))
+
+// every()
+function everyFunc(value){
+    return value != "Honda"
+}
+console.log("every Result: ", motos.every(everyFunc))
+
+// some()
+function someFunc(value){
+    return value == "Pulsar"
+}
+console.log("some Result: ", motos.some(someFunc))
+
+// Buscar valores en el array
+// IndexOf
+let posMoto = motos.indexOf("BMW", 1)
+console.log("indexOF Result: ", posMoto)
+motos[4] = "BMW"
+console.log(motos)
+// lastIndexOf
+let posMotoLast = motos.lastIndexOf("BMW", 1)
+console.log("lastIndexOF Result: ", posMotoLast)
+
+// find encuentra el primer valor a partir de una condición
+function findFunc(value){
+    return value != "Akt"
+}
+console.log("find Result: ", motos.find(findFunc))
+
+// findIndex encuentra el index del primer  valor a partir de una condición
+function findFunc(value){
+    return value != "Akt"
+}
+console.log("find Result: ", motos.findIndex(findFunc))
+
+// from permite convertir un string en un array
+console.log("From resutl", Array.from("Motos"))
+
+// entries permite obtener el index y el valor de un array 
+const motosEntries = motos.entries()
+for (let x of motosEntries){
+    console.log(x)
+    console.log(x[0], x[1])
+}
+console.log(motosEntries)
+
+for (let x of motos){
+    console.log(x)
+    console.log(x)
+}
+
+// includes() es validar si el valor existe dentro de un array
+
+console.log("includes resutls: ", motos.includes("BMW"))
+
 
 console.log("============================ Objects ============================")
 
@@ -469,6 +567,55 @@ for (let x in frutas){
 const objectTest = {12345:["Peras", "Manzanas", "Uvas"], 123451:[]}
 console.log("objeto: ", objectTest["12345"])
 
+
 console.log("============================ Dates ============================")
+
 // Definición Date
- 
+const dateNow = new Date()
+console.log("Fecha Actual: ", dateNow)
+// String
+const dateStr = new Date("April 17, 2022 21:20:01")
+console.log("Fecha string Definida: ", dateStr)
+const dateStr1 = new Date("2022-04-17")
+console.log("Fecha string Definida: ", dateStr1)
+//Numbers
+// En números enero = 0 y diciembre = 11
+const dateNum = new Date(2013, 15, 18, 23, 30, 10 )
+console.log("Fecha Number Definida: ", dateNum)
+const dateNum1 = new Date(2013, 15, 18, 23, 30 )
+console.log("Fecha Number Definida: ", dateNum1)
+const dateNum2 = new Date(2013, 15, 18, 23 )
+console.log("Fecha Number Definida: ", dateNum2)
+const dateNum3 = new Date(2013, 11, 18 )
+console.log("Fecha Number Definida: ", dateNum3)
+const dateNum4 = new Date(2013, 11 )
+console.log("Fecha Number Definida: ", dateNum4)
+// Error No se pueden definir fechas sin mes
+const dateNum5 = new Date(2013)
+console.log("Fecha Number Definida: ", dateNum5)
+// Miliseconds
+const dateMili = new Date(999809708500)
+console.log("Fecha milisegundos Definida: ", dateMili)
+const dateMili1 = new Date(-62109809708500)
+console.log("Fecha milisegundos Definida: ", dateMili1)
+
+// Métodos
+// Date to String
+console.log("Fecha String: ", dateNow.toString())
+console.log("Fecha Date String: ", dateNow.toDateString())
+console.log("Fecha UTC String: ", dateNow.toUTCString())
+console.log("Fecha ISO String: ", dateNow.toISOString())
+
+// Formatos
+// ISO AAAA-MM-DD (2023-04-19)
+// Fecha Corta MM/DD/AAAA (04/19/2023)
+// Fecha Amplia  (Apr 19 2023, 19 Apr 2023)
+
+const dateIso = new Date("2022-04-17")
+console.log("Fecha ISO Definida: ", dateIso)
+const dateIso1 = new Date("2022-04-17 11:00:11")
+console.log("Fecha ISO Definida: ", dateIso1)
+const dateIso2 = new Date("2022-04-17T11:00:11Z")
+console.log("Fecha ISO UTC Definida: ", dateIso2)
+const dateIso3 = new Date("2022-04-17T11:00:11-01:00")
+console.log("Fecha ISO Hora Local Definida: ", dateIso3)
