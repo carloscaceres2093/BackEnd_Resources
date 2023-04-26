@@ -775,3 +775,72 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 
 // console.log(sumFunciton(1,2))
 
+// console.log("============================ Comparación ============================")
+
+// let x = 8
+// // Igual que ==, es una comparación del componente sin mirar su estructura o tipo 
+// console.log("Igual que: ", x==8)
+// console.log("Igual que: ", x=="8")
+// // Igual que en valor y tipo  ===, es una comparación del componente estricto
+// console.log("Igual que: ", x===8)
+// console.log("Igual que: ", x==="8")
+// // Diferente que  !=, es una comparación del componente sin mirar su estructura o tipo 
+// console.log("Diferente que: ", x!=5)
+// console.log("Diferente que: ", x!="8")
+// // Diferente que  !=, es una comparación del componente estricta
+// console.log("Diferente que: ", x!==5)
+// console.log("Diferente que: ", x!=="8")
+// // mayor que  >, es una comparación del componente estricta
+// console.log("Mayor que: ", x>8)
+// console.log("Mayor que: ", x>"9")
+// // menor que  <, es una comparación del componente estricta
+// console.log("Menor que: ", x<5)
+// console.log("Menor que: ", x<"1")
+// // mayor igual que  >=, es una comparación del componente estricta
+// console.log("Mayor que: ", x>=8)
+// console.log("Mayor que: ", x>="8")
+// // menor o igual  que  <=, es una comparación del componente estricta
+// console.log("Menor que: ", x<=8)
+// console.log("Menor que: ", x<="9")
+
+// console.log("============================ Operadores Lógicos ============================")
+// // And o y (and) o (&) -> js -> &&
+
+// // Tabla de verdad AND
+// console.log(x<7 && x>9)
+// console.log(x<7 && x>7)
+// console.log(x>7 && x<7)
+// console.log(x<9 && x>7)
+
+// // or o ó (or) o (|) -> js -> ||
+
+// // Tabla de verdad AND
+// console.log(x<7 || x>9)
+// console.log(x<7 || x>7)
+// console.log(x>7 || x<7)
+// console.log(x<9 || x>7)
+
+// // not o no (not) o (!) -> js -> !
+
+// // Tabla de verdad AND
+// console.log(!x<7)
+// console.log(!x>7)
+
+// let condicionTerniario = (3>9) ? "Es mayor que 9":"No es mayor a 9"
+// console.log(condicionTerniario)
+// // Comparación numeros en string
+// let xString = "8"
+// console.log("Comparación string, ", "8">"8")
+
+// // operador lógico de null
+// let nullVar = null
+// let operacion = null
+// let texto = "missing"
+// console.log("Operador null, ", operacion??texto)
+
+// // ?. 
+// const sbk = {velocidad:"Más de 200km/h", tamaño:"Varios tamños", maximoCC:1200}
+// console.log(sbk.color)
+// console.log(sbk?.color)
+
+
