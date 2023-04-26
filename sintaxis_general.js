@@ -843,4 +843,80 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // console.log(sbk.color)
 // console.log(sbk?.color)
 
+console.log("============================ Expresiones condicionales ============================")
 
+// sentencia if
+if (7>6) {
+    console.log("El resultado de la condicion es verdadero")
+}
+
+// sentencia if else
+if (7>8) {
+    console.log("El resultado de la condicion es verdadero")
+} else {
+    console.log("El resultado de la condicion es falso")
+}
+
+// sentencia if else if else 
+let z = 8
+if (z>8) {
+    console.log("El resultado es que z es mayor a 8")
+}else  if (z>9) {
+    console.log("El resultado es que x es mayor a 9")
+}else if (z>10) {
+    console.log("El resultado es que z es mayor a 10")
+}else  if (z>11) {
+    console.log("El resultado es que x es mayor a 11")
+}else {
+    console.log("El resultado de la condicion es falso")
+}
+
+
+if (z==8) {
+    console.log("El resultado es que z es igual a 8")
+}else  if (z==9) {
+    console.log("El resultado es que z es igual a 9")
+}else if (z==10) {
+    console.log("El resultado es que z es igual a 10")
+}else  if (z==11) {
+    console.log("El resultado es que z es igual a 11")
+}else {
+    console.log("El resultado es que z es diferente")
+}
+
+// switch case es una especie de condicional  if else if else
+// // Caso comparación directa
+let resultado
+// La comparación del switch case por defecto es estricta 
+switch (z){
+    case "8":
+        resultado = 8
+        break
+    case 9:
+        resultado = 9
+        break
+    case 10:
+        resultado = 10
+        break
+    default:
+        resultado = z+"default"
+}
+
+console.log("El resultado es que z es igual a ", resultado)
+
+// Caso comparación bajo condiciones
+let resultado2
+switch (true){
+    case z>8:
+        resultado2 = 8
+        break
+    case z>9:
+        resultado2 = 9
+        break
+    case z>10 && z<5 || z==8:
+        resultado2 = 10
+        break
+    default:
+        resultado2 = z
+}
+console.log("El resultado  ", resultado2)
