@@ -744,3 +744,18 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // console.log("Fecha UTC string", date1.toUTCString())
 
 console.log("============================ Funciones ============================")
+
+// Definición de una función
+function miFuncion(a, b, c) {
+    return a + b + c
+}
+function miFuncion() {
+    console.log("El grupo de backEnd Es el mejor")
+}
+let sumaTotal = miFuncion(1, 2, 3)
+console.log("Este es el resultado de mi primera función", sumaTotal)
+// let valor = miFuncion2()
+// console.log(valor)
+function otraFuncion(){
+    
+}
