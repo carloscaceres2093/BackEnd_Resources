@@ -743,19 +743,35 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // // toUTCString() convertir a JSON (ISO) string
 // console.log("Fecha UTC string", date1.toUTCString())
 
-console.log("============================ Funciones ============================")
+// console.log("============================ Funciones ============================")
 
-// Definición de una función
-function miFuncion(a, b, c) {
-    return a + b + c
-}
-function miFuncion() {
-    console.log("El grupo de backEnd Es el mejor")
-}
-let sumaTotal = miFuncion(1, 2, 3)
-console.log("Este es el resultado de mi primera función", sumaTotal)
-// let valor = miFuncion2()
-// console.log(valor)
-function otraFuncion(){
+// // Definición de una función
+// function miFuncion(a, b, c) {
+//     return a + b + c
+// }
+// function miFuncion() {
+//     let text = "El grupo de backEnd Es el mejor"
+//     console.log(text)
+// }
+// let sumaTotal = miFuncion(1, 2, 3)
+// console.log("Este es el resultado de mi primera función", sumaTotal)
+
+// function printText(text){
+//     console.log("Esto es el texto a imprimir: ", text)
     
-}
+// }
+
+// printText(sumFuncitonDecl(1,2))
+// // Función Declarada
+// function sumFuncitonDecl(a, b){
+//     return a+b
+// }
+// printText(sumFunciton(1,2))
+// // Función Expresada
+// var sumFunciton = function(a, b){
+//     return a+b
+// }
+// printText(sumFunciton(1,2))
+
+// console.log(sumFunciton(1,2))
+
