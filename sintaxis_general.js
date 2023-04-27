@@ -843,80 +843,211 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // console.log(sbk.color)
 // console.log(sbk?.color)
 
-console.log("============================ Expresiones condicionales ============================")
+// console.log("============================ Expresiones condicionales ============================")
 
-// sentencia if
-if (7>6) {
-    console.log("El resultado de la condicion es verdadero")
+// // sentencia if
+// if (7>6) {
+//     console.log("El resultado de la condicion es verdadero")
+// }
+
+// // sentencia if else
+// if (7>8) {
+//     console.log("El resultado de la condicion es verdadero")
+// } else {
+//     console.log("El resultado de la condicion es falso")
+// }
+
+// // sentencia if else if else 
+// let z = 8
+// if (z>8) {
+//     console.log("El resultado es que z es mayor a 8")
+// }else  if (z>9) {
+//     console.log("El resultado es que x es mayor a 9")
+// }else if (z>10) {
+//     console.log("El resultado es que z es mayor a 10")
+// }else  if (z>11) {
+//     console.log("El resultado es que x es mayor a 11")
+// }else {
+//     console.log("El resultado de la condicion es falso")
+// }
+
+
+// if (z==8) {
+//     console.log("El resultado es que z es igual a 8")
+// }else  if (z==9) {
+//     console.log("El resultado es que z es igual a 9")
+// }else if (z==10) {
+//     console.log("El resultado es que z es igual a 10")
+// }else  if (z==11) {
+//     console.log("El resultado es que z es igual a 11")
+// }else {
+//     console.log("El resultado es que z es diferente")
+// }
+
+// // switch case es una especie de condicional  if else if else
+// // // Caso comparación directa
+// let resultado
+// // La comparación del switch case por defecto es estricta 
+// switch (z){
+//     case "8":
+//         resultado = 8
+//         break
+//     case 9:
+//         resultado = 9
+//         break
+//     case 10:
+//         resultado = 10
+//         break
+//     default:
+//         resultado = z+"default"
+// }
+
+// console.log("El resultado es que z es igual a ", resultado)
+
+// // Caso comparación bajo condiciones
+// let resultado2
+// switch (true){
+//     case z>8:
+//         resultado2 = 8
+//         break
+//     case z>9:
+//         resultado2 = 9
+//         break
+//     case z>10 && z<5 || z==8:
+//         resultado2 = 10
+//         break
+//     default:
+//         resultado2 = z
+// }
+// console.log("El resultado  ", resultado2)
+
+console.log("============================ Iteraciones ============================")
+
+// For que un cilco que recorre cierta cantidad de veces un bloque
+let maxIter = 10
+for (let i=0; i<maxIter; i++){
+    console.log("Iteración Numero: ", i)
+}
+// Ejemplo de for 
+const lenguajes = ["python", "javascript", "java", "go", "cobol"]
+console.log("Longitud del array: ",lenguajes.length)
+for (let x=0; x<lenguajes.length; x++){
+    if( lenguajes[x] != "go"){
+        console.log("Lenguaje ", lenguajes[x])
+    }
+}
+let texto = ""
+let arrayText = ["Este", "es", "el", "curso", "de", "backEnd"]
+for (let i=0; i<arrayText.length; i++){
+    texto+= arrayText[i]+" "
+}
+console.log(texto)
+let i2 = 0
+console.log("Longitud Array: ", arrayText.length)
+let texto2 =""
+for (; i2<arrayText.length; i2++){// i2 = i2+1
+    texto2+= arrayText[i2]+" "
+   // texto2+=`${arrayText[i2]} `
+   
+}
+// Ejemplo con formating
+console.log(`texto ${i2}`)
+console.log(texto2)
+console.log(i2)
+const endpoints = ["endpoint1", "endpoint2", "endpoint3"]
+const request1 = "v2"
+for (let i=0; i<endpoints.length; i++){
+    console.log(`https://google.com/${request1}/${endpoints[i]}/peticion`)
+}
+// Ejemplo con break
+let i = 0;
+for (;;) {
+    if (i === 10) {
+        break
+    }
+    console.log(i)
+    i++
 }
 
-// sentencia if else
-if (7>8) {
-    console.log("El resultado de la condicion es verdadero")
-} else {
-    console.log("El resultado de la condicion es falso")
+let endpointFinal
+for (let i=0; i<endpoints.length; i++){
+    if (endpoints[i]=="endpoint2"){
+        console.log("Acá debería entrar cuando sea diferente a endpoint2")
+        console.log("iteración numero: ", i+1)
+        endpointFinal = endpoints[i]
+        break
+    }
+}
+console.log("Este es el endpoint de la condicion: ", endpointFinal)
+
+// Ejemplo con continue
+let endpointFinal2
+for (let i=0; i<endpoints.length; i++){
+    
+    if (endpoints[i]=="endpoint2"){
+        console.log("Hola iteracion:", i+1)
+        continue
+    }
+    console.log("Iteraciones: ", i+1) 
 }
 
-// sentencia if else if else 
-let z = 8
-if (z>8) {
-    console.log("El resultado es que z es mayor a 8")
-}else  if (z>9) {
-    console.log("El resultado es que x es mayor a 9")
-}else if (z>10) {
-    console.log("El resultado es que z es mayor a 10")
-}else  if (z>11) {
-    console.log("El resultado es que x es mayor a 11")
-}else {
-    console.log("El resultado de la condicion es falso")
+// For in, siempre se usa para recorrer las propiedades de un objeto
+// Ejemplo con Objeto-Objeto
+const motos2 = {BMW:"S1000R", DUCATI:"Panigale", YAMAHA:"R1M", SUZUKI:"GSR 750"}
+const propiedadesMotos = []
+for (let moto in motos2){
+    console.log(`${moto} <- ${motos2[moto]}`)
+    propiedadesMotos.push(moto)
+}
+console.log(motos2.BMW)
+console.log(propiedadesMotos)
+
+// Ejemplo Objeto-Array
+for (let indice in propiedadesMotos){
+    console.log(`${propiedadesMotos[indice]} tiene el indice ${indice}`)
 }
 
+// For of obtiene el valor de un objeto iterable
 
-if (z==8) {
-    console.log("El resultado es que z es igual a 8")
-}else  if (z==9) {
-    console.log("El resultado es que z es igual a 9")
-}else if (z==10) {
-    console.log("El resultado es que z es igual a 10")
-}else  if (z==11) {
-    console.log("El resultado es que z es igual a 11")
-}else {
-    console.log("El resultado es que z es diferente")
+for (let value of propiedadesMotos){
+    console.log(`Propiedad: ${value}`)
 }
 
-// switch case es una especie de condicional  if else if else
-// // Caso comparación directa
-let resultado
-// La comparación del switch case por defecto es estricta 
-switch (z){
-    case "8":
-        resultado = 8
-        break
-    case 9:
-        resultado = 9
-        break
-    case 10:
-        resultado = 10
-        break
-    default:
-        resultado = z+"default"
+for (let value of "motos2"){
+    console.log(`Valor: ${value}`)
 }
 
-console.log("El resultado es que z es igual a ", resultado)
-
-// Caso comparación bajo condiciones
-let resultado2
-switch (true){
-    case z>8:
-        resultado2 = 8
-        break
-    case z>9:
-        resultado2 = 9
-        break
-    case z>10 && z<5 || z==8:
-        resultado2 = 10
-        break
-    default:
-        resultado2 = z
+// While Ciclo con salida bajo condición, de resultado falso
+let iterWhile = 0
+while (iterWhile<10){
+    console.log("Iteracion:" ,iterWhile)
+    iterWhile++
 }
-console.log("El resultado  ", resultado2)
+// Salida del while con break
+let iterWhile2 = 0
+while (true){
+    if (propiedadesMotos[iterWhile2]=="YAMAHA"){
+        break
+    }
+    console.log("Valores:" ,propiedadesMotos[iterWhile2])
+    iterWhile2++
+}
+// Salida del while con condición
+let motoValida = true
+let iterWhile3 = 0 
+while (motoValida){
+    if (propiedadesMotos[iterWhile3]=="YAMAHA"){
+        motoValida = false
+    }
+    console.log("Valores:" ,propiedadesMotos[iterWhile3])
+    iterWhile3++
+}
+
+// Do while
+
+let iterDo = 0
+do {
+    console.log("Iteracion: ", iterDo)
+    iterDo++
+}
+while(iterDo< 5)
