@@ -352,7 +352,9 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // console.log("Tipo Array: ", Array.isArray(numbersTest))
 // //Validación instanceof
 // console.log("Tipo Array: ", numbersTest instanceof Array)
+// const perros = {Doberman:{tamaño:"Grandecitos", patas:4, pelaje:"Corto"}, pitbul:"Medianitos" }
 
+// console.log("Tipo : ", perros instanceof Object)
 // Añadir valor a Array
 // Normal
 // motos[5] = "KTM"
@@ -921,133 +923,235 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // }
 // console.log("El resultado  ", resultado2)
 
-console.log("============================ Iteraciones ============================")
+// console.log("============================ Iteraciones ============================")
 
-// For que un cilco que recorre cierta cantidad de veces un bloque
-let maxIter = 10
-for (let i=0; i<maxIter; i++){
-    console.log("Iteración Numero: ", i)
-}
-// Ejemplo de for 
-const lenguajes = ["python", "javascript", "java", "go", "cobol"]
-console.log("Longitud del array: ",lenguajes.length)
-for (let x=0; x<lenguajes.length; x++){
-    if( lenguajes[x] != "go"){
-        console.log("Lenguaje ", lenguajes[x])
-    }
-}
-let texto = ""
-let arrayText = ["Este", "es", "el", "curso", "de", "backEnd"]
-for (let i=0; i<arrayText.length; i++){
-    texto+= arrayText[i]+" "
-}
-console.log(texto)
-let i2 = 0
-console.log("Longitud Array: ", arrayText.length)
-let texto2 =""
-for (; i2<arrayText.length; i2++){// i2 = i2+1
-    texto2+= arrayText[i2]+" "
-   // texto2+=`${arrayText[i2]} `
+// // For que un cilco que recorre cierta cantidad de veces un bloque
+// let maxIter = 10
+// for (let i=0; i<maxIter; i++){
+//     console.log("Iteración Numero: ", i)
+// }
+// // Ejemplo de for 
+// const lenguajes = ["python", "javascript", "java", "go", "cobol"]
+// console.log("Longitud del array: ",lenguajes.length)
+// for (let x=0; x<lenguajes.length; x++){
+//     if( lenguajes[x] != "go"){
+//         console.log("Lenguaje ", lenguajes[x])
+//     }
+// }
+// let texto = ""
+// let arrayText = ["Este", "es", "el", "curso", "de", "backEnd"]
+// for (let i=0; i<arrayText.length; i++){
+//     texto+= arrayText[i]+" "
+// }
+// console.log(texto)
+// let i2 = 0
+// console.log("Longitud Array: ", arrayText.length)
+// let texto2 =""
+// for (; i2<arrayText.length; i2++){// i2 = i2+1
+//     texto2+= arrayText[i2]+" "
+//    // texto2+=`${arrayText[i2]} `
    
-}
-// Ejemplo con formating
-console.log(`texto ${i2}`)
-console.log(texto2)
-console.log(i2)
-const endpoints = ["endpoint1", "endpoint2", "endpoint3"]
-const request1 = "v2"
-for (let i=0; i<endpoints.length; i++){
-    console.log(`https://google.com/${request1}/${endpoints[i]}/peticion`)
-}
-// Ejemplo con break
-let i = 0;
-for (;;) {
-    if (i === 10) {
-        break
-    }
-    console.log(i)
-    i++
-}
+// }
+// // Ejemplo con formating
+// console.log(`texto ${i2}`)
+// console.log(texto2)
+// console.log(i2)
+// const endpoints = ["endpoint1", "endpoint2", "endpoint3"]
+// const request1 = "v2"
+// for (let i=0; i<endpoints.length; i++){
+//     console.log(`https://google.com/${request1}/${endpoints[i]}/peticion`)
+// }
+// // Ejemplo con break
+// let i = 0;
+// for (;;) {
+//     if (i === 10) {
+//         break
+//     }
+//     console.log(i)
+//     i++
+// }
 
-let endpointFinal
-for (let i=0; i<endpoints.length; i++){
-    if (endpoints[i]=="endpoint2"){
-        console.log("Acá debería entrar cuando sea diferente a endpoint2")
-        console.log("iteración numero: ", i+1)
-        endpointFinal = endpoints[i]
-        break
-    }
-}
-console.log("Este es el endpoint de la condicion: ", endpointFinal)
+// let endpointFinal
+// for (let i=0; i<endpoints.length; i++){
+//     if (endpoints[i]=="endpoint2"){
+//         console.log("Acá debería entrar cuando sea diferente a endpoint2")
+//         console.log("iteración numero: ", i+1)
+//         endpointFinal = endpoints[i]
+//         break
+//     }
+// }
+// console.log("Este es el endpoint de la condicion: ", endpointFinal)
 
-// Ejemplo con continue
-let endpointFinal2
-for (let i=0; i<endpoints.length; i++){
+// // Ejemplo con continue
+// let endpointFinal2
+// for (let i=0; i<endpoints.length; i++){
     
-    if (endpoints[i]=="endpoint2"){
-        console.log("Hola iteracion:", i+1)
-        continue
-    }
-    console.log("Iteraciones: ", i+1) 
-}
+//     if (endpoints[i]=="endpoint2"){
+//         console.log("Hola iteracion:", i+1)
+//         continue
+//     }
+//     console.log("Iteraciones: ", i+1) 
+// }
 
-// For in, siempre se usa para recorrer las propiedades de un objeto
-// Ejemplo con Objeto-Objeto
-const motos2 = {BMW:"S1000R", DUCATI:"Panigale", YAMAHA:"R1M", SUZUKI:"GSR 750"}
-const propiedadesMotos = []
-for (let moto in motos2){
-    console.log(`${moto} <- ${motos2[moto]}`)
-    propiedadesMotos.push(moto)
-}
-console.log(motos2.BMW)
-console.log(propiedadesMotos)
+// // For in, siempre se usa para recorrer las propiedades de un objeto
+// // Ejemplo con Objeto-Objeto
+// const motos2 = {BMW:"S1000R", DUCATI:"Panigale", YAMAHA:"R1M", SUZUKI:"GSR 750"}
+// const propiedadesMotos = []
+// for (let moto in motos2){
+//     console.log(`${moto} <- ${motos2[moto]}`)
+//     propiedadesMotos.push(moto)
+// }
+// console.log(motos2.BMW)
+// console.log(propiedadesMotos)
 
-// Ejemplo Objeto-Array
-for (let indice in propiedadesMotos){
-    console.log(`${propiedadesMotos[indice]} tiene el indice ${indice}`)
-}
+// // Ejemplo Objeto-Array
+// for (let indice in propiedadesMotos){
+//     console.log(`${propiedadesMotos[indice]} tiene el indice ${indice}`)
+// }
 
-// For of obtiene el valor de un objeto iterable
+// // For of obtiene el valor de un objeto iterable
 
-for (let value of propiedadesMotos){
-    console.log(`Propiedad: ${value}`)
-}
+// for (let value of propiedadesMotos){
+//     console.log(`Propiedad: ${value}`)
+// }
 
-for (let value of "motos2"){
-    console.log(`Valor: ${value}`)
-}
+// for (let value of "motos2"){
+//     console.log(`Valor: ${value}`)
+// }
 
-// While Ciclo con salida bajo condición, de resultado falso
-let iterWhile = 0
-while (iterWhile<10){
-    console.log("Iteracion:" ,iterWhile)
-    iterWhile++
-}
-// Salida del while con break
-let iterWhile2 = 0
-while (true){
-    if (propiedadesMotos[iterWhile2]=="YAMAHA"){
-        break
-    }
-    console.log("Valores:" ,propiedadesMotos[iterWhile2])
-    iterWhile2++
-}
-// Salida del while con condición
-let motoValida = true
-let iterWhile3 = 0 
-while (motoValida){
-    if (propiedadesMotos[iterWhile3]=="YAMAHA"){
-        motoValida = false
-    }
-    console.log("Valores:" ,propiedadesMotos[iterWhile3])
-    iterWhile3++
-}
+// // While Ciclo con salida bajo condición, de resultado falso
+// let iterWhile = 0
+// while (iterWhile<10){
+//     console.log("Iteracion:" ,iterWhile)
+//     iterWhile++
+// }
+// // Salida del while con break
+// let iterWhile2 = 0
+// while (true){
+//     if (propiedadesMotos[iterWhile2]=="YAMAHA"){
+//         break
+//     }
+//     console.log("Valores:" ,propiedadesMotos[iterWhile2])
+//     iterWhile2++
+// }
+// // Salida del while con condición
+// let motoValida = true
+// let iterWhile3 = 0 
+// while (motoValida){
+//     if (propiedadesMotos[iterWhile3]=="YAMAHA"){
+//         motoValida = false
+//     }
+//     console.log("Valores:" ,propiedadesMotos[iterWhile3])
+//     iterWhile3++
+// }
 
-// Do while
+// // Do while
 
-let iterDo = 0
-do {
-    console.log("Iteracion: ", iterDo)
-    iterDo++
-}
-while(iterDo< 5)
+// let iterDo = 0
+// do {
+//     console.log("Iteracion: ", iterDo)
+//     iterDo++
+// }
+// while(iterDo< 5)
+
+
+// console.log("============================ Palabras Reservadas  ============================")
+// arguments // argumentos asociados a un proceso o una función 
+// await // Extraer una promesa (una expresion resultado de un procso asincrono)
+// boolean // Tipo de dato
+// break // Salir de un proceso iterativo de forma inmediata
+// byte // Tipo de dato 8 bits
+// case // Para definición de una iteración sobre condiciones 
+// catch // Para el manejo de errores y excepciones / o metodo de un Promise
+// class // Para la difiinición de una clase en js
+// const // para definición de constantes
+// continue // Continuar con la iteración sin ejecutar el proceso posterior restante dentro del bloque iterado
+// debugger // Habilita el debugging o validación paso a paso del código
+// default // Permite definir un valor por defecto  para una respuesta
+// delete // Remueve una propiedad de un objeto
+// do // La inicialización del ciclo do while
+// else // Es el valor sino de una condición
+// enum // Es un objeto inmutable que no puede ser manipulado por el código para sobreescrirlo
+// eval // Evalua un objeto represtado como string y retorna su valor operado
+// export // Permite exporta valores  de librerias o modulos desde JS
+// extends // Sirve para declaración  clases o expresiones de clases para la creación de una clase hija desde otra clase
+// false // La expresión booleana negativa
+// final // Es similar al const pero debe tener un inizializador
+// finally // Manejo de excepciones finalizado el proceso
+// for // Para inicializar ciclos de tipo  for loop
+// function // Definición de funciones
+// if // Valor "si" de una condción
+// implements // Genera una clase a partir de otra con la forma pero no se considera un clase hija, puede heredar todos los metodos de la clase principal
+// import // Permite importar solo como lectura  funciones, metodos, clases de otros modulos externos
+// in // Validación de una condición en la que valor pertenece a un objeto o no sin traer el valor propiamente 
+// instanceof // Validación o test de una condición para un objeto definido hacia su tipo de dato
+// interface // El gateway o emascarado de un proceso que abstrae su funcionalidad del proceso que la usa
+// let // Definición de una variable local
+// new // la instanciación de un objecto, que puede puede ser vacio
+// null // Un valor vacio según el tipo de dato
+// package // PErmite llamar paquetes diseñados con un fin específico y asociado a un framework
+// private // Define los objetos de una clase que solamente de uso interno de la misma
+// protected // Permite el acceso a componentes de una clase pero solo para algunos procesos establecidos
+// public // Defición de un objeto dentro de una clase al que cualquier proceso puede acceder
+// return // Para retornar valores asociados a una función, el resultado de una fucnión.
+// static // No permite el acceso a las propiedades de un objeto o metodo dentro de una clase.
+// super // permite acceder a propiedades de objetos o clases dentro de una super clase, además de el construcutor. 
+// switch // Es la segunda parte o lo que permite iterar a un case
+// this // Obtiene los valores propios de un objeto para uso interno.
+// throw // Manejo de errores directamente en el bloque ejecutado
+// // function test(){
+// //     if (BigInt("HOLA")){
+// //         console.log("Hola again")
+// //         //throw new Error(" Esto es mi error controlado")
+// //     }
+// // }
+// // try{
+// //     test()  
+// // }catch(e){
+// //     console.log(e)
+// // }
+// true // valor positivo de un bool
+// try // Condición de ejecución de un bloque para manejo de errores
+// typeof // Validación de tipo de dato
+// var // Es la definición de variable global
+// void // Exresión que define un componente como vacio
+// while // Expresión de bucle mientras
+// with // Extensión para la ejecución de un bloque
+// with ([1, 2, 3]){
+//     console.log(toString())
+// }
+// yield // Es un operador que pausa y resume la generación de una función
+// function* test(index){
+//     while(index<3){
+//         yield index
+//         index++
+//     }
+// }
+// const iterador = test(0)
+
+// console.log(iterador.next().value)
+// console.log(iterador.next().value)
+// console.log(iterador.next().value)
+
+
+// var yield = 1
+
+// console.log(yield)
+// function* test(index){
+//     while(index<3){
+//         yield index
+//         index++
+        
+//     }
+//     return 3
+
+// }
+// console.log(yield)
+// const iterador = test(0)
+// console.log(iterador)
+// for (let i=0; i<4; i++){
+//     console.log(iterador.next().value)
+// }
+// console.log(iterador.next().value)
+// console.log(iterador.next().value)
+// console.log(iterador.next().value)
