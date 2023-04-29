@@ -1155,3 +1155,67 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // console.log(iterador.next().value)
 // console.log(iterador.next().value)
 // console.log(iterador.next().value)
+
+
+// console.log("============================ Maps ============================")
+
+// // Se comporta como un objeto donde se tiene llave/Valor y la llave puede ser cualquier tipo de dato
+// const objetoTest = {esto:"Hola", esto2:"HOla2", esto3:1}
+// console.log(objetoTest)
+// // Definición a partir de array de arrays
+// const objectTest1 = new Map(
+//     [["llave1","valor1"],
+//     [1,"2"],
+//     ["1","Esto es uno"]]
+// )
+// console.log(objectTest1.get(1))
+
+// // Definición de un map a través de un set
+// const carros = new Map()
+// carros.set("BMW", "M2")
+// carros.set("Mercedes Benz", "GLC 43")
+// carros.set("Audi", "Q3")
+// carros.set("Ford", "Fiesta")
+// console.log(carros)
+
+
+// // Propiedad size, devuelve la longitud del Map  o la cantidad de componentes (donde un componente es llave y valor)
+// console.log("Size: ", carros.size)
+// // delete() Permite remover objetos dentro de un map
+// carros.delete("Ford")
+// console.log(carros)
+// // has() Nos permite validar si una llave se encuentra dentro del map o no?
+// console.log(carros.has("Ford"))
+// if (!carros.has("Ford")){
+//     console.log("Ford no pertenece al map de carros")
+// }
+
+// // |    Valores    |    Objeto      |     Map           |
+// // | Es iterable?  |No directamente |     Si            |
+// // | Longitud?     |    Lenght      |    Size           |
+// // | Tipo de llaves|    Strings     |Cualquier Data Type|
+// // |    Orden      |  Mal ordenado  |   Por inserción   |
+// // |Llaves default |       Si       |        No         |
+
+// // forEach() iterar los valores propios del map tanto llave como valor
+
+// carros.forEach (
+//     function(value, key){
+//         console.log(`La key es: ${key} y el value es: ${value}`)
+//     }
+// )
+
+// // entries() retorna un iterador con los objetos de [llave/valor] dentro del map
+// for (let x of carros.entries()){
+//     console.log("Llave: ", x[0])
+//     console.log("Valor: ", x[1])
+// }
+// let testentries = carros.entries()
+// console.log(testentries[0])
+// let testArrays = [
+//     [1,2],
+//     [2,3],
+//     [3,4]
+// ]
+// console.log(testArrays[0])
+
