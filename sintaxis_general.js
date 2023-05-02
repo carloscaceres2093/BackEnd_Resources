@@ -1218,4 +1218,96 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 //     [3,4]
 // ]
 // console.log(testArrays[0])
+// console.log("============================ Conversión tipos de datos ============================")
+// // Conversión de Strings a Numbers
+// console.log(Number("3.14"))
+// console.log(Number("3450"))
+// console.log(Number(Math.PI))
+// console.log(Number(" "))
+// console.log(Number("Carlos"))
+// console.log(Number("21 13"))
+// // parse 
+// console.log(parseFloat("3450"))
+// console.log(parseInt("3.14"))
+// // unario
 
+// let stringValue = "5"
+// let numberValue = +stringValue
+// console.log("El valor", stringValue,"es", typeof stringValue)
+// console.log("El valor", numberValue,"es", typeof numberValue)
+
+// // Conversión de Numbers a Strings
+// console.log(String(3.14))
+// console.log(String(2+3))
+// // toString()
+// let numberValue2 = 1230
+// console.log(typeof numberValue2)
+// console.log(typeof numberValue2.toString())
+// // toExponential() Retorna un string con el numero redondeado y usando notación exponencia o científica
+// console.log("Expresión exponencial: ", numberValue2.toExponential())
+// // toFixed() Retorna un string con el numero redondeado y con un número específico de decimales
+// let numberValue3 = 123.16416156165
+// console.log("Decimales: ", numberValue3.toFixed(4))
+// // toPrecision() Retorna un string con una longitud específica
+// console.log("Cantidad numeros: ", numberValue3.toPrecision(6))
+// let numberValue4 = 12316416156165
+// console.log("Decimales: ", numberValue4.toPrecision(17))
+
+// // Conversión de Dates a Numbers
+// let date2Num = new Date()
+// console.log( date2Num)
+// console.log( Number(date2Num))
+// console.log( date2Num.getTime())
+// // Conversión de Dates a String
+// console.log( String(date2Num))
+// console.log( date2Num.toString())
+// console.log( date2Num.toDateString())
+
+// // Conversión de Numbers a Dates
+// console.log( Date(1682735968295))
+
+// // Conversión de Booleans a Numbers
+// console.log(Number(true))
+// console.log(Number(false))
+// // Conversión de Numbers a Booleans, valores > 1 siempre retonan true
+// console.log(Boolean(1))
+// console.log(Boolean(0))
+
+// // Conversiones automáticas
+// console.log(typeof (5+null)) //Conviert el null a 0
+// console.log(typeof ("5"+null))// Convierte el null a "null"
+// console.log(("5"+null))
+// console.log(typeof ("5"+2)) // Convierte el 2 a string
+// console.log(typeof ("5"-2)) // Convierte el resutlado a number
+// console.log(typeof ("5"/2)) // Convierte el resutlado a number
+// console.log(typeof ("5"*2)) // Convierte el resutlado a number
+
+console.log("============================ JSON ============================")
+// Es un formato para organizar, transportar data y almacenarla
+// Organiza llave valor, con el cual se pueden asociar datos a su respectivo identificado (llave)
+// Transporta, cuando se presentan los datos de una respuesta tipo API Rest (JSON)
+// Almacenar, en bases de datos no relacionales.
+// Definición:
+// Es el el formato JavaScript Object Notation
+// Es un formato muy liviano para intercambio de datos
+// Es un lenguaje independiente
+// Es autodescriptivo, las llaves pueden dar contexto, y fácil de entender
+
+// Reglas para la definición de un json
+// *  Llaves siempre serán de tipo texto y entre COMILLAS DOBLES ("")
+// * Todos los tipos de dato string deben ser en comillas dobles
+// * Extensión del archivo siempre será .json
+// * Los valores pueden ser strings, numéricos y json y arrays
+// * la separación de rows o de datos es por , 
+// * Se pueden tener varios datos por llave
+// * No se puede tener la misma llave dentro del mismo nivel de los datos
+// * Anidación (nested)
+// * Solo se realiza una separación de datos a través de comas, si es un dato adicional, el ulitmo dato no se separa por coma
+// *  No se puede crear una llave sin un valor asignado, se debe asociar a null o vacio
+// * Por convención los arrays contienen información que presntan la misma estructura exactamente. Se percibe como una tabla
+// * IMPORTANTE siempre tener el contexto de las llaves asociadas a un json.
+// * El formato de archivo de tipo JSON es case sensitive para las llaves, es decir entiende entre mayúsculas y minúsculas y las peribe de forma distinta.
+
+
+// Revisar archivo explicacion.json 
+// Para visualizar y formatear un json en plano se puede usar https://jsonformatter.org/

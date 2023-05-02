@@ -1,0 +1,77 @@
+{
+    "informatica":{
+        "cursos":{
+            "backend":{
+                "curso1":{
+                    "cantidad_estudiantes":120,
+                    "modulos":15,
+                    "estudiantes":{
+                        "ejemplo1@gmail.com":{
+                            "nombre":"Dalia",
+                            "apellido":"Cualquier Apellido"
+                        },
+                        "ejemplo2@gmail.com":{
+                            "nombre":"Jorge",
+                            "apellido":"Cualquier Apellido2",
+                            "cursos":[
+                                {"backend":{"hola":1,"hola2":2}},
+                                {"frontend":{}}, 
+                                {"musica":{}}
+                            ]
+                        },
+                        "elprofe@gmail.com":{
+                            "nombre":"Carlos",
+                            "apellido":"Cáceres",
+                            "cursos":["backend"],
+                            "edad":null,
+                            "direccion":""
+                        },
+                        "Elprofe@gmail.com":{
+                            "nombre":"Carlos",
+                            "apellido":"Cáceres",
+                            "cursos":["backend"],
+                            "edad":null,
+                            "direccion":""
+                        }
+                    }
+                },
+                "curso 2":{
+                    
+                }
+            },
+            "frontend":{
+
+            },
+            "1":1
+        },
+        "descripcion":"Todos los cursos",
+        "detalles":{
+            "back":""
+        }
+    },
+    "matematicas":{
+        "calculo":{
+            "modulos":20,
+            "profesor":["Antonio", "margarita"]
+        },
+        "ecuaciones":{
+            "estudiantes":20,
+            "docente":"Pepito"
+        },
+        "descripcion":"Esto es la dependencia de Matemáticas",
+        "transversales":[
+            {
+                "curso":"cáculo",
+                "profesor":"Antonio",
+                "modulos": 20,
+                "estudiantes":["carlos", "ramiro", "mateo"]               
+            },
+            {
+                "curso":"ecuaciones",
+                "profesor":"Pepito",
+                "modulos": 12,
+                "estudiantes":["carlos", "ramiro", "mateo"]               
+            }
+        ]
+    }
+}
