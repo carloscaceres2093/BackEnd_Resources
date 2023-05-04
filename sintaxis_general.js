@@ -1401,7 +1401,7 @@ console.log(textoReg.search(/\v/))
 // Cuantificadores 
 // Son expresiones que me permiten determinar que un patrón ser repita n cantidad de veces según sea la expresión
 // + Que permite se repita al menos 1 veces, es decir, 1 o más veces
-const textoReg2 = "ci cirlos ci ciceres cicici123caa123 es cereal"
+const textoReg2 = "cacocicerlos ci ciceres cicicicicici123caa123 es cereal"
 console.log(textoReg2.match(/\w/g))
 console.log(textoReg2.match(/\w+/g))
 // * Que permite se repita al menos 0 o más  veces
@@ -1412,3 +1412,21 @@ console.log(textoReg2.match(/(ca)?\d/g))
 console.log(textoReg2.match(/(ci){2}/g))
 // {x, y} Ocurre desde x hasta y veces
 console.log(textoReg2.match(/(ci){1,3}/g))
+// {x,} que se tenga al menos la ocurrencia x cantidad de veces
+console.log(textoReg2.match(/(ci){1,}/g))
+
+// $ Me permite obtener cualquier ocurrencia que se presente al final de la cadena de texto
+console.log(textoReg2.match(/(al)$/g))
+// ^ Me permite obtener cualquier ocurrencia que se presente al principio de la cadena de texto
+console.log(textoReg2.match(/^(cice|caco){0,2}/g))
+const textoReg3 = "102 m 102 cm cabaña 102mm text.csv 102 m"
+// ?= Permite obtener un patron seguido de otro patron, para identificar cierta unanimidad.
+console.log(textoReg3.match(/102(?= m)/ig))
+// ?! Permite obtener un patron diferente al que se define.
+console.log(textoReg3.match(/102(?! m)[_]?/ig))
+console.log(textoReg3.match(/[^a-z]/ig))
+// Agrupadores [ ] ( )
+// [] agrupa valores independientes y busca una coincidencia en general para esos valores de forma independiente
+console.log(textoReg3.match(/[ca10]/ig))
+// () agrupa cadena de caracteres compuestos para encontrarlos dentro de la expresión
+console.log(textoReg3.match(/(ca|mm){1,5}/ig))
