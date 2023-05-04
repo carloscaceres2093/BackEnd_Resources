@@ -1312,121 +1312,198 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // Revisar archivo explicacion.json 
 // Para visualizar y formatear un json en plano se puede usar https://jsonformatter.org/
 
-console.log("============================ REGEX (RegExp) ============================")
-// Expresiones regulares
-// Es un patron de caracteres, usadado hacer match con cierto tipo de datos y ejecutar algún proceso.
+// console.log("============================ REGEX (RegExp) ============================")
+// // Expresiones regulares
+// // Es un patron de caracteres, usadado hacer match con cierto tipo de datos y ejecutar algún proceso.
 
-// Definción  /patron/modificador
-let exRegex = /CursoBack/i
-let exRegexR = new RegExp("CursoBack", "i")
+// // Definción  /patron/modificador
+// let exRegex = /CursoBack/i
+// let exRegexR = new RegExp("CursoBack", "i")
 
-// Métodos de las expresiones regulares
-// search() un metodo que permite hacer busqueda de patrones dentro texto, según el valor especificado y retorna la posición de le valor encontrado.
-let texto = "El curso 3 de BackEnd es muy aplicado y realiza sus cuestionarios "
-let searchData =  texto.search("backend")
-console.log("Regex Search: ", searchData)
-let searchDataRegex =  texto.search(/backend/i)
-console.log("Regex Search: ", searchDataRegex)
-let searchDataRegexAl =  texto.search(/E/g)
-console.log("Regex Search: ", searchDataRegexAl)
+// // Métodos de las expresiones regulares
+// // search() un metodo que permite hacer busqueda de patrones dentro texto, según el valor especificado y retorna la posición de le valor encontrado.
+// let texto = "El curso 3 de BackEnd es muy aplicado y realiza sus cuestionarios "
+// let searchData =  texto.search("backend")
+// console.log("Regex Search: ", searchData)
+// let searchDataRegex =  texto.search(/backend/i)
+// console.log("Regex Search: ", searchDataRegex)
+// let searchDataRegexAl =  texto.search(/E/g)
+// console.log("Regex Search: ", searchDataRegexAl)
 
-// replace() es un metodo que permite buscar y reemplazar un patrón dentro de un texto. No reasigna el texto, sino que genera un nuevo resultado
-let textoReplace = "El curso 3 de BackEnd es muy aplicado y realiza sus cuestionarios"
-console.log(textoReplace)
-let repRegexR = textoReplace.replace(/cuestionarios/i, "trabajos")
-console.log(repRegexR)
-// Aplicar el metodo a todas la coincidencias
-let repRegexR2 = textoReplace.replace(/e/ig, "E")
-console.log(repRegexR2)
-let repRegexR3 = textoReplace.replaceAll("E", "e")
-console.log(repRegexR3)
+// // replace() es un metodo que permite buscar y reemplazar un patrón dentro de un texto. No reasigna el texto, sino que genera un nuevo resultado
+// let textoReplace = "El curso 3 de BackEnd es muy aplicado y realiza sus cuestionarios"
+// console.log(textoReplace)
+// let repRegexR = textoReplace.replace(/cuestionarios/i, "trabajos")
+// console.log(repRegexR)
+// // Aplicar el metodo a todas la coincidencias
+// let repRegexR2 = textoReplace.replace(/e/ig, "E")
+// console.log(repRegexR2)
+// let repRegexR3 = textoReplace.replaceAll("E", "e")
+// console.log(repRegexR3)
 
-// Modifiers
-// g La busqueda global de la coincidencia (el match entre el patrón y la expresión dentro del texto)
-// i La busqueda case-insensitive, es decir no tiene en cuenta mayúsculas o minúsculas.
-// m Permite la busqueda o el match en multiline 
+// // Modifiers
+// // g La busqueda global de la coincidencia (el match entre el patrón y la expresión dentro del texto)
+// // i La busqueda case-insensitive, es decir no tiene en cuenta mayúsculas o minúsculas.
+// // m Permite la busqueda o el match en multiline 
 
-// Multiline m
-let textMulti = "Esto "+
-"es una " +
-" prueba para "+ 
-"multiline"
-console.log(textMulti)
-let regex1 = new RegExp("a", "m")
-let textMultiRegex = textMulti.replace(regex1, "A")
-console.log(textMultiRegex)
+// // Multiline m
+// let textMulti = "Esto "+
+// "es una " +
+// " prueba para "+ 
+// "multiline"
+// console.log(textMulti)
+// let regex1 = new RegExp("a", "m")
+// let textMultiRegex = textMulti.replace(regex1, "A")
+// console.log(textMultiRegex)
 
-// test() Esta función se asocia al patrón o al regex definido y permite validar si una expresión se encuentra o no dentro de una entrada.
-const patronA = /A/ig
-console.log(patronA.test(textMulti))
+// // test() Esta función se asocia al patrón o al regex definido y permite validar si una expresión se encuentra o no dentro de una entrada.
+// const patronA = /A/ig
+// console.log(patronA.test(textMulti))
 
-// exec() Buscar un string para determinado patrón y retorna el texto encontrado como objeto.
-// Si no encuentra nada, retornará siempre un objeto null.
-console.log(patronA.exec(textMulti))
+// // exec() Buscar un string para determinado patrón y retorna el texto encontrado como objeto.
+// // Si no encuentra nada, retornará siempre un objeto null.
+// console.log(patronA.exec(textMulti))
 
-// Expresiones reservadas dentro de los regex.
-// \w Encontrar caracteres [a-zA-Z0-9_]
-const textoReg = "ñ @ \v Est@ es tun & \n texto de pru3ba \t para buscar patrones 123 123 "
-console.log(textoReg.search(/[\w]+/i))
+// // Expresiones reservadas dentro de los regex.
+// // \w Encontrar caracteres [a-zA-Z0-9_]
+// const textoReg = "ñ @ \v Est@ es tun & \n texto de pru3ba \t para buscar patrones 123 123 "
+// console.log(textoReg.search(/[\w]+/i))
 
-console.log(/[\w]*^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]+/.test("Aqe312das@"))
-// \W Encontrar caracteres que no pertenezcan [^a-zA-Z0-9_]
-console.log(/[^a-z0-9]+/.test("a"))
-// \d es la expresion [0-9] => \D es la expresion [^0-9]
-console.log(textoReg.search(/\d/))
-console.log(textoReg.search(/\D/))
+// console.log(/[\w]*^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]+/.test("Aqe312das@"))
+// // \W Encontrar caracteres que no pertenezcan [^a-zA-Z0-9_]
+// console.log(/[^a-z0-9]+/.test("a"))
+// // \d es la expresion [0-9] => \D es la expresion [^0-9]
+// console.log(textoReg.search(/\d/))
+// console.log(textoReg.search(/\D/))
 
-// \s Encontrar espacios en blanco [ \n\t\v] => \S [^ \n\t\v]
-console.log(textoReg.search(/\s/))
-console.log(textoReg.search(/\S/))
-// \b Encontrar la expresión al inicio o al final del texto y encuntra la ultima expresión, \B = ^\b
-// Principio  12 primeros
-console.log(textoReg.search(/\bt/))
-// Final Busca toda la expresion
-console.log(textoReg.search(/[a\b]/))
-// Deuda Técnica
-console.log(textoReg.search(/[a\B]/))
-console.log(textoReg.search(/\Bru3\B/))
-// Caracter Nulo
-let textoNull = "Esto es texto Nulo \0"
-console.log(textoNull)
-console.log(textoNull.search(/\0/))
-// Salto de linea
-console.log(textoReg.search(/\n/))
-// Tabulador
-console.log(textoReg.search(/\t/))
-// Tabulación vertical
-console.log(textoReg.search(/\v/))
+// // \s Encontrar espacios en blanco [ \n\t\v] => \S [^ \n\t\v]
+// console.log(textoReg.search(/\s/))
+// console.log(textoReg.search(/\S/))
+// // \b Encontrar la expresión al inicio o al final del texto y encuntra la ultima expresión, \B = ^\b
+// // Principio  12 primeros
+// console.log(textoReg.search(/\bt/))
+// // Final Busca toda la expresion
+// console.log(textoReg.search(/[a\b]/))
+// // Deuda Técnica
+// console.log(textoReg.search(/[a\B]/))
+// console.log(textoReg.search(/\Bru3\B/))
+// // Caracter Nulo
+// let textoNull = "Esto es texto Nulo \0"
+// console.log(textoNull)
+// console.log(textoNull.search(/\0/))
+// // Salto de linea
+// console.log(textoReg.search(/\n/))
+// // Tabulador
+// console.log(textoReg.search(/\t/))
+// // Tabulación vertical
+// console.log(textoReg.search(/\v/))
 
-// Cuantificadores 
-// Son expresiones que me permiten determinar que un patrón ser repita n cantidad de veces según sea la expresión
-// + Que permite se repita al menos 1 veces, es decir, 1 o más veces
-const textoReg2 = "cacocicerlos ci ciceres cicicicicici123caa123 es cereal"
-console.log(textoReg2.match(/\w/g))
-console.log(textoReg2.match(/\w+/g))
-// * Que permite se repita al menos 0 o más  veces
-console.log(textoReg2.match(/((ca)[a-z]*)?\d+/g))
-// ? Que permite se repita 0 o 1 
-console.log(textoReg2.match(/(ca)?\d/g))
-// {x} Ocurre x veces
-console.log(textoReg2.match(/(ci){2}/g))
-// {x, y} Ocurre desde x hasta y veces
-console.log(textoReg2.match(/(ci){1,3}/g))
-// {x,} que se tenga al menos la ocurrencia x cantidad de veces
-console.log(textoReg2.match(/(ci){1,}/g))
+// // Cuantificadores 
+// // Son expresiones que me permiten determinar que un patrón ser repita n cantidad de veces según sea la expresión
+// // + Que permite se repita al menos 1 veces, es decir, 1 o más veces
+// const textoReg2 = "cacocicerlos ci ciceres cicicicicici123caa123 es cereal"
+// console.log(textoReg2.match(/\w/g))
+// console.log(textoReg2.match(/\w+/g))
+// // * Que permite se repita al menos 0 o más  veces
+// console.log(textoReg2.match(/((ca)[a-z]*)?\d+/g))
+// // ? Que permite se repita 0 o 1 
+// console.log(textoReg2.match(/(ca)?\d/g))
+// // {x} Ocurre x veces
+// console.log(textoReg2.match(/(ci){2}/g))
+// // {x, y} Ocurre desde x hasta y veces
+// console.log(textoReg2.match(/(ci){1,3}/g))
+// // {x,} que se tenga al menos la ocurrencia x cantidad de veces
+// console.log(textoReg2.match(/(ci){1,}/g))
 
-// $ Me permite obtener cualquier ocurrencia que se presente al final de la cadena de texto
-console.log(textoReg2.match(/(al)$/g))
-// ^ Me permite obtener cualquier ocurrencia que se presente al principio de la cadena de texto
-console.log(textoReg2.match(/^(cice|caco){0,2}/g))
-const textoReg3 = "102 m 102 cm cabaña 102mm text.csv 102 m"
-// ?= Permite obtener un patron seguido de otro patron, para identificar cierta unanimidad.
-console.log(textoReg3.match(/102(?= m)/ig))
-// ?! Permite obtener un patron diferente al que se define.
-console.log(textoReg3.match(/102(?! m)[_]?/ig))
-console.log(textoReg3.match(/[^a-z]/ig))
-// Agrupadores [ ] ( )
-// [] agrupa valores independientes y busca una coincidencia en general para esos valores de forma independiente
-console.log(textoReg3.match(/[ca10]/ig))
-// () agrupa cadena de caracteres compuestos para encontrarlos dentro de la expresión
-console.log(textoReg3.match(/(ca|mm){1,5}/ig))
+// // $ Me permite obtener cualquier ocurrencia que se presente al final de la cadena de texto
+// console.log(textoReg2.match(/(al)$/g))
+// // ^ Me permite obtener cualquier ocurrencia que se presente al principio de la cadena de texto
+// console.log(textoReg2.match(/^(cice|caco){0,2}/g))
+// const textoReg3 = "102 m 102 cm cabaña 102mm text.csv 102 m"
+// // ?= Permite obtener un patron seguido de otro patron, para identificar cierta unanimidad.
+// console.log(textoReg3.match(/102(?= m)/ig))
+// // ?! Permite obtener un patron diferente al que se define.
+// console.log(textoReg3.match(/102(?! m)[_]?/ig))
+// console.log(textoReg3.match(/[^a-z]/ig))
+// // Agrupadores [ ] ( )
+// // [] agrupa valores independientes y busca una coincidencia en general para esos valores de forma independiente
+// console.log(textoReg3.match(/[ca10]/ig))
+// // () agrupa cadena de caracteres compuestos para encontrarlos dentro de la expresión
+// console.log(textoReg3.match(/(ca|mm){1,5}/ig))
+
+
+// console.log("============================ Manejo de Errores ============================")
+
+// // Sentencias para el manejo de errores
+// // Try es una sentencia que permite correr (o tratar) de ejecutar un bloque de código, en caso el va a redirigir ese proceso hacia el bloque de manejo de error
+// // Catch es una sentecia que permite hacer el manejo de cualquier error que le arroje el try
+// // Finally Me permite continuar con el código sin hacer cacheo o manejo del error, sin importar si existe error, el proceso va a continauar.
+
+// // try y catch
+// try{
+//     adddalert("Esto es una alerta con typo")
+// }
+// catch(err){
+//     if (err.message.includes("defined")){
+//         console.log("Se encontró un error de una variable no definida")
+//     }     
+// }
+// // try y finally
+// try{
+//     adddalert("Esto es una alerta con typo")
+// }
+// catch{
+
+// }
+// finally{
+//     console.log("Voy a hacer este proceso, así el try tenga un error")
+// }
+
+// // try, catch y finally
+
+// try{
+//     adddalert("Esto es una alerta con typo")
+// }
+// catch(err){
+//     console.log(err.message)
+// }
+// finally{
+//     console.log("Voy a hacer este proceso, así el try tenga un error")
+// }
+
+// // Ejemplo
+
+// const addi = (a, b) => a+b
+// function addi2(a, b){
+//     return a+b
+// }
+
+// let resultado = 0
+
+// try{
+//     resultado = addi(funct, 2)
+// }
+// catch(err) {
+//     console.log("Este es el mensaje de error: ", err.message)
+// }
+// finally{
+//     console.log("Este es el resultado: ", resultado )
+// }
+
+// // throw permite crear un error customizado
+// // El throw puede ser un string, un booleano, un Number o un objeto
+
+// function funcionError(){
+//     let valor 
+//     console.log(valor)
+//     try{
+//         if (valor == undefined){
+//             throw new Error("hola")//{error:"Es una variable vacia", code_error:400}
+//         }
+
+//     }
+//     catch(err){
+//         console.log(err)
+//     }
+// }
+// funcionError()
