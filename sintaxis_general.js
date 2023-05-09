@@ -278,7 +278,7 @@
 // console.log("Operación BigInt y Number: ",  bigIntNum1/BigInt(2))
 
 // // Propiedades y metodos
-// // Max/Min Number propierties 
+// // Max/Min Number properties 
 // let maxNum = Number.MAX_SAFE_INTEGER
 // console.log("Entero máximo: ", maxNum)
 // let minNum = Number.MIN_SAFE_INTEGER
@@ -781,54 +781,7 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 
 // let x = 8
 // // Igual que ==, es una comparación del componente sin mirar su estructura o tipo 
-// console.log("Igual que: ", x==8)
-// console.log("Igual que: ", x=="8")
-// // Igual que en valor y tipo  ===, es una comparación del componente estricto
-// console.log("Igual que: ", x===8)
-// console.log("Igual que: ", x==="8")
-// // Diferente que  !=, es una comparación del componente sin mirar su estructura o tipo 
-// console.log("Diferente que: ", x!=5)
-// console.log("Diferente que: ", x!="8")
-// // Diferente que  !=, es una comparación del componente estricta
-// console.log("Diferente que: ", x!==5)
-// console.log("Diferente que: ", x!=="8")
-// // mayor que  >, es una comparación del componente estricta
-// console.log("Mayor que: ", x>8)
-// console.log("Mayor que: ", x>"9")
-// // menor que  <, es una comparación del componente estricta
-// console.log("Menor que: ", x<5)
-// console.log("Menor que: ", x<"1")
-// // mayor igual que  >=, es una comparación del componente estricta
-// console.log("Mayor que: ", x>=8)
-// console.log("Mayor que: ", x>="8")
-// // menor o igual  que  <=, es una comparación del componente estricta
-// console.log("Menor que: ", x<=8)
-// console.log("Menor que: ", x<="9")
-
-// console.log("============================ Operadores Lógicos ============================")
-// // And o y (and) o (&) -> js -> &&
-
-// // Tabla de verdad AND
-// console.log(x<7 && x>9)
-// console.log(x<7 && x>7)
-// console.log(x>7 && x<7)
-// console.log(x<9 && x>7)
-
-// // or o ó (or) o (|) -> js -> ||
-
-// // Tabla de verdad AND
-// console.log(x<7 || x>9)
-// console.log(x<7 || x>7)
-// console.log(x>7 || x<7)
-// console.log(x<9 || x>7)
-
-// // not o no (not) o (!) -> js -> !
-
-// // Tabla de verdad AND
-// console.log(!x<7)
-// console.log(!x>7)
-
-// let condicionTerniario = (3>9) ? "Es mayor que 9":"No es mayor a 9"
+// console.log("Igual que: ", x==8)propier
 // console.log(condicionTerniario)
 // // Comparación numeros en string
 // let xString = "8"
@@ -1075,20 +1028,7 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // eval // Evalua un objeto represtado como string y retorna su valor operado
 // export // Permite exporta valores  de librerias o modulos desde JS
 // extends // Sirve para declaración  clases o expresiones de clases para la creación de una clase hija desde otra clase
-// false // La expresión booleana negativa
-// final // Es similar al const pero debe tener un inizializador
-// finally // Manejo de excepciones finalizado el proceso
-// for // Para inicializar ciclos de tipo  for loop
-// function // Definición de funciones
-// if // Valor "si" de una condción
-// implements // Genera una clase a partir de otra con la forma pero no se considera un clase hija, puede heredar todos los metodos de la clase principal
-// import // Permite importar solo como lectura  funciones, metodos, clases de otros modulos externos
-// in // Validación de una condición en la que valor pertenece a un objeto o no sin traer el valor propiamente 
-// instanceof // Validación o test de una condición para un objeto definido hacia su tipo de dato
-// interface // El gateway o emascarado de un proceso que abstrae su funcionalidad del proceso que la usa
-// let // Definición de una variable local
-// new // la instanciación de un objecto, que puede puede ser vacio
-// null // Un valor vacio según el tipo de dato
+// false // La expresión booleana negativapropier
 // package // PErmite llamar paquetes diseñados con un fin específico y asociado a un framework
 // private // Define los objetos de una clase que solamente de uso interno de la misma
 // protected // Permite el acceso a componentes de una clase pero solo para algunos procesos establecidos
@@ -1527,470 +1467,532 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 
 
 
-console.log("============================ Clases ============================")
-// Definición
-// Definición de clase sin constructor
-class ClaseBackEnd{
-      constructor(){} // o no tenerlo es lo mismo
-}
-const claseBack = new ClaseBackEnd()
+// console.log("============================ Clases ============================")
+// // Definición
+// // Definición de clase sin constructor
+// class ClaseBackEnd{
+//       constructor(){} // o no tenerlo es lo mismo
+// }
+// const claseBack = new ClaseBackEnd()
 
-// Definición de clase con constructor
-class ClaseBackEnd2{
-    constructor(horario){
-        this.horario = horario
-    }   
-}
-const claseBack2 = new ClaseBackEnd2(horario = "7:30pm a 10:00pm")
+// // Definición de clase con constructor
+// class ClaseBackEnd2{
+//     constructor(horario){
+//         this.horario = horario
+//     }   
+// }
+// const claseBack2 = new ClaseBackEnd2(horario = "7:30pm a 10:00pm")
 
-let sumar =  (a, b) => a+b
-// Definición metodos
-class ClaseBackEnd3{
-    constructor(horario, modulo){
-        this.horario = horario
-    }   
-    print(estudiantes){ // nombre método y argumentos
-        console.log("Horario de clase:", this.horario)
-        console.log("El número de estudiantes es:", estudiantes)
-    }
-    printModulo(){
-        console.log(modulo)
-    }
+// let sumar =  (a, b) => a+b
+// // Definición metodos
+// class ClaseBackEnd3{
+//     constructor(horario, modulo){
+//         this.horario = horario
+//     }   
+//     print(estudiantes){ // nombre método y argumentos
+//         console.log("Horario de clase:", this.horario)
+//         console.log("El número de estudiantes es:", estudiantes)
+//     }
+//     printModulo(){
+//         console.log(modulo)
+//     }
     
-}
-const claseBack3 = new ClaseBackEnd3(horario = "7:30pm a 10:00pm",  "modulo 6")
-claseBack3.print(120)
-// claseBack3.printModulo(120)
+// }
+// const claseBack3 = new ClaseBackEnd3(horario = "7:30pm a 10:00pm",  "modulo 6")
+// claseBack3.print(120)
+// // claseBack3.printModulo(120)
 
 
-// Public  es el acceso general a las propiedades y métodos de una clase
+// // Public  es el acceso general a las propiedades y métodos de una clase
 
-// Notación Clase
-class ClaseBackEnd11{
-    name
-    constructor(name){
-        this.name = name
-    }
-    getName(){
-        return this.name
-    }
-}
-const backObject = new ClaseBackEnd11("Back End")
-console.log(backObject.getName())
-console.log(backObject.name)
+// // Notación Clase
+// class ClaseBackEnd11{
+//     name
+//     constructor(name){
+//         this.name = name
+//     }
+//     getName(){
+//         return this.name
+//     }
+// }
+// const backObject = new ClaseBackEnd11("Back End")
+// console.log(backObject.getName())
+// console.log(backObject.name)
 
-// Notación Objeto
-const backObjectFunc = {
-    name:"Back End",
-    getName: function(){
-        return this.name
-    }
-}
-console.log(backObjectFunc.getName())
-console.log(backObjectFunc.name)
-backObjectFunc.name = "Front End"
-console.log(backObjectFunc.name)
-console.log(backObjectFunc.getName())
+// // Notación Objeto
+// const backObjectFunc = {
+//     name:"Back End",
+//     getName: function(){
+//         return this.name
+//     }
+// }
+// console.log(backObjectFunc.getName())
+// console.log(backObjectFunc.name)
+// backObjectFunc.name = "Front End"
+// console.log(backObjectFunc.name)
+// console.log(backObjectFunc.getName())
 
-// Private me permite ocultar o restringir el acceso a objetos o métodos dentro de mi clase, las variables privadas debe ser declaradas dentro de la clase
-// Notación clase 
-class ClaseBackPrivate{
-    #name
-    #students
-    constructor(name){
-        this.#name = name
-        this.#students = 18
-        this.prueba = "Prueba"
-    }
-    #printName(){
-        return "El nombre de la clase es "+ this.#name
-    }
-    getClassDescription(){
-        return this.#printName()+ " Y tiene "+this.#students+" estudiantes"
-    }
+// // Private me permite ocultar o restringir el acceso a objetos o métodos dentro de mi clase, las variables privadas debe ser declaradas dentro de la clase
+// // Notación clase 
+// class ClaseBackPrivate{
+//     #name
+//     #students
+//     constructor(name){
+//         this.#name = name
+//         this.#students = 18
+//         this.prueba = "Prueba"
+//     }
+//     #printName(){
+//         return "El nombre de la clase es "+ this.#name
+//     }
+//     getClassDescription(){
+//         return this.#printName()+ " Y tiene "+this.#students+" estudiantes"
+//     }
     
-}
-const backPrivateObj = new ClaseBackPrivate("Back End")
-console.log(backPrivateObj.getClassDescription())
-console.log(backPrivateObj.name)
-console.log(backPrivateObj.prueba)
-// console.log(backPrivateObj.printName())
-console.log(backPrivateObj["#printName()"])
+// }
+// const backPrivateObj = new ClaseBackPrivate("Back End")
+// console.log(backPrivateObj.getClassDescription())
+// console.log(backPrivateObj.name)
+// console.log(backPrivateObj.prueba)
+// // console.log(backPrivateObj.printName())
+// console.log(backPrivateObj["#printName()"])
 
-// Notación Objeto
-function pruebaAdd(){
-    var add = 0
-    return{
-        addition: function(){
-            return add++
-        }
-    }
-}
-let add1 = new pruebaAdd()
-console.log(add1)
-console.log(add1.add)
-console.log(add1.addition())
-console.log(add1.addition())
-console.log(add1.addition())
+// // Notación Objeto
+// function pruebaAdd(){
+//     var add = 0
+//     return{
+//         addition: function(){
+//             return add++
+//         }
+//     }
+// }
+// let add1 = new pruebaAdd()
+// console.log(add1)
+// console.log(add1.add)
+// console.log(add1.addition())
+// console.log(add1.addition())
+// console.log(add1.addition())
 
-// Protected, permite acceder a las propiedades pero bajo sentencias de lectura.
-class ClaseBackEndProtected{
-    _name
-    constructor(name){
-        this._name = name
-    }
-    get name(){
-        return this._name
-    }
-}
+// // Protected, permite acceder a las propiedades pero bajo sentencias de lectura.
+// class ClaseBackEndProtected{
+//     _name
+//     constructor(name){
+//         this._name = name
+//     }
+//     get name(){
+//         return this._name
+//     }
+// }
 
-let backProtectedObj =  new ClaseBackEndProtected("Back End")
-console.log(backProtectedObj.name)
-backProtectedObj.name = "Front End"
-console.log(backProtectedObj.name)
+// let backProtectedObj =  new ClaseBackEndProtected("Back End")
+// console.log(backProtectedObj.name)
+// backProtectedObj.name = "Front End"
+// console.log(backProtectedObj.name)
 
-// La definición de multiples constructores
-// Parametros opcionales con valores default 
-class Vehiculo{
-    constructor(tipo='Carro', numRuedas=4, cilindraje=1200, color="Azul"){
-        this.tipo = tipo
-        this.numRuedas = numRuedas
-        this.cilindraje = cilindraje
-        this.color = color
-    }
-    getTipo(){
-        return this.tipo
-    }
-    getRuedas(){
-        return this.numRuedas
-    }
-    getCilindraje(){
-        return this.cilindraje
-    }
-    getColor(){
-        return this.color
-    }
-}
-const carro =  new Vehiculo()
-console.log(carro.getColor())
-console.log(carro.getTipo())
+// // La definición de multiples constructores
+// // Parametros opcionales con valores default 
+// class Vehiculo{
+//     constructor(tipo='Carro', numRuedas=4, cilindraje=1200, color="Azul"){
+//         this.tipo = tipo
+//         this.numRuedas = numRuedas
+//         this.cilindraje = cilindraje
+//         this.color = color
+//     }
+//     getTipo(){
+//         return this.tipo
+//     }
+//     getRuedas(){
+//         return this.numRuedas
+//     }
+//     getCilindraje(){
+//         return this.cilindraje
+//     }
+//     getColor(){
+//         return this.color
+//     }
+// }
+// const carro =  new Vehiculo()
+// console.log(carro.getColor())
+// console.log(carro.getTipo())
 
-const camioneta = new Vehiculo("Camioneta")
-console.log(camioneta.getColor())
-console.log(camioneta.getTipo())
-console.log(camioneta.getRuedas())
+// const camioneta = new Vehiculo("Camioneta")
+// console.log(camioneta.getColor())
+// console.log(camioneta.getTipo())
+// console.log(camioneta.getRuedas())
 
-const moto = new Vehiculo("Moto", 2, undefined,"Rojo")
-console.log(moto.getColor())
-console.log(moto.getTipo())
-console.log(moto.getRuedas())
-console.log(moto.getCilindraje())
+// const moto = new Vehiculo("Moto", 2, undefined,"Rojo")
+// console.log(moto.getColor())
+// console.log(moto.getTipo())
+// console.log(moto.getRuedas())
+// console.log(moto.getCilindraje())
 
-// Multipleconstructor con definición de objeto
+// // Multipleconstructor con definición de objeto
 
-class Vehiculo2{
-    constructor(propiedades={}){
-        this.propiedades = propiedades
-    }
-    getTipo(){
-        return this.propiedades.tipo
-    }
-    getRuedas(){
-        return this.propiedades.numRuedas
-    }
-    getCilindraje(){
-        return this.propiedades.cilindraje
-    }
-    getColor(){
-        return this.propiedades.color
-    }
-    getTipoChasis(){
-        return this.propiedades.chasis
-    }
-}
+// class Vehiculo2{
+//     constructor(propiedades={}){
+//         this.propiedades = propiedades
+//     }
+//     getTipo(){
+//         return this.propiedades.tipo
+//     }
+//     getRuedas(){
+//         return this.propiedades.numRuedas
+//     }
+//     getCilindraje(){
+//         return this.propiedades.cilindraje
+//     }
+//     getColor(){
+//         return this.propiedades.color
+//     }
+//     getTipoChasis(){
+//         return this.propiedades.chasis
+//     }
+// }
 
-const moto2 = new Vehiculo2({tipo:"moto", color:"Negro", numRuedas:2})
-console.log(moto2.getColor())
-console.log(moto2.getTipo())
-console.log(moto2.getRuedas())
-console.log(moto2.getCilindraje())
+// const moto2 = new Vehiculo2({tipo:"moto", color:"Negro", numRuedas:2})
+// console.log(moto2.getColor())
+// console.log(moto2.getTipo())
+// console.log(moto2.getRuedas())
+// console.log(moto2.getCilindraje())
 
-const carro2 = new Vehiculo2({tipo:"carro", color:"gris", cilindraje:1600, chasis:"H"})
-console.log(carro2.getColor())
-console.log(carro2.getTipo())
-console.log(carro2.getCilindraje())
-console.log(carro2.getTipoChasis())
+// const carro2 = new Vehiculo2({tipo:"carro", color:"gris", cilindraje:1600, chasis:"H"})
+// console.log(carro2.getColor())
+// console.log(carro2.getTipo())
+// console.log(carro2.getCilindraje())
+// console.log(carro2.getTipoChasis())
 
-// Métodos estáticos, la forma estática en javascript solo se puede usar dentro clases y es aplicable solo para los métodos, no para los objetos
-// Definión que el método estático solo puede ser invocado a través de la clase y no del objeto
-class ClaseBackStatic{
-    constructor(name){
-        this.name = name
-    }
-    static getName(objeto){
-        return objeto.name
-    }
-    getName2(){
-        return this.name
-    }
-}
+// // Métodos estáticos, la forma estática en javascript solo se puede usar dentro clases y es aplicable solo para los métodos, no para los objetos
+// // Definión que el método estático solo puede ser invocado a través de la clase y no del objeto
+// class ClaseBackStatic{
+//     constructor(name){
+//         this.name = name
+//     }
+//     static getName(objeto){
+//         return objeto.name
+//     }
+//     getName2(){
+//         return this.name
+//     }
+// }
 
-const backStaticObj = new ClaseBackStatic("Back End")
-// console.log(backStaticObj.getName()) // Esta expresión no se puede usar, porque el objeto no puede acceder a los métos estaáticos
-const backStaticObj2 = new ClaseBackStatic("Front End")
-console.log(ClaseBackStatic.getName({name:"Hola MUndo"}))
-console.log(ClaseBackStatic.getName(backStaticObj2))
-console.log(backStaticObj2.getName2())
+// const backStaticObj = new ClaseBackStatic("Back End")
+// // console.log(backStaticObj.getName()) // Esta expresión no se puede usar, porque el objeto no puede acceder a los métos estaáticos
+// const backStaticObj2 = new ClaseBackStatic("Front End")
+// console.log(ClaseBackStatic.getName({name:"Hola MUndo"}))
+// console.log(ClaseBackStatic.getName(backStaticObj2))
+// console.log(backStaticObj2.getName2())
 
-// Multiple constructor método estático
+// // Multiple constructor método estático
 
-class VehiculoStatic{
-    constructor(tipo, color, cilindraje, numRuedas, capacidad, chasis){
-        this.tipo = tipo
-        this.numRuedas = numRuedas
-        this.cilindraje = cilindraje
-        this.color = color
-        this.capacidad = capacidad
-        this.chasis = chasis
-    }
-    static capacidad(tipo, capacidad){
-        return new VehiculoStatic(tipo, "", "", "", capacidad, "")
-    }
-    static descripcion(tipo, color, numRuedas){
-        return new VehiculoStatic(tipo, color, "",numRuedas, "", "")
-    }
-    getTipo(){
-        return this.tipo
-    }
-    getRuedas(){
-        return this.numRuedas
-    }
-    getCilindraje(){
-        return this.cilindraje
-    }
-    getColor(){
-        return this.color
-    }
-    getTipoChasis(){
-        return this.chasis
-    }
-    getCapacidad(){
-        return this.capacidad
-    }
-}
+// class VehiculoStatic{
+//     constructor(tipo, color, cilindraje, numRuedas, capacidad, chasis){
+//         this.tipo = tipo
+//         this.numRuedas = numRuedas
+//         this.cilindraje = cilindraje
+//         this.color = color
+//         this.capacidad = capacidad
+//         this.chasis = chasis
+//     }
+//     static capacidad(tipo, capacidad){
+//         return new VehiculoStatic(tipo, "", "", "", capacidad, "")
+//     }
+//     static descripcion(tipo, color, numRuedas){
+//         return new VehiculoStatic(tipo, color, "",numRuedas, "", "")
+//     }
+//     getTipo(){
+//         return this.tipo
+//     }
+//     getRuedas(){
+//         return this.numRuedas
+//     }
+//     getCilindraje(){
+//         return this.cilindraje
+//     }
+//     getColor(){
+//         return this.color
+//     }
+//     getTipoChasis(){
+//         return this.chasis
+//     }
+//     getCapacidad(){
+//         return this.capacidad
+//     }
+// }
 
-const carroCap = VehiculoStatic.capacidad("Camioneta", "5 Ton")
-console.log(carroCap.getTipo())
-console.log(carroCap.getCapacidad())
+// const carroCap = VehiculoStatic.capacidad("Camioneta", "5 Ton")
+// console.log(carroCap.getTipo())
+// console.log(carroCap.getCapacidad())
 
-// Encapsulación proceso que permite ocultar y volver seguras las propiedades de un objeto. Donde solo se permite acceder a través de otro mecanismo que no es el propio objeto
-// Notación clase
-class ClaseBackEndEncap{
-    #name
-    constructor(name){
-        this.#name = name
-    }
-    getName(){
-        return this.#name
-    }
-    setName(value){
-        this.#name = value
-    }
-}
-const backEncapObj =  new ClaseBackEndEncap("Back End")
-backEncapObj.name = "Front"
-console.log(backEncapObj.name)
-console.log(backEncapObj.getName())
-backEncapObj.setName("Front End")
-console.log(backEncapObj.getName())
-// Notación Función
+// // Encapsulación proceso que permite ocultar y volver seguras las propiedades de un objeto. Donde solo se permite acceder a través de otro mecanismo que no es el propio objeto
+// // Notación clase
+// class ClaseBackEndEncap{
+//     #name
+//     constructor(name){
+//         this.#name = name
+//     }
+//     getName(){
+//         return this.#name
+//     }
+//     setName(value){
+//         this.#name = value
+//     }
+// }
+// const backEncapObj =  new ClaseBackEndEncap("Back End")
+// backEncapObj.name = "Front"
+// console.log(backEncapObj.name)
+// console.log(backEncapObj.getName())
+// backEncapObj.setName("Front End")
+// console.log(backEncapObj.getName())
+// // Notación Función
 
-function BackEncap(value){
-    var name = value
-    var publicMethods = {
-        getName: function(){
-            return name
-        },
-        setName: function(value){
-            name = value
-        }
-    }
-    return publicMethods
-}
+// function BackEncap(value){
+//     var name = value
+//     var publicMethods = {
+//         getName: function(){
+//             return name
+//         },
+//         setName: function(value){
+//             name = value
+//         }
+//     }
+//     return publicMethods
+// }
 
-const backObjeEncapFun = new BackEncap("Back End")
-console.log(backObjeEncapFun.getName())
-backObjeEncapFun.setName("Front End")
-console.log(backObjeEncapFun.getName())
+// const backObjeEncapFun = new BackEncap("Back End")
+// console.log(backObjeEncapFun.getName())
+// backObjeEncapFun.setName("Front End")
+// console.log(backObjeEncapFun.getName())
 
 
-// Abstracción oculta los detalles de la implementación y solo permite observar el comportamiento
-// Notación clase
-class ClaseBackEndAbstract{
-    #name
-    #students
+// // Abstracción oculta los detalles de la implementación y solo permite observar el comportamiento
+// // Notación clase
+// class ClaseBackEndAbstract{
+//     #name
+//     #students
 
-    getName(){
-        return this.#name
-    }
-    setName(value){
-        this.#name = value + " Class"
-    }
-    setStudents(value){
-        this.#students = value
-    }
-    getStudentsByProject(){
-        return this.#students/5
-    }
-}
+//     getName(){
+//         return this.#name
+//     }
+//     setName(value){
+//         this.#name = value + " Class"
+//     }
+//     setStudents(value){
+//         this.#students = value
+//     }
+//     getStudentsByProject(){
+//         return this.#students/5
+//     }
+// }
 
-const backAbstractObj = new ClaseBackEndAbstract()
-console.log(backAbstractObj.getName())
-backAbstractObj.setName("Back End")
-console.log(backAbstractObj.getName())
-backAbstractObj.setStudents(120)
-console.log(backAbstractObj.getStudentsByProject())
+// const backAbstractObj = new ClaseBackEndAbstract()
+// console.log(backAbstractObj.getName())
+// backAbstractObj.setName("Back End")
+// console.log(backAbstractObj.getName())
+// backAbstractObj.setStudents(120)
+// console.log(backAbstractObj.getStudentsByProject())
 
-// Notación función
+// // Notación función
 
-function BackAbstract(){
-    let name
-    let students
-    var publicMethods = {}
-    publicMethods.setName = function(value){
-        name = value
-    }
-    publicMethods.getName = function(){
-        return name
-    }
-    publicMethods.setStudents = function(value){
-        students = value
-    }
-    publicMethods.getStudentsByProject = function(){
-        return students/5
-    }
-    publicMethods.getActiveSyncroClass = function(){
-        return students*.4
-    }
-    return publicMethods
-}
+// function BackAbstract(){
+//     let name
+//     let students
+//     var publicMethods = {}
+//     publicMethods.setName = function(value){
+//         name = value
+//     }
+//     publicMethods.getName = function(){
+//         return name
+//     }
+//     publicMethods.setStudents = function(value){
+//         students = value
+//     }
+//     publicMethods.getStudentsByProject = function(){
+//         return students/5
+//     }
+//     publicMethods.getActiveSyncroClass = function(){
+//         return students*.4
+//     }
+//     return publicMethods
+// }
 
-const backObjeAbstractFun = new BackAbstract()
-backObjeAbstractFun.setName("Back End")
-console.log(backObjeAbstractFun.getName())
-backObjeAbstractFun.setStudents(120)
-console.log(backObjeAbstractFun.getStudentsByProject())
-console.log(backObjeAbstractFun.getActiveSyncroClass())
+// const backObjeAbstractFun = new BackAbstract()
+// backObjeAbstractFun.setName("Back End")
+// console.log(backObjeAbstractFun.getName())
+// backObjeAbstractFun.setStudents(120)
+// console.log(backObjeAbstractFun.getStudentsByProject())
+// console.log(backObjeAbstractFun.getActiveSyncroClass())
 
-// Herencia es un proceso en el cual, la clase hija puede heredar propiedades y metodos de una clase padre
-// La herencia en JS se construye dentro objetos  y cada uno de llos tiene una propiedad llamada prototipo la cual se refiere directament al clase padre del objeto 
+// // Herencia es un proceso en el cual, la clase hija puede heredar propiedades y metodos de una clase padre
+// // La herencia en JS se construye dentro objetos  y cada uno de llos tiene una propiedad llamada prototipo la cual se refiere directament al clase padre del objeto 
 
-class Clases{ // Clase padre, es un clase general que no es muy detallada
-    constructor(name){
-        this.name = name
-    }
-    getName(){
-        return this.name
-    }
-}
+// class Clases{ // Clase padre, es un clase general que no es muy detallada
+//     constructor(name){
+//         this.name = name
+//     }
+//     getName(){
+//         return this.name
+//     }
+// }
 
-class ClaseBackHerencia extends Clases { // Primer parametro es la clase hija, y segundo parametro se extiendo de la clase padre
-    constructor(name, students, modulos){
-        super(name)
-        this.students = students
-        this.modulos = modulos   
-    }
-    getStudents(){
-        return this.students
-    }
-    getModules(){
-        return this.modulos
-    }
-    printClassDescription(){
-        return `La clase ${this.name} tiene ${this.students} estuidantes, con ${this.modulos} por ver`
-    }
-}
+// class ClaseBackHerencia extends Clases { // Primer parametro es la clase hija, y segundo parametro se extiendo de la clase padre
+//     constructor(name, students, modulos){
+//         super(name)
+//         this.students = students
+//         this.modulos = modulos   
+//     }
+//     getStudents(){
+//         return this.students
+//     }
+//     getModules(){
+//         return this.modulos
+//     }
+//     printClassDescription(){
+//         return `La clase ${this.name} tiene ${this.students} estuidantes, con ${this.modulos} por ver`
+//     }
+// }
 
-const backHerenciaObj = new ClaseBackHerencia("Back End", 120, 15)
-console.log("Estuidantes ",backHerenciaObj.getStudents())
-console.log("Curso ", backHerenciaObj.getName())
-console.log(backHerenciaObj.printClassDescription())
+// const backHerenciaObj = new ClaseBackHerencia("Back End", 120, 15)
+// console.log("Estuidantes ",backHerenciaObj.getStudents())
+// console.log("Curso ", backHerenciaObj.getName())
+// console.log(backHerenciaObj.printClassDescription())
 
-const backParentObj = new Clases("Front Ent")
-console.log("Curso ", backParentObj.getName())//
+// const backParentObj = new Clases("Front Ent")
+// console.log("Curso ", backParentObj.getName())//
 
-// Polimorfismo
+// // Polimorfismo
 
-class ClaseBackPoly extends Clases { // Primer parametro es la clase hija, y segundo parametro se extiendo de la clase padre
-    constructor(name, students, modulos){
-        super(name)
-        this.students = students
-        this.modulos = modulos   
-    }
-    getStudents(){
-        return this.students
-    }
-    getModules(){
-        return this.modulos
-    }
-    printClassDescription(){
-        return `La clase ${this.name} tiene ${this.students} estuidantes, con ${this.modulos} por ver`
-    }
-    getName(){
-        let namePoly = "Esta es la clase " + this.name
-        //super.getName()
-        return namePoly
-    }
-}
-const backPolyObj = new ClaseBackPoly("Back End", 120, 15)
-console.log( backPolyObj.getName())
+// class ClaseBackPoly extends Clases { // Primer parametro es la clase hija, y segundo parametro se extiendo de la clase padre
+//     constructor(name, students, modulos){
+//         super(name)
+//         this.students = students
+//         this.modulos = modulos   
+//     }
+//     getStudents(){
+//         return this.students
+//     }
+//     getModules(){
+//         return this.modulos
+//     }
+//     printClassDescription(){
+//         return `La clase ${this.name} tiene ${this.students} estuidantes, con ${this.modulos} por ver`
+//     }
+//     getName(){
+//         let namePoly = "Esta es la clase " + this.name
+//         //super.getName()
+//         return namePoly
+//     }
+// }
+// const backPolyObj = new ClaseBackPoly("Back End", 120, 15)
+// console.log( backPolyObj.getName())
 
-const backParentObj2 = new Clases("Front End")
-console.log("Curso ", backParentObj2.getName())
+// const backParentObj2 = new Clases("Front End")
+// console.log("Curso ", backParentObj2.getName())
 
-// Asociación principio de diseño que dice que diferentes objetos pueden estar asociados uno con el otro para realizar alguna tarea
+// // Asociación principio de diseño que dice que diferentes objetos pueden estar asociados uno con el otro para realizar alguna tarea
 
-// Tipo Agregación, un objeto puede existir aún si su asociación es destruida
+// // Tipo Agregación, un objeto puede existir aún si su asociación es destruida
 
-class Description{
-    constructor(velocidad, peso){
-        this.velocidad =  velocidad
-        this.peso = peso
-    }
-}
-class Auto{
-    constructor(descripcion){
-        this.descripcion = descripcion
-    }
-    printDescripcion(){
-        console.log(this.descripcion)
-    }
-}
+// class Description{
+//     constructor(velocidad, peso){
+//         this.velocidad =  velocidad
+//         this.peso = peso
+//     }
+// }
+// class Auto{
+//     constructor(descripcion){
+//         this.descripcion = descripcion
+//     }
+//     printDescripcion(){
+//         console.log(this.descripcion)
+//     }
+// }
 
-let pepito = new Description("300 km/h", "1600 kg")
-const automovil = new Auto(pepito)
-automovil.printDescripcion()
-pepito = null
-automovil.printDescripcion()
-const automovil2 = new Auto(pepito)
-automovil2.printDescripcion()
+// let pepito = new Description("300 km/h", "1600 kg")
+// const automovil = new Auto(pepito)
+// automovil.printDescripcion()
+// pepito = null
+// automovil.printDescripcion()
+// const automovil2 = new Auto(pepito)
+// automovil2.printDescripcion()
 
-// Tipo Composición, los objetos están sumamenta acoplados y no pueden existir independientemente uno del otro
+// // Tipo Composición, los objetos están sumamenta acoplados y no pueden existir independientemente uno del otro
 
-class Description1{
-    constructor(velocidad, peso){
-        this.velocidad =  velocidad
-        this.peso = peso
-    }
-}
-class Auto1{
-    constructor(velocidad, peso){
-        this.descripcion = new Description(velocidad, peso)
-    }
-    printDescripcion(){
-        console.log(this.descripcion)
-    }
-}
+// class Description1{
+//     constructor(velocidad, peso){
+//         this.velocidad =  velocidad
+//         this.peso = peso
+//     }
+// }
+// class Auto1{
+//     constructor(velocidad, peso){
+//         this.descripcion = new Description(velocidad, peso)
+//     }
+//     printDescripcion(){
+//         console.log(this.descripcion)
+//     }
+// }
 
-const automovil1 = new Auto1("300 km/h", "1600 kg")
-automovil1.printDescripcion()
+// const automovil1 = new Auto1("300 km/h", "1600 kg")
+// automovil1.printDescripcion()
+
+// console.log("============================ Getters Y Setters ============================")
+
+// // Metodo Getter permite acceder a las propiedades de un objeto
+// // Acceso a la propiedad, con la palabra reservada get, se define un método getter
+
+// const getterObj = {
+//     name: "Getter",
+//     get getName(){
+//         return this.name
+//     },
+//     getName2:function(){
+//         return this.name
+//     }
+// }
+// console.log(getterObj.name)
+// console.log(getterObj.getName)
+// // console.log(getterObj.getName()) // No funciona y retorna error porque es un getter que es un métdo interno de un objeto 
+// console.log(getterObj.getName2())
+
+// // Metodo Setter permite modificar las propiedades de un objeto
+// // Modicación a la propiedad, con la palabra reservada set, se define un método setter
+
+// const setterObj = {
+//     name: "Setter",
+//     set changeName(valueSet){
+//         this.name = valueSet
+//     }
+// }
+// console.log(setterObj.name)
+// setterObj.name = "Setter Mod Property"
+// console.log(setterObj.name)
+// setterObj.changeName = "Setter Mod"
+// console.log(setterObj.name)
+
+// // Object.define.Property() permite definir setter y getter sobro objeto de java scritp luego de la definición del propio objeto.
+// // Object.defineProperty(nombre_objeto, nombre_propiedad, descripcion_propiedad)
+// const propertyObject = {
+//     name: "Prueba Object.define.Property"
+// }
+
+// console.log(propertyObject.getName) // método aún no existe
+// propertyObject.changeName = "Estoy cambiando el nombre"
+// console.log(propertyObject)
+
+// // getter property
+// Object.defineProperty(propertyObject, "getName",{
+//     get : function()    {
+//         return this.name
+//     }
+// })
+// // setter property
+// Object.defineProperty(propertyObject, "changeName",{
+//     set : function(valueSet)    {
+//         this.name = valueSet
+//     }
+// })
+
+// console.log( propertyObject.getName)
+// propertyObject.changeName = "Estoy cambiando el nombre"
+// console.log( propertyObject.getName)
+// console.log(propertyObject)
