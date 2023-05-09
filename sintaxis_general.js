@@ -1996,3 +1996,74 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // propertyObject.changeName = "Estoy cambiando el nombre"
 // console.log( propertyObject.getName)
 // console.log(propertyObject)
+
+// console.log("============================ Scope ============================")
+// // En java script el scope hace referencia a como se determina la accesibilidad de las variables, o en palabras sencillas a que puede ver que.
+// // JS tiene 3 tipos de scope, antes del 2015 solo existían el global y el de función
+// // Cuando tenemos acceso limitado solo dentro de los bloques o funciones a variables, a estas se les llama varaibles locales (Scope Local)
+
+// // Bloque
+// // Se tiene las palabras reservadas de let y const, donde el bloque siempre va a estar determinado por los corchetes ( {} )
+// // y dichas definicioens con let y const dentro de un bloque no podrán ser accedidas desde fuera del bloque
+// {
+//     let testBloque = 1
+//     const testBloque1 = 2 
+//     var testBloqueVar = 3
+//     console.log(testBloque, testBloque1)
+//     console.log(testBloqueVar)
+// }
+// // console.log(testBloque, testBloque1) // No se puede acceder a las definiciones con let y const
+// console.log(testBloqueVar) // Me permite acceder a las variables del bloque definidas con var
+// // yo puedo definir las variables locales dentro de otros scopes y no se van a modificar o cambiar su comportamiento local.
+// {
+//     let testBloque = 1
+//     const testBloque1 = 2 
+//     var testBloqueVar = 5
+//     console.log(testBloque, testBloque1)
+//     console.log(testBloqueVar)
+// }
+// console.log(testBloqueVar) 
+
+// // Función
+// // Se tiene que cada función crea su propio scope, es decir, cada función tiene un mundo a parte.
+// // Todas las variables definidas dentro de un función son variables locales, es decir, no se tiene acceso fuera de la función.
+
+// function scopeFunc(){
+//     let testFuncLet = 1
+//     const testFuncConst = 2 
+//     var testFuncVar = 5
+//     console.log(testFuncLet, testFuncConst, testFuncVar)
+// }
+// // console.log( testFuncLet) // No se pueden acceder desde fuera de la función
+// // console.log( testFuncConst) // No se pueden acceder desde fuera de la función
+// // console.log( testFuncVar) // No se pueden acceder desde fuera de la función
+
+// // Global
+// // Por definición una variable fuera de un bloque es o se comporta como variable global y todos los procesos, funciones o scripts dentro del programa tendrán acceso a ellas
+// let testGlobal = "Test global let"
+// const testGlobalConst = "Test global const"
+// var testGlobalVar = "Test global var"
+// {
+//     console.log(testGlobal)
+//     console.log(testGlobalConst)
+//     console.log(testGlobalVar)
+// }
+// function testGlobalFunc(){
+//     console.log(testGlobal)
+//     console.log(testGlobalConst)
+//     console.log(testGlobalVar)
+// }
+// testGlobalFunc()
+// // las funciones y objetos dentro de js son variables globales
+// // Si  se asigna un valor a una variable que no ha sido declarada, esta se volverá global de forma automática.
+// function globalTestFunc(){
+//     testGlobalAuto = "Esto es global"
+// }
+
+// console.log(testGlobalAuto)
+
+// Use Strict
+// Es una directiva o una sentencia que se usa para evitar errores dentro de las definiciones del desarrollo dentro de JS, permite mejorar el uso de buenas practicas en JS
+"use strict"
+testUseStrict = "Esto es use strict"
+console.log(testUseStrict)
