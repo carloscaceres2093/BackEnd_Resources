@@ -2061,7 +2061,7 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // }
 
 // console.log(testGlobalAuto)
-console.log("============================ Use Strict ============================")
+// console.log("============================ Use Strict ============================")
 // Use Strict
 // Es una directiva o una sentencia que se usa para evitar errores dentro de las definiciones del desarrollo dentro de JS, permite mejorar el uso de buenas practicas en JS
 
@@ -2127,3 +2127,122 @@ console.log("============================ Use Strict ===========================
 // eval("x = 2")
 // console.log(eval("x = 2") )
 // console.log(eval("var x = 2") )
+
+
+// console.log("============================ This ============================")
+
+// // Siempre hace referencia a un objeto, importante tener el contexto de como se llama this, para saber que uso darle
+// // * CUando se usa dentro de una función o método, this hace referencia siempre a un objeto
+// // * Cuando está sola la palabra this hace referencia aun objeto global
+// // * En strict mode this solo es un undefined
+// // * En un evento, this hace referencia a el elemnto que recibe el evento
+// // * this no es una variable
+
+// // This se refiere a un objeto
+// const objThis  = {
+//     name : function() {
+//         return this.name
+//     }
+// }
+
+// // This solo, objeto global
+// let thisSolo = this 
+// console.log(thisSolo)
+
+// // This en función
+
+// function thisFunc() {
+//     return this
+// }
+// console.log(thisFunc())
+
+// // En strict mode, this como return siempre será undefined
+
+// // This como metodo vinculante
+
+// const vehiculo = {
+//     tipo : "Carro",
+//     ruedas : 4,
+//     traccion : "trasera",
+//     vehiFunc : function(){
+//         return this
+//     },
+//     vehiDescFunc : function() {
+//         return `El vehículo es un ${this.tipo} y tiene ${this.ruedas} ruedas y tracción ${this.traccion}`
+//     }
+// }
+
+// console.log(vehiculo.vehiFunc())
+// console.log(vehiculo)
+// console.log(vehiculo.vehiDescFunc())
+
+
+// // Metodos vinculates 
+
+// // call(), permite hacer uso de propiedades de un objeto en otro.
+// const moto = {
+//     descripcion : function() {
+//         return `La moto es marca ${this.marca} y es de cilindraje ${this.cinlindraje}`
+//     }
+// }
+// console.log(moto.descripcion())
+
+// const motoDesc = {
+//     marca : "BMW",
+//     cinlindraje : "1000 cc"
+// }
+
+// console.log(moto.descripcion.call(motoDesc))
+
+
+// // bind(), es una función de prestamo
+// const curso = {
+//     nombre : "BackEnd",
+//     estudiantes : 120,
+//     descripcion : function(){
+//         return `El curso de ${this.nombre} tiene ${this.estudiantes} inscritos`
+//     }
+// }
+// console.log(curso.descripcion())
+
+// const cursoFront = {
+//     nombre : "FrontEnd",
+//     estudiantes : 50,
+//     intensidad : 12.5
+
+// }
+// let frontFuncPrestamo = curso.descripcion.bind(cursoFront)
+// console.log(frontFuncPrestamo())
+
+// // apply(), permite hacer uso de argumentos como array
+
+// const cursoApply = {
+//     descripcion : function(modalidad, modulos){
+//         return `El curso de ${this.nombre} tiene ${this.estudiantes} inscritos, con una modalidad ${modalidad} y ${modulos} modulos`
+//     }
+// }
+// console.log(cursoApply.descripcion())
+
+// const cursoFrontApply = {
+//     nombre : "FrontEnd",
+//     estudiantes : 50,
+// }
+// console.log(cursoApply.descripcion.apply(cursoFrontApply, ["virtual", 15]))
+
+// // Ejemplo
+// const pokemonGolem = {
+//     tipo : "Tierra",
+//     nombre : "Golem",
+//     poder : "Super Puño"
+// }
+// console.log(`El pokemon ${pokemonGolem.nombre} es de tipo  ${pokemonGolem.tipo}`)
+
+// const pokemonTierra = {
+//     pokemonTipo : function() {
+//         return "Este pokemon es de tipo " +this.tipo
+//     }
+// }
+
+// console.log(pokemonTierra.pokemonTipo())
+
+// console.log(pokemonTierra.pokemonTipo.call(pokemonGolem))
