@@ -312,7 +312,7 @@
 
 // console.log("============================ Arrays ============================")
 // // Definición de un array
-const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
+// const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // // Array Vacio
 // const motos2 = []
 // motos2[0] = "Pulsar"
@@ -2254,3 +2254,33 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // import { nombreCurso, cursoFunc } from "./export_test.js"
 // console.log(nombreCurso)
 // console.log(cursoFunc())
+
+// console.log("============================ Debugging ============================")
+
+// // Debugging es el proceso mediante el cual podemos evidenciar comportamientos dentro del código.
+
+// // Tipos de Debug en JS
+
+// // console.log()
+// let a = 1
+// let b = 2
+// let c = a + b
+// console.log("Referencia resultado operación en C")
+// console.log(c)
+// let x = 1
+// let y = 2
+// let z = x * y
+// console.log("Referencia resultado operación en Z")
+// console.log(z)
+
+// // BreakPoints
+// // Son puntos de referencia donde el código va detenerse para empezar el proceso de debug de forma controlada
+
+
+// // Debugger palabra reservada que me premite establer un endpoint dentro del propio código js
+
+// debugger
+// let text1 = "Esto es el texto 1"
+// console.log(text1)
+// let text2 = "Esto es el texto 2"
+// console.log(text2)
