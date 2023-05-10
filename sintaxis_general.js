@@ -2061,9 +2061,69 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // }
 
 // console.log(testGlobalAuto)
-
+console.log("============================ Use Strict ============================")
 // Use Strict
 // Es una directiva o una sentencia que se usa para evitar errores dentro de las definiciones del desarrollo dentro de JS, permite mejorar el uso de buenas practicas en JS
-"use strict"
-testUseStrict = "Esto es use strict"
-console.log(testUseStrict)
+
+// "use strict"
+
+// // testUseStrict = "Esto es use strict"
+// // console.log(testUseStrict)
+
+// globalTestFunc()
+// function globalTestFunc(){
+//     testGlobalAuto = "Esto es global"
+// }
+
+// x = 123
+// console.log(x)
+// globalTestFunc()
+// function globalTestFunc(){
+//     "use strict"
+//     y = "Esto es global"
+// }
+
+// Que no se puede hacer en Strict Mode
+
+// * usar variables sin declaración
+// "use strict"
+// a = 123
+// obj = {hola1:1, hola2:2}
+
+// Borrar variables o objetos 
+// "use strict"
+// let x = 123
+// delete x
+// x=null
+
+// Duplicar parémtros o argumentos de entrada en una función
+//"use strict"
+// function test(test1, test1 ){
+//     test1
+// }
+// test(1,2)
+
+// Escribir numeros con ceros a la izq
+// let x = 010
+// "use strict"
+// var objTest = {}
+// Object.defineProperty(objTest, "hola", {hola1:1}) 
+// console.log(objTest)
+
+// Accesar a  una propiedad de get-only o un getter, para sobreescribirlo
+// "use strict"
+// const objTest = {
+//     get testGet(){
+//         return 0
+//     }
+// }
+// console.log(objTest.testGet)
+// objTest.testGet = "Hola"
+
+// Poder usar la palabra reservada eval para asignar un valor
+//let eval = 1
+
+// Poder usar eval para crear variables
+// eval("x = 2")
+// console.log(eval("x = 2") )
+// console.log(eval("var x = 2") )
