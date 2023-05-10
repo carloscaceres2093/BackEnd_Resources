@@ -2246,3 +2246,11 @@ const motos = ["Pulsar", "Akt", "BMW", "Ducati"]
 // console.log(pokemonTierra.pokemonTipo())
 
 // console.log(pokemonTierra.pokemonTipo.call(pokemonGolem))
+
+
+// console.log("============================ Exports/Imports ============================")
+
+// // Revisar el archivo de export_test.js para validar como se exportan
+// import { nombreCurso, cursoFunc } from "./export_test.js"
+// console.log(nombreCurso)
+// console.log(cursoFunc())
