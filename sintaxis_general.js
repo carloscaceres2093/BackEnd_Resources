@@ -2369,3 +2369,135 @@
 // // HTML la extensión es .html o .htm
 // // CSS la extesión  es .css
 // // JavaScript la extensión es .js
+
+// console.log("============================ Buenas Prácticas ============================")
+
+// // Evitar el uso de variables globales, porque se pueden realizar sobreescrituras de las mismas y cambiar su comportamiento.
+// // Siempre declarar las variables y constantes con las palabras reservadas var, let y const, ya que de no hacerlo, dichas variables serán globales.
+// // Todas las declaraciones se deberían hacer al principio del bloque o del script
+
+// // =============================== Inicio Código ==========================================
+// let nombre1, nombre2, nombre3
+// const constante1 = "Esto es constante" 
+
+// // Usar más adelante
+// nombre1 = "Carlos"
+// nombre2 = "Dario"
+// nombre3 = "Pedro"
+
+// // Inicializar todas las variables
+// let nombre11 = "Carlos"
+// let nombre22 = "Dario"
+// let nombre33 = "Pedro"
+// let numero1 = 1
+// const arrayTest = []
+// const objectTest = {}
+// let nullVar = null
+// let textTest = ""
+
+// // Declarar los objetos y los array's como const, esto previene que un cambie accidentamente de tipo ese array o objeto
+// // Ejemplo mal array
+// let motos = ["S1000R", "M1", "GSR750"]
+// console.log(motos)
+// motos = "motos"
+// console.log(motos)
+// // Ejemplo bien  array
+// const motosConst = ["S1000R", "M1", "GSR750"]
+// console.log(motosConst)
+// motosConst[3]="H2r"
+// console.log(motosConst)
+// // motosConst = "motos"
+
+// // Ejemplo mal objeto
+// let vehiculoDesc = {tipo: "Carro", ruedas: 4, tranccion: "Trasera"}
+// console.log(vehiculoDesc)
+// vehiculoDesc = "Un gato"
+// console.log(vehiculoDesc)
+
+// // Ejemplo bien objeto
+// const vehiculoDesc1 = {tipo: "Carro", ruedas: 4, tranccion: "Trasera"}
+// console.log(vehiculoDesc1)
+// // vehiculoDesc1 = "Un gato"
+// vehiculoDesc1.licencia = "B1"
+// console.log(vehiculoDesc1)
+
+// // Hay que tratar de evitar usar el "use Object()", es decir, la inicialización a través de new
+
+// // Definir un string
+
+// let stringMal = new String() // Mal
+// let stringBien = "" // forma primitiva de String
+// let numberMal = new Number() // Mal
+// let numberBien = 0 // forma primitiva de Number
+// let boolMal = new Boolean() // Mal
+// let boolBien = false // forma primitiva de Boolean
+// const objectMal = new Object() // Mal
+// const objectBien = {} // Objeto nuevo
+// const arrayMal = new Array() // Mal
+// const arrayBien = [] // Array nuevo
+// const regexMal = new RegExp() // Mal
+// const regexBien = /()/ // Regex nuevo
+// const fucntionMal = new Function() // Mal
+// const fucntionBien = function() {} // Regex nuevo
+
+
+// // Ser muy conscientes de la conversión automática en JS
+
+// let x = "Test" // Tipo de dato string
+// x = 5 // Cambio a tipo number
+
+// // Importante tener en cuenta que los datos de tipo number se pueden cambiar a strings o NaN, cuando se hacen operaciones matemáticas
+// let y = 5 + "7" 
+// console.log(typeof y)
+// let z = 5 - "7" 
+// console.log(typeof z)
+// let w = 5 - "x" 
+// console.log(typeof w)
+// console.log(w)
+// let text = "Back" - "End"
+// console.log(typeof text)
+// console.log(text)
+
+// // Usar siempre comparaciones estrictas
+
+// console.log(0 == '')
+// console.log(1 == '1')
+// console.log(0 === '')
+// console.log(1 === '1')
+// console.log(1 !== '1')
+
+// // Hacer uso de parámetros por default, o tener siempre presente que se deben polular todos los argumentos de una función, mientras esos argumentos no tengan valores por default
+
+// function argsDefault(value1 = 1, value2 = 2) {
+//     return value1 + value2
+// }
+// console.log(argsDefault())
+
+// // Recomendación personal profesor, es siempre tener en cuenta los argumentos de la función
+// function fillArgs(value1, value2) {
+//     return value1 + value2
+// }
+// console.log(fillArgs(1, 3))
+
+
+// // Switch con valores por defecto
+// let day 
+// switch (new Date().getDay()) {
+//     case 0:
+//         day = "Domingo"
+//     case 1:
+//         day = "Lunes"
+//     default:
+//         day = "Cualquier Día"
+// }
+// console.log(day)
+
+// // tipos de datos (number, string, boolean) como objetos
+
+// let stringOk = "Carlos"
+// let stringObje = new String("Carlos")
+// console.log(stringOk===stringObje)
+// console.log("Tipo de datos para stirngOK: ", typeof stringOk)
+// console.log("Tipo de datos para stirngObje: ", typeof stringObje)
+// let stringObje2 = new String("Carlos")
+// console.log(stringObje2===stringObje) // Los objetos no se pueden compara 
