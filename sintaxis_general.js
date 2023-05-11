@@ -760,7 +760,7 @@
 
 // function printText(text){
 //     console.log("Esto es el texto a imprimir: ", text)
-    
+
 // }
 
 // printText(sumFuncitonDecl(1,2))
@@ -903,7 +903,7 @@
 // for (; i2<arrayText.length; i2++){// i2 = i2+1
 //     texto2+= arrayText[i2]+" "
 //    // texto2+=`${arrayText[i2]} `
-   
+
 // }
 // // Ejemplo con formating
 // console.log(`texto ${i2}`)
@@ -938,7 +938,7 @@
 // // Ejemplo con continue
 // let endpointFinal2
 // for (let i=0; i<endpoints.length; i++){
-    
+
 //     if (endpoints[i]=="endpoint2"){
 //         console.log("Hola iteracion:", i+1)
 //         continue
@@ -1081,7 +1081,7 @@
 //     while(index<3){
 //         yield index
 //         index++
-        
+
 //     }
 //     return 3
 
@@ -1496,7 +1496,7 @@
 //     printModulo(){
 //         console.log(modulo)
 //     }
-    
+
 // }
 // const claseBack3 = new ClaseBackEnd3(horario = "7:30pm a 10:00pm",  "modulo 6")
 // claseBack3.print(120)
@@ -1548,7 +1548,7 @@
 //     getClassDescription(){
 //         return this.#printName()+ " Y tiene "+this.#students+" estudiantes"
 //     }
-    
+
 // }
 // const backPrivateObj = new ClaseBackPrivate("Back End")
 // console.log(backPrivateObj.getClassDescription())
@@ -2284,3 +2284,88 @@
 // console.log(text1)
 // let text2 = "Esto es el texto 2"
 // console.log(text2)
+
+
+
+// console.log("============================ Style Guide ============================")
+
+// // Nombre de variables
+
+// // Los nombres de las variables deben estar en camelCase, dende la primera palabra empieza en minúscula y las que le siguen empiezan con mayúscula
+
+// let primeraVariable = "Variable con camelCase"
+// let camel = "camelCase"
+
+// // Espacios en las operaciones (*, +, -, /, =, % etc) y procesos que sean separados por coma
+// let x = 1
+// let y = 2
+// let z = x + y
+// const arrayTest = [1, 2, 3, "Hola"]
+// const objTest = { numero1: 1, numero2: 2, numero3: 3 }
+
+// // Indentación, se debería hacer con dos espcios, el profe carlos usa tab
+// const objTest1 = {
+//     numero1: 1,
+//     numero2: 2,
+//     numero3: 3,
+//     numero4: 4,
+//     numero5: 5,
+//     numero6: {
+//         letraa: "a",
+//         letrab: "b",
+//     }
+// }
+
+// function testFunc(test) {
+//     return test
+// }
+
+// // Reglas de sentencias
+// // Se puede o no usar el ; para finalizar la sentencia, sin embargo si se va a usar, usarlo siempre y sino no usarlo nunca.
+// // Siempre colcar un espacio antes de abrir un corchete
+// // Colocar la apertura del corchete d eun bloque siempre la misma linea de la definición
+// // Colocar el corchete de cerrado del bloque siempre en un linea aparte y sin espacion
+
+
+// for (let i = 0; i < 2; i++) {
+//     console.log(i)
+// }
+
+// if (x < 2) {
+//     curso = "Back"
+// } else {
+//     curso = "Front"
+// }
+
+// // Reglas de objetos
+// // Colocar la apertura del corchete d eun bloque siempre la misma linea de la definición
+// // Colocar el corchete de cerrado del bloque siempre en un linea aparte y sin espacion
+// // Despues de los 2 puntos colocar un espacio para definir el valor de una propiedad
+// // Para valores de tipo string, usar comillas dobles y no sencillas
+// // No usar coma cuando se tiene la ultima propiedad-valor
+// // Para objetos cortos, sus propiedades y valores se pueden definir en una sola linea
+// let objStatemens = {
+//     objeto1: 1,  
+//     objeto2: {
+//         objetoa: "a",
+//         objetob: "b"
+//     }
+// }
+
+// const objRule = {numero1: 1, numero2: 2, numero3: 3}
+
+// // Longitud máxima de la linea debería ser de 80 caracteres
+
+// const lenghtRule = {numero1: 1, numero2: 2, numero3: 3, numero4: 4, numero5: 5,
+//     numero6: 6
+// }
+
+// //Convención de nombres
+// // Variables y funciones en camelCase
+// // Variables Globales en MAYÚSCULA SOSTENIDA
+// // Constantes de objetos conocidos (como PI) en MAYÚSCULA SOSTENIDA
+
+// // Extensiones de archivos
+// // HTML la extensión es .html o .htm
+// // CSS la extesión  es .css
+// // JavaScript la extensión es .js
