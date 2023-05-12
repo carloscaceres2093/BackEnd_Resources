@@ -2501,3 +2501,161 @@
 // console.log("Tipo de datos para stirngObje: ", typeof stringObje)
 // let stringObje2 = new String("Carlos")
 // console.log(stringObje2===stringObje) // Los objetos no se pueden compara 
+
+
+
+console.log("============================ JS Asíncrono ============================")
+// Asíncrono en programación es un proceso que se da luego de una ejecución y no en tiempo real.
+// Los procesos asíncronos se dan cuando exisite un proceso que tarda mucho tiempo o que depende de otros procesos.
+
+// Callbacks, signifca ques una función usado como un argumento de otra función. Donde usar una función corriendo otra
+// Tipos de callback
+
+// Función de secuencia, esto significa que la función se ejecutará cuando sea llamada y no en la secuencia en la que se define.
+function sequenceFirst() {
+    return "Función definida primero"
+}
+
+function sequenceSecond() {
+    return "Función definda segundo"
+}
+
+console.log(sequenceSecond())
+console.log(sequenceFirst())
+
+//  Control de la secuencia, haga uso de un callback para controlar en que momento se hace uso de una función u otra.
+// Secuencia normal
+function returnAlgo(algo) {
+    return algo
+}
+function descripcion(tipo, marca) {
+    return `El vehículo es de tipo ${tipo} y marca ${marca}`
+}
+
+let descripcionString = descripcion("Carro", "BMW")
+console.log(returnAlgo(descripcionString))
+
+// Secuencia controlada
+function controlSequence(tipo, marca) {
+    let texto = `El vehículo es de tipo ${tipo} y marca ${marca}`
+    return returnAlgo(texto)
+}
+
+console.log(controlSequence("Carro", "BMW"))
+
+// Callbacks
+
+function callbackFunc(value) {
+    console.log(value)
+}
+function callbackFunc1(value) {
+    console.log(value+ "esto es otro callback")
+}
+
+function descripcionCallback(tipo, marca, callbackArg) {
+    let text = `El vehículo es de tipo ${tipo} y marca ${marca}`
+    callbackArg(text)
+}
+
+descripcionCallback("Carro", "BMW", callbackFunc1)
+
+// Ejemplo callback
+
+const numbers = [1, 20, -15, 2, -3]
+
+function validarPositivos(individualNumber) {
+    if (individualNumber >= 0) {
+        return individualNumber
+    }
+    return 
+}
+
+function quitarNegativos(callback, arrayNumbers) {
+    const positiveNumbers = []
+    for (const number of arrayNumbers) {
+        if (callback(number)) {
+            positiveNumbers.push(number)
+        }
+    }
+    return positiveNumbers
+}
+
+console.log(quitarNegativos(validarPositivos, numbers))
+
+
+// const positiveNumbers1 = []
+// for (let i = 0; i < numbers.length; i++) {
+//     if (validarPositivos(numbers[i])) { 
+//         positiveNumbers1.push(numbers[i])
+//     }
+// }
+// console.log(positiveNumbers1)
+
+const motos = ["S1000R", "GSR750", "Afrika Twin", "Husqvarna 701", "Streetfighter", "Multiestrada"] 
+
+function selectMotos(value) {
+    if (value.startsWith("S")) {
+        return value
+    }
+    return 
+}
+console.log(quitarNegativos(selectMotos, motos))
+
+// Proceso Asíncrono
+// Es un proceso que se ejecuta luego del runtime, no es inmediato y puede tardar un poco más que un proceso síncrono
+// Todas funciones que corran en paralelo con otras funciones son llamadas asíncronas.
+
+// Función asíncrona setTimeout(), ejecuta un proceso después de un tiempo asignado.
+function setTimeFunct() {
+    console.log("Este ese el curso de BackEnd intermedio")
+}
+// //setTimeFunct()
+// setTimeout(setTimeFunct, 3000)
+// console.log(typeof setTimeFunct)
+
+// // Uno podría en vez de pasar el nombre de la función como argumento de otra función, se podría pasar el la función como tal definida.
+// function setTimeFunct2(value) {
+//     console.log(value)
+// }
+// console.log(typeof setTimeFunct2("HOla"))
+// //setTimeout(setTimeFunct2("test"), 3000) //Es un error porque no se pueden pasar el resultado de una fu nción all callback
+// setTimeout(function() {setTimeFunct2("Este es el curso de BackEnd")}, 3000)
+
+// Función asíncrona setInterval, va a ejecutar el callbak para cada intervalo 
+
+// function horaUTC() {
+//     let hora = new Date()
+//     console.log( `${hora.getHours()}:${hora.getMinutes()}:${hora.getSeconds()}`)
+// }
+
+// setInterval(horaUTC, 5000)
+
+
+
+// Promesas en java script
+
+// Existen dos definiciones dentro de una promesa.
+// * Código productor que es un código que puede tomar cierto tiempo de ejecución
+// * Código consumidor, que es un código que debe esperar por el resultado.
+// entonces las promesas son un objeto que permite contectar el código productor con el consumidor.
+
+// Definición de un promersa
+let promiseDefinition = new Promise(function(myResolve, myReject) {
+    //Código Productor
+    myResolve()
+    myReject()
+})
+
+promiseDefinition.then(
+    function(value) {/* Cuando la lógica sea correcta */},
+    function(error) {/* Cuando la lógica sea incorrecta */}
+)
+
+// La promesa me arroja 2 parámetros de respuesta.
+// * El resultado donde yo puedo tener 2 estados "Success" o "Error"
+// * El estado como tal de la promesa:
+//      - "pending" (cuando el proceso sigue en ejecución), 
+//      - "fulfilled" (cuando el proceso terminó satisfactoriamente)
+//      - "rejected" (Cuando el proceso falló)
+
+// las promesas son un objeto que tiene como propiedades los valores "state" y "result"
