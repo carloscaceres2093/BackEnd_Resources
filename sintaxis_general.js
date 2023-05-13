@@ -2646,12 +2646,14 @@ let promiseDefinition = new Promise(function(myResolve, myReject) {
     myReject()
 })
 
+
+// Código consumidor
 promiseDefinition.then(
     function(value) {/* Cuando la lógica sea correcta */},
     function(error) {/* Cuando la lógica sea incorrecta */}
 )
 
-// La promesa me arroja 2 parámetros de respuesta.
+// La promesa me arroja 2 propiedades de respuesta.
 // * El resultado donde yo puedo tener 2 estados "Success" o "Error"
 // * El estado como tal de la promesa:
 //      - "pending" (cuando el proceso sigue en ejecución), 
@@ -2659,3 +2661,76 @@ promiseDefinition.then(
 //      - "rejected" (Cuando el proceso falló)
 
 // las promesas son un objeto que tiene como propiedades los valores "state" y "result"
+
+// Ejemplo de promesa
+
+function displaySomething(text) {
+    console.log(text)
+}
+
+let eje1Promise = new Promise(function(myResolve, myReject) {
+    let x = 5
+    if (x == 0) {
+        myResolve("OK")
+    }else if (x == 1){
+        myResolve("OK pero con 1")
+    }else if (x == 2){
+        myReject("Error pero con 2")
+    } else {
+        myReject("Error")
+    }
+})
+
+eje1Promise.then(
+    function(value) { displaySomething(value) },
+    function(error) { displaySomething(error) },
+)
+
+// setTimeOut usando promesas
+
+let timeOutPromise = new Promise(function(myResolve, myReject) {
+        setTimeout(function() {myResolve("Este curso es el mejor de Todos a la U")}, 1)
+})
+
+
+function displaySomething1(text) {
+    console.log(text) 
+}
+
+timeOutPromise.then(
+    function(error) { displaySomething1(error) },
+)
+
+// Waiting for response 
+// Callback PENDIENTE
+
+// function displaySomething2(text) {
+//     console.log(text) 
+// }
+// function getResponse(callback) {
+//     const https = require('https');
+//     const options = {
+//         host:"https://pokeapi.co/api/v2/pokemon/pikachu",
+//         method:'GET'
+//     }
+//     var req = https.request(options, (res) => {
+//         callback(res.statusCode)
+//     }
+
+//     )
+//     req.end()
+//     //let req =  new XMLHttpRequest()
+//     //let response  = fetch("https://www.google.com/")
+//     //req.request("get", "mycar.html")
+//     // req.open("get", "mycar.html")
+//     // req.onload = function() {
+//     //     if (req.status == 200) {
+//     //         callback(req.responseText)
+//     //     } else {
+//     //         callback("Error: " + req.statusText)
+//     //     }
+//     // }
+//     // req.send()
+// }
+
+// getResponse(displaySomething2)
