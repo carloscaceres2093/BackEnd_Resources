@@ -2778,3 +2778,166 @@
 
 // awaitFunc()
 
+
+console.log("============================ AJAX ============================")
+
+// AJAX = Asynchronous JavaScript And XML
+// NO es un lenguaje de progración, simplemente es la combinación de JS y el DOM de HTML, poder construir desde un navegador una petición http request.
+// AJAX  nos permite actualizar de forma asíncorna las paginas web intercambiando data con el servicio  por detrás, esto represtnta que también puedo cambiar
+// partes del front (No todo el front) sin refrescar la pagina web
+
+// Como funciona
+
+// * Lo primero se da en el página web, donde algún proceso se ejecuta (click a algún componente por ejemplo)
+// * Se crea un objeto XMLHttpRequest, el cual es creado por JS
+// * Luego de creado el request es enviado al servicio web
+// * El servidor procesa esa petición
+// * Para luego enviar la resputa de la lógica hacia la página web
+// * La información de respuesta es proesado por JS
+// * Se ejecuta la acción pertinente según la respuesta dada.
+
+
+// XMLHttpRequest, es basado en callbacks
+
+// // Pasos a seguir para la creación de una petición
+
+// // Crear el objeto XMLHttpRequest
+// const objXMLHttpReq = new XMLHttpRequest()
+
+// // Se debe definir el callback function, para que procese la respuesta a la petición
+// objXMLHttpReq.onload = function() {
+
+// }
+
+// // Se debe hacer el envio de la petición y acá se presenta 2 pasos
+// // Se abre la conexión el servicio web o el servicio del que esperamos una respuesta
+// objXMLHttpReq.open("GET", "www.google.com")
+// // Se envia la petición al servicio web
+// objXMLHttpReq.send()
+
+
+// Métodos del objeto http request
+
+// abort(), me permite cancelar el request actual
+// getAllResponseHeaders(), permite leer todos los datos asociados a un header
+// getResponseHeader(), Me retorna un header específico
+// open() Detalles del apeticíon
+// -> método, url, async (true (asíncrono) y false (síncrono)), user, psw
+// send(), enviar el request
+// setRequestHeader(), Permite añadir headers a la petición
+
+
+// Propiedades del objeto http request
+// onload, me permite definir la función que va a recibir y procesar mi response
+// onreadystatechange, definir la función del proceso cuando la propiedad readyState cambie
+// readyState, me indica los estados del request
+// -> 0:  La petición no ha sido inicializada
+// -> 1: Conexión con el servidor fue establecida
+// -> 2: La petición fue recibida por el servicio web
+// -> 3: Se está procesando la petición
+// -> 4: La petición terminó y la respuesta está disponible
+// responseText, devuelve la respuesta a mi petición en string
+// responseXML, devuelve la respuesta en formato XML
+// responseType, permite definir el tipo de respuesta que viene.
+// status, retorna los poisbles estados de la petición a nivel http (200, 301, 500, 403, 404)
+// statusText, retorna el status a nivel de texto ("OK", "Redirect", "Server Interal Error", "Forbidden", "Bad Request")
+
+// // Ejemplo de AJAX implementado
+// const reqPokemon = new XMLHttpRequest()
+// reqPokemon.responseType = "json"
+// reqPokemon.onload = () => {
+//     if (reqPokemon.readyState == 4 && reqPokemon.status==200){
+//         const data = reqPokemon.response.effect_changes[0].effect_entries
+//         //console.log(reqPokemon.responseText)
+//         document.getElementById("api").innerHTML = JSON.stringify(data)
+//     } else {
+//         console.log(`Error: ${reqPokemon.statusText}` )
+//     }
+// } 
+// reqPokemon.open("GET", "https://pokeapi.co/api/v2/ability/1/")
+// reqPokemon.send()
+
+
+// // Ejemplo post con xmlhttprequest
+
+// const postReq = new XMLHttpRequest()
+// postReq.open("POST", "https://dummyjson.com/products/add")
+// postReq.setRequestHeader('Content-Type', 'application/json')
+// let dataObj = JSON.stringify(
+//     {
+//         title: "Objeto Nuevo"
+//     }
+// ) 
+// //postReq.responseType = "json"
+// postReq.onload = function() {
+//     if (postReq.status == 200) {
+//         document.getElementById("api2").innerHTML = postReq.responseText
+//     } else {
+//         console.log(`Error: ${postReq.statusText}` )
+//     }
+// }
+// postReq.send(dataObj)
+
+// // Multiple Callback functions
+
+// function pokemonFunc(url, callback) {
+//     const pokemonHttp = new XMLHttpRequest()
+//     pokemonHttp.responseType = "json"
+//     pokemonHttp.onload = function() {callback(this)}
+//     pokemonHttp.open("GET", url)
+//     pokemonHttp.send()
+// }
+
+// function callbackBerry(httpObj) {
+//     if (httpObj.readyState == 4 && httpObj.status==200){
+//         const data = httpObj.response.berries[2]
+//         //console.log(reqPokemon.responseText)
+//         document.getElementById("berries").innerHTML = JSON.stringify(data)
+//     } else {
+//         console.log(`Error:  Berries fail with status ${httpObj.statusText}` )
+//     }
+// }
+// function callbackEncounter(httpObj) {
+//     if (httpObj.readyState == 4 && httpObj.status==200){
+//         const data = httpObj.response.condition
+//         document.getElementById("encounter").innerHTML = JSON.stringify(data)
+//     } else {
+//         console.log(`Error:  encounter fail with status ${httpObj.statusText}` )
+//     }
+// }
+
+// pokemonFunc("https://pokeapi.co/api/v2/berry-flavor/1/", callbackBerry)
+// pokemonFunc("https://pokeapi.co/api/v2/encounter-condition-value/2/", callbackEncounter)
+
+
+// // Fetch api basada en promesas
+
+// // Provee una interfaz para acceder y manipular partes del protocolo http, como lo son la petición y la respuesta.
+// // el metodo fetch() permite encpasular toda la lógica detrás que puede el xmlhttprequest y ejecutarla de forma asycrona.
+
+// // Definición
+
+// async function fetchDef() {
+//     const response = await fetch("https://pokeapi.co/api/v2/ability/?limit=20&offset=20")
+//     const jsonRender = await response.json()
+//     document.getElementById("fetch").innerHTML = JSON.stringify(jsonRender.next)
+// }
+// fetchDef()
+
+// // Ejemplo post
+
+// async function postFetchFunc(url, data) {
+//     const response = await fetch(url, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type':'application/json'
+//         },
+//         body: JSON.stringify(data)
+//     })
+    
+//     return response.json()
+// }
+
+// postFetchFunc("https://dummyjson.com/products/add", {title: "Objeto Fetch"}).then((data) => {
+//     document.getElementById("fetchPost").innerHTML = JSON.stringify(data)
+// })
