@@ -2941,3 +2941,7 @@ console.log("============================ AJAX ============================")
 // postFetchFunc("https://dummyjson.com/products/add", {title: "Objeto Fetch"}).then((data) => {
 //     document.getElementById("fetchPost").innerHTML = JSON.stringify(data)
 // })
+
+let nombre = "Carlos"
+nombre =123
+nombre = true
