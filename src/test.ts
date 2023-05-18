@@ -102,3 +102,144 @@ const datos: [x:number, y:number] = [20, 21]
 const [x] = datos
 console.log(x)
 console.log(datos[0])
+
+// Objetos en TS
+
+// Definición
+
+const ejmObj : {prop1: string, prop2: number, prop3: boolean} = {
+    prop1: "Un string",
+    prop2: 1,
+    prop3: true
+}
+
+// Infiriendo el tipo de dato del objeto
+
+const inferenceObj = {
+    prop1: "String",
+    prop2: function () {},
+    prop3: false
+}
+
+console.log(inferenceObj)
+inferenceObj.prop1 = "Esto es un string modificado"
+console.log(inferenceObj)
+// inferenceObj.prop2 = 1
+
+// Propiedades opcionales
+
+// // Ejemplo de definición de propiedades sin asignación erronea
+// const carro4 : {tipo: string, cilindraje: number} = {
+//     tipo: "Camioneta",
+// }
+
+const carros1 : {tipo: string, cilindraje?: number, descripcion?: object} = {
+        tipo: "Camioneta",
+    }
+console.log(carros1)
+carros1.cilindraje = 1600
+carros1.descripcion = {
+    ruedas:4,
+    puertas: 3
+}
+console.log(carros1)
+
+// Indexación de objetos
+
+// puede ser usada para objetos sin propiedades definidas
+
+const motos1: { [index: string]: string} = {}
+console.log(motos1)
+motos1.bmw = "S1000R"
+motos1.yamaha = "M1"
+motos1.ducati = "Streetfighther"
+console.log(motos1)
+
+
+// ENUMS
+// Son una clase especial de datos qu representan un grupo de constantes
+// Los enums solo tiene 2 tipos de datos disponibles, string y number
+
+// Enums numéricos
+// Si uno definie un enum sin inicializar, este se volverá por defecto 0 para el primer valor y añadira 1 a cada valor que se sume
+
+enum Coordenadas {
+    Norte,
+    Occidente,
+    Oriente,
+    Sur
+}
+let coordenadasNorte = Coordenadas.Norte
+console.log(coordenadasNorte)
+console.log(Coordenadas)
+coordenadasNorte = 2
+console.log(coordenadasNorte)
+// No se puede cambiar
+// coordenadasNorte = "Norte"
+
+enum Coordenadas1 {
+    Norte = 3,
+    Occidente,
+    Oriente,
+    Sur
+}
+console.log(Coordenadas1)
+
+enum StatusOk {
+    Ok = 200,
+    Created = 201,
+    Reset = 205,
+    Reported = 208
+}
+console.log(StatusOk)
+// Acceder por su propiedad
+console.log(StatusOk.Ok)
+// Acceder por su valor
+console.log(StatusOk[200])
+
+
+// Enums de tipo string
+
+enum StatusString {
+    Ok = "OK 200",
+    Created = "Created OK",
+    Reset = "Reset Completed",
+    Reported = "Reported"
+}
+console.log(StatusString.Ok)
+
+// Aliases, permiten definir tipos de datos con nombres personalizados
+// Se pueden usar con tipos de datos primitivos con strings o numbers, o se pueden dar contipos de datos más complejos como obj, arrays
+
+type CarDescr = object
+type CarType = string
+
+const descripcion: CarDescr = {
+    ruedas:4,
+    puertas: 3
+}
+
+// Interfaces, funcionan similar a los aliases pero con objetos
+
+
+interface CarDescr1 {
+    ruedas: number,
+    puertas: number
+}
+
+interface Carros {
+    tipo: string,
+    cinlidraje: number,
+    description: CarDescr1
+}
+
+const carroDesc: CarDescr1 =  {
+    ruedas: 4,
+    puertas: 5
+} 
+
+const carrosInterface: Carros = {
+    tipo: "Camioneta",
+    cinlidraje: 3000,
+    description: carroDesc
+}
