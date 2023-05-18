@@ -222,20 +222,22 @@ const descripcion: CarDescr = {
 // Interfaces, funcionan similar a los aliases pero con objetos
 
 
-interface CarDescr1 {
+interface DescripVehiculo {
     ruedas: number,
-    puertas: number
+    traccion: string,
+    combustible: string
 }
 
 interface Carros {
     tipo: string,
     cinlidraje: number,
-    description: CarDescr1
+    description: DescripVehiculo
 }
 
-const carroDesc: CarDescr1 =  {
-    ruedas: 4,
-    puertas: 5
+const carroDesc: DescripVehiculo =  {
+    ruedas: 5,
+    traccion: "trasera",
+    combustible: "Diesel"
 } 
 
 const carrosInterface: Carros = {
@@ -243,3 +245,144 @@ const carrosInterface: Carros = {
     cinlidraje: 3000,
     description: carroDesc
 }
+
+
+interface Motos {
+    tipo: string ,
+    cilindraje: number,
+    torque: string,
+    marca: string,
+    descripcion: DescripVehiculo
+}
+const motosDescript: DescripVehiculo = {
+    ruedas: 2,
+    traccion: "Cadena",
+    combustible: "Gasolina+Aceite"
+}
+
+const motosInterface: Motos = {
+    tipo: "2T",
+    cilindraje: 175,
+    torque: "25NM",
+    marca: "Yamaha",
+    descripcion:motosDescript
+}
+
+const motosSinInter:{
+    tipo: string ,
+    cilindraje: number,
+    torque: string,
+    marca: string,
+    descripcion: object
+} = {
+    tipo: "2T",
+    cilindraje: 175,
+    torque: "25NM",
+    marca: "Yamaha",
+    descripcion:{
+        ruedas: 2,
+        traccion: "Cadena",
+        combustible: "Gasolina+Aceite"
+    }
+}
+const motosSinInter2:{
+    tipo: string ,
+    cilindraje: number,
+    torque: string,
+    marca: string,
+    descripcion: object
+} = {
+    tipo: "2T",
+    cilindraje: 175,
+    torque: "25NM",
+    marca: "Yamaha",
+    descripcion:{
+        ruedas: 2,
+        traccion: "Cadena",
+        combustible: "Gasolina+Aceite"
+    }
+}
+
+// Union Type, permite definir más de un tipo de dato
+
+function unionExample (param: string | number) {
+    return param
+}
+
+console.log(unionExample(123))
+console.log(unionExample("Texto"))
+
+let varUnion: string|object
+
+varUnion = "Hola Texto"
+console.log(varUnion)
+varUnion = {
+    ejemplo:"Esto es un objeto"
+}
+console.log(varUnion)
+
+// Posibles errores haciendo uso del Union
+
+// function errorUnionTest(param: string | number){
+//     console.log(param.toUpperCase())
+// }
+
+// Funciones en TS
+// En TS se debe especificar el tipo de argumentos que se ingresan a la función y el tipo de dato del return
+
+function testFunc(): number {
+    return new Date().getTime()
+}
+console.log(testFunc())
+
+// Void Return
+function testFunc1(param: string): void {
+    console.log(param)
+}
+console.log(testFunc1("Hola Clase"))
+
+// Argumentos opcionales
+function testFunc2(param: string, param2?:number): void {
+    console.log(param, param2)
+}
+testFunc2("Hola Clase", 20)
+
+// Argumentos con valor por defecto
+function testFunc3(param: string, param2:number = 10): void {
+    console.log(param, param2)
+}
+testFunc3("Hola Clase")
+
+// Argumentos Rest
+
+function testFunc4(param: number, param2:number = 10, ...rest: number[]): number {
+    return param + param2 + rest.reduce((p, c) => p - c,0)
+}
+console.log(testFunc4(1, 2, 3, 4))
+
+function testFunc5(param: number, param2:number = 10, ...rest: string[]): void {
+    console.log( param + param2,  rest[0], rest[1])
+}
+
+testFunc5(1, 2, "Carlos")
+
+// Funciones con alieses
+
+type AliasesFuncType = (value: string) => object
+
+const aliasesFunc: AliasesFuncType = function (value) {
+    const obj = {
+        texto:value
+    }
+    return obj
+}
+
+console.log(aliasesFunc("BackEnd"))
+const aliasesFunc2: AliasesFuncType = function (value) {
+    const obj = {
+        texto:value,
+        valores: value.split("")
+    }
+    return obj
+}
+console.log(aliasesFunc2("BackEnd"))
