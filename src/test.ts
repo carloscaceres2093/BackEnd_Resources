@@ -267,7 +267,7 @@ const motosInterface: Motos = {
     marca: "Yamaha",
     descripcion:motosDescript
 }
-
+console.log(motosInterface)
 const motosSinInter:{
     tipo: string ,
     cilindraje: number,
@@ -285,6 +285,7 @@ const motosSinInter:{
         combustible: "Gasolina+Aceite"
     }
 }
+
 const motosSinInter2:{
     tipo: string ,
     cilindraje: number,
@@ -386,3 +387,251 @@ const aliasesFunc2: AliasesFuncType = function (value) {
     return obj
 }
 console.log(aliasesFunc2("BackEnd"))
+
+
+// Castear o casting
+// sirve para poder trabajar con tipos de datos que quizá no tenga las propiedades del tipo de dato original
+// Con la palabra as yo puede difinir que un tipo de dato como any, unknown se comporten como el tipo de dato deseado
+// Permite usar los atributos y propiedades de una variable que se percibe como un tipo de dato específico
+let castVar: unknown = "Esto es cast var"
+console.log((castVar as string).length)
+// No se puede castear una variable con un tipo de dato que no corresponda
+let numberCast: unknown = 10
+console.log((numberCast as string).length)
+
+// Casting <>, esta forma no se puede usar en REACT o con los comandos de TSX
+let castVarz: unknown = "Esto es otr cast var"
+console.log((<string>castVarz).length)
+
+// Forzar el casting
+let castVarForce = "5"
+console.log(((castVarForce as unknown) as string).length)
+
+
+// Clases TS
+
+// Definición
+
+class ClassDef {
+    // Variable interna
+    private nombre: string
+    // Constructor
+    public constructor(nombre: string){
+        this.nombre = nombre
+    }
+    public getName(): string {
+        return this.nombre
+    }
+}
+
+const objClase = new ClassDef("BackEnd")
+console.log(objClase.getName())
+
+
+// Propiedades de los parámetros
+
+class ClassParams {
+    public constructor(private nombre: string) {}
+
+    public getName(): string {
+        return this.nombre
+    }
+    public setName(value:string): void {
+        this.nombre = value
+
+    }
+}
+
+const objParams = new ClassParams("BackEnd")
+console.log(objParams.getName())
+objParams.setName("BackEnd Reloaded")
+console.log(objParams.getName())
+
+// ReadOnly,  las variables internas son solo de lectura, como si fuese una constante
+
+class ClassParamsOnly {
+    public constructor(private readonly nombre: string) {}
+
+    public getName(): string {
+        return this.nombre
+    }
+    // No se puede modificar el valor de un readonly
+    // public setName(value:string): void {
+    //     this.nombre = value
+
+    // }
+}
+
+// Interfaces con herencia
+// Interfaz anidad
+interface CursoBack {
+    estudiantes: number
+    nombre: string
+    modulos: Modulos
+}
+interface Modulos {
+    tipo: string
+    nombreModulos: string
+    tiempo: number
+}
+
+// Herencia entre interfaces
+
+interface CursoBackHerecnia extends Modulos {
+    estudiantes: number
+    nombre: string
+}
+
+const objInterHerencia: CursoBackHerecnia = {
+    estudiantes:31,
+    nombre: "Curso BackEnd",
+    tipo: "On Line",
+    nombreModulos:"TS",
+    tiempo:71
+} 
+console.log(objInterHerencia)
+
+
+// Interfaz para clase clase
+interface ObjectsClassInterfaz {
+    nombre: string,
+    getName: () => string
+}
+
+class ClassInterfaz implements ObjectsClassInterfaz, Modulos {
+    nombre : string
+    tipo: string
+    nombreModulos: string
+    tiempo: number
+    constructor(nombre:string) {
+        this.nombre = nombre
+        this.tipo = "CualquierCoas"
+        this.nombreModulos ="TypeScript"
+        this.tiempo =71
+    }
+
+    public getName(): string {
+        return this.nombre
+    }
+    public setName(value:string): void {
+        this.nombre = value
+    }
+}
+
+// Herencia TS
+class ClassHerencia extends ClassInterfaz {
+    public constructor(nombre: string){
+        super(nombre)
+    }
+}
+
+const objHerencia = new ClassHerencia("Test")
+console.log(objHerencia.getName())
+console.log(objHerencia.nombreModulos)
+objHerencia.setName("Otro test")
+console.log(objHerencia.getName())
+
+
+// Polimorfismo 
+// La palabra reservada override me permite asegurarme que yo esté sobreescribiendo un método heredado de la clase padre y no creando
+// un nuevo método, ya que no sería polimorfismo
+class ClassPolimorfismo extends ClassInterfaz {
+    public constructor(nombre: string){
+        super(nombre)
+    }
+    public override getName(): string {
+        return this.nombre +" Algo de polimorfismo"
+    }
+}
+
+const objPoli = new ClassPolimorfismo("Polimorfismo")
+console.log(objPoli.getName())
+
+// Clases Abstractas
+
+abstract class ClassAbstract {
+    public abstract getName(): string
+
+    public setNewName(): string {
+        return this.getName()+" Algo más"
+    }
+}
+
+class ClassAbstractHerencia extends ClassAbstract {
+    public constructor (protected readonly nombre: string){
+        super()
+    }
+    public getName(): string {
+        return this.nombre
+    }
+}
+
+const objAbstract = new ClassAbstractHerencia("Abstracción")
+console.log(objAbstract.getName())
+console.log(objAbstract.setNewName())
+
+
+// Utility Types
+// Esto me permite manipular varaibles y tipos de datos a través de una definición de interfaz
+
+// Tipos de utility types
+
+// Partial, es una definición de tipo de datos donde las propiedades son opcionales en su definición
+interface Curso {
+    nombre:  string
+    estudiantes: number
+    modulos:number
+}
+
+let cursoPartial: Partial<Curso> = {}
+console.log(cursoPartial)
+cursoPartial.nombre = "CursoBack" 
+console.log(cursoPartial)
+
+let cursoPartial2: Partial<Curso> = {}
+cursoPartial2.modulos = 15
+console.log(cursoPartial2)
+
+// Esto hace lo mismo que arriba, sin embargo lo hace para un solo objeto, bajo la otra definición se puede extender a más objetos.
+const cursoX: {nombre?:string, estudiantes?:number, modulos?: number} = {} 
+
+// Required, todas las propiedades del objeto son requeridas
+interface Vehiculos {
+    tipo:  string
+    ruedas: number
+    cilindraje?:number
+}
+// Propiedades de objetos opcionales a través de la interfaz
+const carroInterface: Vehiculos = {
+    tipo:"Carro",
+    ruedas: 4
+}
+// Propiedades de objetos requeridos así la interaz diga que pueden ser opcionales
+const carroRequired: Required<Vehiculos> = {
+    tipo:"Carro",
+    ruedas: 4,
+    cilindraje: 1200
+    
+}
+
+// Record, me permite definir un objeto con un tipo de llave y valor especifico.
+// { [ key: number ]: string }
+const diasSemana :  Record<number, string> = {
+    0: "Lunes",
+    1: "Martes",
+    6: "Domingo"
+}
+console.log(typeof diasSemana)
+
+// Omit, que me permite remover promiedades de un objeto
+
+const carroTipo: Omit<Vehiculos, 'ruedas' | 'cilindraje'> = {
+    tipo:"Carro"
+}
+
+// Pick, me permite seleccionar las propiedades de la interfaz que quiero usar
+
+const carroPick: Pick<Vehiculos, 'ruedas' | 'cilindraje'> = {
+    ruedas: 4,
+    cilindraje:1200,
+}
