@@ -635,3 +635,121 @@ const carroPick: Pick<Vehiculos, 'ruedas' | 'cilindraje'> = {
     ruedas: 4,
     cilindraje:1200,
 }
+// Exclud, remover la unión de tipos
+
+type TipoData = string | number | boolean
+
+const varTest: Exclude<TipoData, number> = false
+
+// Return Type, extrae el tipo de dato que retorna la función
+
+type Coordenadas20 = () => { x: number, y: number}
+
+const coordenada: ReturnType<Coordenadas20> = {
+    x:10,
+    y:20
+}
+console.log(coordenada)
+
+// Parameters, esto extrae el tipo de dato  de los argumentos de una función
+
+type Coordenadas30 = ( p: { x: number, y: number}) => void
+
+const coordenada3: Parameters<Coordenadas30>[0] = {
+    x: 30,
+    y: 50
+}
+
+const  testParams: Coordenadas30 = function (p:{x: number, y:number}){
+    console.log(p.x, p.y)
+}
+const ptest = {
+    x:10,
+    y:20
+}
+testParams(ptest)
+
+
+
+// keyof obtner explicitamente el valor de la key de un objeto
+
+interface Carros50 {
+    ruedas: number
+    tipo: string
+    perro: string
+}
+
+let carro50: Carros50 = {
+    ruedas: 10,
+    tipo: "Camion",
+    perro: "Hola"
+}
+
+function imprimirPropiedad ( carro: Carros50, propiedad: keyof Carros50){
+    return `Este es el tipo de carro ${carro[propiedad]} y esta la propiedad ${propiedad}`
+}
+
+console.log(imprimirPropiedad( carro50, "tipo"))
+
+
+type Mappers = { [key: string]: unknown }
+
+function MapFucn (prop: keyof Mappers, value: string): Mappers {
+    return {[prop]: value}
+}
+
+const funcKeyof = MapFucn("name", "test")
+console.log(funcKeyof)
+
+
+// Null y Undefined 
+
+// Tipos de datos null y undefined 
+
+let testNull: string | undefined | null = null
+testNull = "Null"
+testNull = undefined
+
+// Cuando se habilita la opción de strictNullChecks en el tsconfig.json de TS, este require que los valores o resultados que se den para un proceso,
+// se encuentren declarados como undefined
+
+// Encadenamiento opcional(?) (JS) para manejar los null, esto permite acceder a las propiedades de un objeto que quiza exista o no.
+
+interface CursoBack2 {
+    horario: string
+    modulosTest?: {
+        intensidad: number
+    }
+}
+type TestOKI =  number | undefined
+function imprimirIntensidad(curso: CursoBack2){
+    const intensidad = curso.modulosTest?.intensidad
+    console.log(typeof intensidad)
+    if ( intensidad === undefined ){
+        console.log("No se definió intesidad")
+    } else {
+        console.log("La intensidad horaria para los modulos es en promedio: "+ intensidad)
+    }
+}
+
+let cursoBack: CursoBack2 = {
+    horario:"7:30",
+
+}
+imprimirIntensidad(cursoBack)
+
+// El nulo opcional (??) (Nullish Coalescence), si es null va a tomar la segunda opción 
+
+function AgeFunc( age?: number | null | undefined)  {
+    return age ?? "Esto no es un number"
+}
+
+console.log(AgeFunc())
+
+// Validación de null (!) que pueden tener los resultados en caso que sea un valor o un undefined
+
+function getName2(value:string | undefined ): string  | undefined {
+    return value
+}
+let getNameValue = getName2("undefined")
+console.log(getNameValue!.length)
