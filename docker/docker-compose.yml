@@ -1,0 +1,8 @@
+services: # Define los servicios a levantar
+  web: # El nombre del servicio
+    build: . # Construir la imagen (en este caso no está construida)
+    ports: # Me mapea los puertos interno del contenedor hacia el puerto del local host
+      - "8001:8080" # Debe ser una lista que está representada por el guion(-)
+    container_name: "ejemplo_compose" # Define el nombre del contenedor
+  redis: # El nombre del servicio
+    image: "redis:alpine" # Define la imagen a descargar

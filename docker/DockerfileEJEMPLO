@@ -1,0 +1,20 @@
+# From me permite importart la versión de la imagen que yo requiero, o la base de la imagen
+FROM node:18-apline 
+# Definición de directorio de trabajo
+WORKDIR /app
+# Run permite usar comandos básico de consola o terminal
+RUN mkdir /esta_es_mi_carpeta
+# Permite realizar el copiado de información de un archivo local hacia el contenedor
+# Recibe el path local y el path del contenedor
+COPY explicacion.json /esta_es_mi_carpeta
+COPY sintaxis_general.js .
+RUN yarn install --production
+
+# Cmd permite ejecutar un comando del lenguaje de programación y un archivo ejecutable a partir de ese lenguaje
+CMD ["node", "sintaxis_general.js"]
+# Expose me permite abrir un puerto o más  dentro del contenedor
+EXPOSE 3000
+# Cuando se tienen variables de entorno se puede usar el comando ENV para definirlas
+ENV var1=value1
+# Volume  define cual directo dentro de la imagen debe ser usado como almacenamiento
+VOLUME [ "/data" ]
