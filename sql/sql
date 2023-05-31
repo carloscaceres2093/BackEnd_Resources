@@ -1,0 +1,57 @@
+-- ===============================================================================================
+-- DDL 
+-- ===============================================================================================
+
+-- Crea una base de datos
+CREATE DATABASE testDB1;
+-- Borra una base de datos
+DROP DATABASE testDB1;
+
+-- Crea una tabla dentro de una DB
+CREATE TABLE modalidad (
+	id_modalidad bigserial,
+	tipo_modalidad varchar
+);
+
+-- Borra una tabla dentro de una DB
+DROP TABLE modalidad1;
+
+
+-- Añade un campo nuevo dentro de una tabla
+ALTER TABLE modalidad ADD ejemplo_anadir varchar;
+
+-- Modifca el tipo de dato de un campo dentro de una tabla (ESTA APLICA PARA POSTGRESQL)
+ALTER TABLE modalidad ALTER COLUMN ejemplo_anadir TYPE text;
+
+-- Modifica el nombre del campo dentro de una tabla
+ALTER TABLE modalidad RENAME COLUMN ejemplo_anadir TO ejemplo_anadir_modificado;
+
+-- Borra un campo  dentro de una tabla
+ALTER TABLE modalidad DROP COLUMN ejemplo_anadir_modificado;
+
+-- ===============================================================================================
+-- DML
+-- ===============================================================================================
+-- Inserta datos dentro de una tabla
+INSERT INTO  modalidad (tipo_modalidad)
+VALUES ('Remoto');
+
+INSERT INTO  modalidad (tipo_modalidad)
+VALUES ('Presencial');
+
+INSERT INTO  modalidad (tipo_modalidad)
+VALUES ('Hibidro');
+
+-- Actualizar un dato dentro de una tabla
+-- Actualiza toda la tabla con el dato del campo establecido
+UPDATE modalidad
+SET tipo_modalidad = 'Híbrido'
+
+-- Actualiza solo los registros que cumplan con la condición del WHERE
+UPDATE modalidad
+SET tipo_modalidad = 'Presencial'
+WHERE id_modalidad = 1
+
+UPDATE modalidad
+SET tipo_modalidad = 'Remoto'
+WHERE id_modalidad = 2
