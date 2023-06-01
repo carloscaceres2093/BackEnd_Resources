@@ -29,6 +29,113 @@ ALTER TABLE modalidad RENAME COLUMN ejemplo_anadir TO ejemplo_anadir_modificado;
 -- Borra un campo  dentro de una tabla
 ALTER TABLE modalidad DROP COLUMN ejemplo_anadir_modificado;
 
+-- Definición de campo NOT NULL (No vacío) sobre creación de tabla
+CREATE TABLE Profesores (
+	id_profesor bigserial NOT NULL, 
+	nombre_profesor varchar NOT NULL,
+	identificacion_profresor varchar
+);
+
+INSERT INTO Profesores (nombre_profesor, identificacion_profresor)
+VALUES ('carlos', '1234567890');
+INSERT INTO Profesores (nombre_profesor)
+VALUES ('caceres');
+INSERT INTO Profesores (identificacion_profresor)
+VALUES ('1234567890');
+INSERT INTO Profesores (nombre_profesor, identificacion_profresor)
+VALUES ('', '1234567890');
+
+-- Definición de campo NOT NULL (No vacío) sobre alteración de tabla
+ALTER TABLE modalidad ALTER COLUMN tipo_modalidad SET NOT NULL;
+
+ALTER TABLE Profesores ALTER COLUMN identificacion_profresor SET NOT NULL;
+
+-- Definición de campo UNIQUE sobre la creación de una tabla
+CREATE TABLE registro_institucion (
+	id_registro bigserial NOT NULL,
+	fecha_creacion timestamp NOT NULL,
+	beneficios text,
+	codigo_registro varchar NOT NULL UNIQUE,
+	id_profesor bigint NOT NULL
+);
+
+
+INSERT INTO registro_institucion (fecha_creacion, codigo_registro, id_profesor)
+VALUES (NOW(), '1e0b5dd9-888f-4a71-bf26-a5da2ed712a6', 1);
+INSERT INTO registro_institucion (fecha_creacion, codigo_registro, id_profesor)
+VALUES (NOW(), '1e0b5dd9-888f-4a71-bf26-a5da2ed712a7', 2);
+
+-- Definición de campo UNIQUE sobre la alteración de una tabla
+ALTER TABLE modalidad ADD CONSTRAINT  modalidad_tipo_modalidad_key UNIQUE (tipo_modalidad);
+
+
+
+DROP TABLE registro_institucion;
+
+
+-- Definición de campo DEFAULT sobre la creación de una tabla
+CREATE TABLE registro_institucion (
+	id_registro bigserial NOT NULL,
+	fecha_creacion timestamp NOT NULL DEFAULT NOW(),
+	beneficios text,
+	codigo_registro varchar NOT NULL UNIQUE,
+	id_profesor bigint NOT NULL
+);
+INSERT INTO registro_institucion ( codigo_registro, id_profesor)
+VALUES ( '1e0b5dd9-888f-4a71-bf26-a5da2ed712a7', 1);
+INSERT INTO registro_institucion ( fecha_creacion,codigo_registro, id_profesor)
+VALUES ('2023-05-30 20:00:00'::timestamp ,'1e0b5dd9-888f-4a71-bf26-a5da2ed712a6', 2);
+
+-- Definición de campo DEFAULT sobre la alteración de una tabla
+ALTER TABLE registro_institucion ALTER COLUMN fecha_creacion DROP DEFAULT;
+ALTER TABLE registro_institucion ALTER COLUMN fecha_creacion SET DEFAULT NOW();
+
+-- Definición de PRIMARY KEY sobre la creación de una tabla
+
+CREATE TABLE estudiantes (
+	id_estudiante bigserial NOT NULL,
+	nombre_estudiante varchar,
+	correo varchar,
+	identificacion_estudiante varchar NOT NULL,
+	PRIMARY KEY (id_estudiante)
+);
+-- Definición de PRIMARY KEY sobre la alteración de una tabla
+
+ALTER TABLE modalidad ADD PRIMARY KEY (id_modalidad);
+ALTER TABLE profesores ADD PRIMARY KEY (id_profesor);
+ALTER TABLE registro_institucion ADD PRIMARY KEY (id_registro);
+
+
+-- Definición de FOREIGN KEY sobre la creación de una tabla
+
+CREATE TABLE cursos (
+	id_curso bigserial NOT NULL,
+	nombre_curso varchar NOT NULL,
+	modulos text,
+	categoria varchar, 
+	id_modalidad bigint NOT NULL,
+	id_profesor bigint NOT NULL,
+	PRIMARY KEY (id_curso),
+	CONSTRAINT fk_modalidad FOREIGN KEY (id_modalidad) REFERENCES modalidad(id_modalidad),
+	CONSTRAINT fk_profesores FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor)
+);
+
+CREATE TABLE estudiante_curso (
+	id_estudiante_curso bigserial NOT NULL,
+	id_estudiante bigint NOT NULL,
+	id_curso bigint NOT NULL,
+	PRIMARY KEY (id_estudiante_curso),
+	CONSTRAINT fk_estudiantes FOREIGN KEY (id_estudiante) REFERENCES estudiantes(id_estudiante),
+	CONSTRAINT fk_cursos FOREIGN KEY (id_curso) REFERENCES cursos(id_curso)
+);
+
+
+
+
+-- Definición de FOREIGN KEY sobre la alteración de una tabla
+ALTER TABLE registro_institucion ADD CONSTRAINT fk_profesores FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor);
+ALTER TABLE registro_institucion ADD CONSTRAINT fk_profesores FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor);
+
 -- ===============================================================================================
 -- DML
 -- ===============================================================================================
@@ -45,13 +152,56 @@ VALUES ('Hibidro');
 -- Actualizar un dato dentro de una tabla
 -- Actualiza toda la tabla con el dato del campo establecido
 UPDATE modalidad
-SET tipo_modalidad = 'Híbrido'
+SET tipo_modalidad = 'Híbrido';
 
 -- Actualiza solo los registros que cumplan con la condición del WHERE
 UPDATE modalidad
 SET tipo_modalidad = 'Presencial'
-WHERE id_modalidad = 1
+WHERE id_modalidad = 1;
 
 UPDATE modalidad
 SET tipo_modalidad = 'Remoto'
-WHERE id_modalidad = 2
+WHERE id_modalidad = 2;
+
+-- Borra datos de la base de datos
+DELETE FROM modalidad WHERE id_modalidad=3;
+
+--Borra todos los datos de la base de datos WARNING
+DELETE FROM modalidad ;
+
+-- Analizar el performance de una query
+EXPLAIN ANALYZE
+SELECT * from modalidad
+
+EXPLAIN ANALYZE
+DELETE FROM modalidad WHERE id_modalidad=4;
+
+-- ===============================================================================================
+-- DQL
+-- ===============================================================================================
+
+-- Obtener todos los datos de una tabla en la DB
+EXPLAIN ANALYZE
+SELECT * FROM modalidad;
+
+-- Obtener todos los datos de una tabla definiendo las columans
+EXPLAIN ANALYZE
+SELECT id_modalidad, tipo_modalidad FROM modalidad;
+
+
+
+-- BORRADO LÓGICO
+ALTER TABLE modalidad ADD delete_col boolean;
+
+UPDATE modalidad
+SET delete_col = false
+WHERE id_modalidad = 1;
+
+UPDATE modalidad
+SET delete_col = true
+WHERE id_modalidad = 2;
+
+
+SELECT id_modalidad, tipo_modalidad FROM modalidad where delete_col = false;
+
+
