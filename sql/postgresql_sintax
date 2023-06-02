@@ -1,0 +1,129 @@
+CREATE TABLE tipos_datos (
+	entero_ocho_bytes bigint,
+	autoincrement_ocho_bytes bigserial,
+	booleano boolean,
+	data_binario bytea,
+	caracter_longitud_fija character,
+	caracter_longitud_variable varchar, 
+	fecha_ano_mes_dia date,
+	numero_punto_flotante_ocho_bytes double precision,
+	entero_con_sigo_cuatro_bytes int,
+	entero_con_sigo_cuatro_bytes1 int4,
+	data_json_format json,
+	data_json_binaririo jsonb,
+	numero_decimal decimal,
+	punto_plotante_precision_sencilla float4,
+	tiempo time,
+	tiempo_con_time_zone timetz,
+	fecha_hora_timestamp timestamp,
+	fecha_hora_timestamp_con_time_zone timestamptz,
+	universally_unique_identifier uuid,
+	xml_fomat xml,
+	documento_busqueda_texto tsvector,
+	string_texto text
+);
+
+insert into tipos_datos (entero_ocho_bytes) values (2651651651651651614);
+
+update tipos_datos
+set  entero_ocho_bytes = 2651651651651651614,
+	booleano = false,
+	data_binario = '\xdeadbeef',
+	caracter_longitud_fija = 'a',
+	caracter_longitud_variable = 'Carlos',
+	fecha_ano_mes_dia = '2023-06-01 12:24'::date, 
+	numero_punto_flotante_ocho_bytes = 2651651651651651614.5,
+	entero_con_sigo_cuatro_bytes = 2614,
+	entero_con_sigo_cuatro_bytes1 = 2651,
+	data_json_format = '{ "prueba": "1",
+						"prueba2": "2"}',
+	numero_decimal =2651651651651651614.5,
+	punto_plotante_precision_sencilla= 2651651651651651614.5,
+	tiempo = '12:24'::time,
+	tiempo_con_time_zone = '1970-01-01 08:00:00 America/Los_Angeles',
+	fecha_hora_timestamp = '1970-01-01 08:00:00 America/Los_Angeles',
+	fecha_hora_timestamp_con_time_zone = '1970-01-01 08:00:00 America/Los_Angeles',
+	universally_unique_identifier = 'a810dd15-bacd-4110-beb7-87ac6ffb085a',
+	string_texto = 'Hola Mundo'
+where autoincrement_ocho_bytes=1;
+
+
+
+-- Operadores Postgresql
+-- Conversion de tipo de dato ::
+select numero_decimal, numero_decimal :: bigint as entero from tipos_datos;
+
+-- Suma, resta, multiplicación, división, modulo, expontente (+)(-)(*)(/)(%)(^)
+select 
+	entero_con_sigo_cuatro_bytes + entero_con_sigo_cuatro_bytes1 as suma,
+	entero_con_sigo_cuatro_bytes - entero_con_sigo_cuatro_bytes1 as resta,
+	entero_con_sigo_cuatro_bytes * 2 as multiplicacion,
+	entero_con_sigo_cuatro_bytes / 23 as division,
+	entero_con_sigo_cuatro_bytes % 5 as modulo,
+	entero_con_sigo_cuatro_bytes ^ 2  as exponente
+	from tipos_datos;
+
+-- Rangos, operadores que van sobre condiciones WHERE
+-- BETWEEN
+select fecha_hora_timestamp from tipos_datos where fecha_hora_timestamp between '1970-01-01' and '1970-01-03';
+-- LIKE 
+select fecha_hora_timestamp from tipos_datos where fecha_hora_timestamp between '1970-01-01' and '1970-01-03';
+
+
+-- Operadores Postgresql
+-- Conversion de tipo de dato ::
+select numero_decimal, numero_decimal :: bigint as entero from tipos_datos;
+
+-- Suma, resta, multiplicación, división, modulo, expontente (+)(-)(*)(/)(%)(^)
+select 
+	entero_con_sigo_cuatro_bytes + entero_con_sigo_cuatro_bytes1 as suma,
+	entero_con_sigo_cuatro_bytes - entero_con_sigo_cuatro_bytes1 as resta,
+	entero_con_sigo_cuatro_bytes * 2 as multiplicacion,
+	entero_con_sigo_cuatro_bytes / 23 as division,
+	entero_con_sigo_cuatro_bytes % 5 as modulo,
+	entero_con_sigo_cuatro_bytes ^ 2  as exponente
+	from tipos_datos;
+
+-- Rangos, operadores que van sobre condiciones WHERE
+-- BETWEEN
+select fecha_hora_timestamp from tipos_datos where fecha_hora_timestamp between '1970-01-01' and '1970-01-03';
+-- LIKE 
+select string_texto  from tipos_datos where string_texto LIKE '%la%';
+-- IN
+select caracter_longitud_fija, caracter_longitud_variable from tipos_datos where caracter_longitud_fija IN ('a', 'b');
+select caracter_longitud_fija, caracter_longitud_variable from tipos_datos where caracter_longitud_fija ='a' or caracter_longitud_fija ='b';
+-- Menor, Mayor, Menor Igual, Mayor Igual, Diferente (<)(>)(<=)(>=)
+select entero_con_sigo_cuatro_bytes from tipos_datos where entero_con_sigo_cuatro_bytes<2651;
+select entero_con_sigo_cuatro_bytes from tipos_datos where entero_con_sigo_cuatro_bytes>2614;
+select entero_con_sigo_cuatro_bytes from tipos_datos where entero_con_sigo_cuatro_bytes<=2614;
+select entero_con_sigo_cuatro_bytes from tipos_datos where entero_con_sigo_cuatro_bytes>=2614;
+-- Diferente (<>)(!=)
+select entero_con_sigo_cuatro_bytes from tipos_datos where entero_con_sigo_cuatro_bytes<>2614;
+select entero_con_sigo_cuatro_bytes from tipos_datos where entero_con_sigo_cuatro_bytes!=2614;
+-- NUll Validation (ISNULL)(NOTNULL)(IS)
+select autoincrement_ocho_bytes, entero_con_sigo_cuatro_bytes  from tipos_datos where entero_con_sigo_cuatro_bytes ISNULL;
+select autoincrement_ocho_bytes, entero_con_sigo_cuatro_bytes  from tipos_datos where entero_con_sigo_cuatro_bytes NOTNULL;
+select autoincrement_ocho_bytes, entero_con_sigo_cuatro_bytes  from tipos_datos where entero_con_sigo_cuatro_bytes IS NULL;
+select autoincrement_ocho_bytes, entero_con_sigo_cuatro_bytes  from tipos_datos where entero_con_sigo_cuatro_bytes IS NOT NULL;
+-- Negación, Conjunción, Disyunción (NOT)(AND)(OR)
+select caracter_longitud_fija, caracter_longitud_variable from tipos_datos where NOT caracter_longitud_fija ='a' ;
+select entero_con_sigo_cuatro_bytes, entero_con_sigo_cuatro_bytes1 from tipos_datos where  entero_con_sigo_cuatro_bytes =2614 and   entero_con_sigo_cuatro_bytes1 =2651 ;
+select caracter_longitud_fija, caracter_longitud_variable from tipos_datos where  caracter_longitud_fija ='a' or  caracter_longitud_fija ='b' ;
+
+-- Sintaxis SQL de query siempre el SELECT primer,
+-- luego FROM para traer table, 
+--luego las condiciones WHERE, 
+--luego se agrupa GROUP BY (HAVING), 
+-- luego se ordena ORDER BY  y 
+-- OFFSET
+-- por ultimo se limita LIMIT 
+
+
+-- ORDER BY  (ASC)(DESC), OFFSET QUE PERMITE ARRANCAR LA CONSULTA DESDE UNA POSICIÓN ADELANTE
+SELECT 
+	*
+FROM public.tipos_datos
+WHERE caracter_longitud_fija notnull 
+ORDER BY autoincrement_ocho_bytes DESC
+OFFSET 1
+LIMIT 1;
