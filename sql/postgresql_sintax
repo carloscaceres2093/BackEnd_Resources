@@ -113,7 +113,8 @@ select caracter_longitud_fija, caracter_longitud_variable from tipos_datos where
 -- Sintaxis SQL de query siempre el SELECT primer,
 -- luego FROM para traer table, 
 --luego las condiciones WHERE, 
---luego se agrupa GROUP BY (HAVING), 
+--luego se agrupa GROUP BY 
+--HAVING, 
 -- luego se ordena ORDER BY  y 
 -- OFFSET
 -- por ultimo se limita LIMIT 
