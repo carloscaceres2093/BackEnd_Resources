@@ -227,3 +227,81 @@ db.clases.find().limit(4)
 ```
 SELECT * FROM clases limit 4
 ```
+
+## Actualizar documentos
+
+**Actualizar un documento**
+```
+db.clases.updateOne({_id: ObjectId("64813331ec596c63e63a3b3a")},
+{
+    $set: {
+        modulos: "Estos son los modulos a cambiar"
+    }
+}
+)
+```
+
+**Actualizar varios documentos**
+1.  Bajo una condición
+```
+db.clases.updateMany({categoria: "Programación"},
+{
+    $set: {
+        modulos: "Estos son los modulos de programación"
+    }
+}
+)
+```
+2.  Bajo varias condición
+```
+db.clases.updateMany({categoria: "Programación", nombre_curso:{$regex: "End"}},
+{
+    $set: {
+        modulos: "Estos son los modulos de programación front y back"
+    }
+}
+)
+```
+
+## Borrar Documentos
+
+**Borrar un documento**
+```
+db.clases.deleteOne({_id:ObjectId("648133cbec596c63e63a3b3b")})
+```
+
+**Borrar varios documento**
+```
+db.clases.deleteMany({categoria:"Programación"})
+```
+
+## Borrar Colecciones
+```
+db.test.drop()
+```
+
+## Borrar bases de datos
+
+Se ubica en la base de datos que quiere borra con el comando *```use <database>```* y luego ejecuta el compando de borrado 
+```
+db.dropDatabase()
+```
+
+## Crear index
+
+Un index es un sistema que usan los motores de base de datos para realizar busquedas rápidas, esto tiene 2 implicaciónes
+1. La buena, es que optimiza las queries de los index que se creen, entonces, si yo hago un filtro bajo una columan que tiene un index, será mucho más performante la query.
+2. La mala, es que afecta directame los insert y los updates
+
+**Creación de index**
+```
+db.clases.createIndex({categoria:1})
+```
+**Consulta  de index**
+```
+db.clases.getIndexes()
+```
+**Borrado de index**
+```
+db.clases.dropIndex("categoria_1")
+```
