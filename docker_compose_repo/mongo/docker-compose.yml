@@ -4,7 +4,7 @@ version: '3.1'
 services:
 
   mongo:
-    image: mongo
+    image: mongo:6
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: backend
@@ -18,6 +18,6 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: backend
       ME_CONFIG_MONGODB_ADMINPASSWORD: changeme
-      ME_CONFIG_MONGODB_URL: mongodb://backend:changeme@mongo:27017/
+      ME_CONFIG_MONGODB_URL: mongodb://bshow colleackend:changeme@mongo:27017/
 
 # engine://user:password@host:port/
